@@ -11,3 +11,6 @@ screenshots/
 allure-results
 *.spec.js.bak
 .DS_Store
+allure-history
+allure-report
+allure-results

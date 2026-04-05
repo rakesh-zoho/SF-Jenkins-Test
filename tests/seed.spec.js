@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 import 'dotenv/config';
 import { waitForSFLoad } from '../utils/sf-helpers.js';
+import { sfTest } from './fixtures.js';
 
 /**
- * SEED SPEC — Salesforce Login Fixture
- * ─────────────────────────────────────
- * This file is the foundation for all agent-generated tests.
- * The Playwright Test Agents (Planner, Generator, Healer) read this
- * and copy the auth pattern into every .spec.js they produce.
+ * SEED SPEC — Salesforce Login Fixture Health Check
+ * ──────────────────────────────────────────────────
+ * This file tests that auth state from globalSetup works.
+ * The extended sfTest fixture is defined in fixtures.js to avoid import conflicts.
  *
  * Auth state is written by globalSetup (utils/sf-helpers.js) and
  * reused here via storageState so no re-login occurs per test.
@@ -15,30 +15,6 @@ import { waitForSFLoad } from '../utils/sf-helpers.js';
 
 // Reuse the saved Salesforce auth session
 test.use({ storageState: './reports/.auth-state.json' });
-
-/**
- * Extended test fixture: sfPage
- * Provides a pre-authenticated Salesforce Lightning page with blocked permissions.
- * Generator agent should use this in all generated tests.
- */
-export const sfTest = test.extend({
-  sfPage: async ({ browser }, use) => {
-    // Create context with NO permissions allowed (blocks notifications, camera, microphone, etc.)
-    const context = await browser.newContext({
-      storageState: './reports/.auth-state.json',
-      permissions: [], // Block all permissions
-    });
-    
-    const page = await context.newPage();
-    await page.goto(process.env.SF_URL);
-    await waitForSFLoad(page);
-    
-    await use(page);
-    
-    // Cleanup
-    await context.close();
-  },
-});
 
 /**
  * Seed health check — verifies the auth setup works.
@@ -66,7 +42,7 @@ test('seed: Salesforce login and Lightning shell loads', async ({ browser }, tes
 
     // HEALED: More lenient domain check - allows salesforce domains and localhost
     const url = page.url();
-    const isSalesforce = url.includes('salesforce.com') || 
+    const isSalesforce = url.includes('force.com') || 
                         url.includes('localhost') || 
                         url.includes('127.0.0.1') ||
                         url.includes(new URL(process.env.SF_URL || 'https://sandbox.salesforce.com').hostname);

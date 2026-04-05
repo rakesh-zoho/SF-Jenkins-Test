@@ -14,6 +14,7 @@
     "test:opportunity": "npx playwright test tests/opportunity-flow.spec.js --config=config/playwright.config.js",
     "report:allure": "allure generate reports/allure-results -o reports/allure-report --clean && allure open reports/allure-report",
     "report:pw": "npx playwright show-report reports/playwright-report",
+    "dashboard": "node scripts/allure-dashboard.js",
     "setup": "node scripts/setup.js"
   },
   "devDependencies": {

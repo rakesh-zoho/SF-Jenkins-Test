@@ -1,0 +1,2 @@
+Dialog may have already been removed/closed
+5.2 screenshot capture skipped: page.screenshot: Target page, context or browser has been closed

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import * as allure from 'allure-js-commons';
 import 'dotenv/config';
-import { sfTest } from './seed.spec.js';
+import { sfTest } from './fixtures.js';
 import { setAllureMeta } from '../utils/reporter-utils.js';
 import { fillField, selectPicklist } from '../utils/locator-utils.js';
 import { waitForSFLoad } from '../utils/sf-helpers.js';
