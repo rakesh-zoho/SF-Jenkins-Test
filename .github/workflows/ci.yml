@@ -1,0 +1,73 @@
+name: SF Playwright Agent Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * *'   # Nightly 2 AM UTC
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: SF Playwright Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run Tests
+        env:
+          SF_URL: ${{ secrets.SF_URL }}
+          SF_USERNAME: ${{ secrets.SF_USERNAME }}
+          SF_PASSWORD: ${{ secrets.SF_PASSWORD }}
+          SF_SECURITY_TOKEN: ${{ secrets.SF_SECURITY_TOKEN }}
+          HEADLESS: 'true'
+          CI: 'true'
+        run: npm run test:ci
+
+      - name: Generate Allure Report
+        if: always()
+        run: |
+          npm install -g allure-commandline --quiet
+          allure generate reports/allure-results -o reports/allure-report --clean || true
+
+      - name: Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ github.run_number }}
+          path: reports/allure-report
+          retention-days: 30
+
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ github.run_number }}
+          path: |
+            reports/playwright-report
+            reports/test-results
+          retention-days: 14
+
+      - name: Publish JUnit Results
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Playwright Results
+          path: reports/junit-results.xml
+          reporter: java-junit
+          fail-on-error: false

@@ -1,0 +1,2 @@
+  ⚠️  Screenshot "navigate-to-leads-app" failed: page.screenshot: Target page, context or browser has been closed
+  ⚠️  Screenshot "failure-Create-Lead-with-Required-Fields-Only" failed: page.screenshot: Target page, context or browser has been closed

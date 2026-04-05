@@ -1,0 +1,31 @@
+{
+  "name": "sf-agentic-framework",
+  "version": "1.0.0",
+  "description": "Salesforce Automation — VS Code + Official Playwright Test Agents (Planner/Generator/Healer)",
+  "type": "module",
+  "scripts": {
+    "agents:init": "npx playwright init-agents --loop=vscode",
+    "test": "npx playwright test --config=config/playwright.config.js",
+    "test:headed": "npx playwright test --config=config/playwright.config.js --headed",
+    "test:debug": "npx playwright test --config=config/playwright.config.js --debug",
+    "test:ui": "npx playwright test --config=config/playwright.config.js --ui",
+    "test:ci": "cross-env CI=true npx playwright test --config=config/playwright.config.js --retries=2",
+    "test:lead": "npx playwright test tests/lead-creation.spec.js --config=config/playwright.config.js",
+    "test:opportunity": "npx playwright test tests/opportunity-flow.spec.js --config=config/playwright.config.js",
+    "report:allure": "allure generate reports/allure-results -o reports/allure-report --clean && allure open reports/allure-report",
+    "report:pw": "npx playwright show-report reports/playwright-report",
+    "setup": "node scripts/setup.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "allure-playwright": "^3.6.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "allure": "^3.3.1",
+    "allure-js-commons": "^3.0.0",
+    "dotenv": "^16.6.1"
+  }
+}
