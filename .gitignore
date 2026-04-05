@@ -6,6 +6,8 @@ reports/allure-report/
 reports/playwright-report/
 reports/test-results/
 reports/junit-results.xml
+reports/screenshots
 screenshots/
+allure-results
 *.spec.js.bak
 .DS_Store
