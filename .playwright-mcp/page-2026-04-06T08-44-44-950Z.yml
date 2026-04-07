@@ -1,0 +1,27 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e7]:
+        - img [ref=e8]
+        - generic [ref=e9]: Salesforce login
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]: To access this page, you have to log in to Salesforce.
+          - heading "Salesforce login" [level=1] [ref=e14]
+          - generic [ref=e15]:
+            - text: Username
+            - textbox "Username" [active] [ref=e17]
+          - text: Password
+          - textbox "Password" [ref=e18]
+          - button "Log In" [ref=e19] [cursor=pointer]
+          - generic [ref=e20]:
+            - checkbox "Remember me" [ref=e21]
+            - generic [ref=e22]: Remember me
+        - link "Forgot Your Password?" [ref=e24] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us&lqs=startURL%3D%252Flightning%252Fpage%252Fhome%26ec%3D302
+    - generic [ref=e25]: © 2026 Salesforce, Inc. All rights reserved.
+  - iframe [ref=e27]:
+    - img [ref=f13e2]
+  - generic: Login
+  - iframe [ref=e28]:
+    

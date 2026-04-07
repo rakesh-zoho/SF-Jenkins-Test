@@ -6,7 +6,7 @@
 ## Stack
 - **Playwright Test Agents** v1.56+ (official Microsoft — `npx playwright init-agents --loop=vscode`)
 - **VS Code** v1.105+ with GitHub Copilot Chat (agent mode)
-- **Agent files**: `.github/chatmodes/` — Planner, Generator, Healer `.chatmode.md`
+- **Agent files**: `.github/agents/` — Planner, Generator, Healer `.chatmode.md`
 - **MCP**: `.vscode/mcp.json` — connects Copilot to Playwright's browser tools
 - **Auth**: `utils/sf-helpers.js` globalSetup → `reports/.auth-state.json` → all tests reuse
 - **Reports**: Allure HTML + Playwright HTML + JUnit (for CI)

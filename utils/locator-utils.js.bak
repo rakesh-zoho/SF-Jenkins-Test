@@ -22,16 +22,12 @@ export async function fillField(page, label, value) {
  * Tries selectOption first (native), falls back to click+option (SF custom).
  */
 export async function selectPicklist(page, label, value) {
-  const field = page.getByLabel(label).first();
-  // HEALED: Salesforce picklists often expose both the combobox control and the listbox as the same label.
+  const field = page.getByLabel(label);
   try {
     await field.selectOption(value, { timeout: 3000 });
-    return;
   } catch {
     await field.click();
-    const option = page.getByRole('option', { name: value }).first();
-    await option.waitFor({ state: 'visible', timeout: 5000 });
-    await option.click();
+    await page.getByRole('option', { name: value }).click();
   }
 }
 

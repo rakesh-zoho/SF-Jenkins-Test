@@ -1,0 +1,41 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e7]:
+        - img [ref=e8]
+        - generic [ref=e9]: Salesforce login
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]: "Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator."
+          - heading "Salesforce login" [level=1] [ref=e14]
+          - generic [ref=e15]:
+            - text: Username
+            - textbox "Username" [active] [ref=e17]
+          - text: Password
+          - textbox "Password" [ref=e18]
+          - button "Log In" [ref=e19] [cursor=pointer]
+          - generic [ref=e20]:
+            - checkbox "Remember me" [ref=e21]
+            - generic [ref=e22]: Remember me
+        - link "Forgot Your Password?" [ref=e24] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=us
+    - generic [ref=e25]: © 2026 Salesforce, Inc. All rights reserved.
+  - iframe [ref=e27]:
+    - main [ref=f5e3]:
+      - article [ref=f5e7]:
+        - generic [ref=f5e9]:
+          - generic [ref=f5e10]:
+            - heading "Get Salesforce for free. No credit card required, no software to install." [level=1] [ref=f5e11]
+            - generic [ref=f5e12]:
+              - paragraph [ref=f5e13]: "With your free CRM, you get:"
+              - list [ref=f5e14]:
+                - listitem [ref=f5e15]: Up to 2 users with no time limits
+                - listitem [ref=f5e16]: Quick and easy set-up with guided onboarding
+                - listitem [ref=f5e17]: Sales, service, and email marketing together in one place
+                - listitem [ref=f5e18]: A free Slack workspace for collaborating with partners
+          - 'link "Get free CRM: Get Salesforce for free. No credit card required, no software to install." [ref=f5e21] [cursor=pointer]':
+            - /url: https://www.salesforce.com/form/signup/free-crm/?d=pb
+            - text: Get free CRM
+  - generic: Login
+  - iframe [ref=e28]:
+    

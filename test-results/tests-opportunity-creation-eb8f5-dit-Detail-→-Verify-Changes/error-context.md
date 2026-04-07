@@ -1,0 +1,218 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: tests\opportunity-creation.spec.js >> Opportunity Creation >> TC3.1: Create Opportunity → Edit Detail → Verify Changes
+- Location: tests\opportunity-creation.spec.js:366:3
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: 'Opportunities' })
+
+```
+
+# Test source
+
+```ts
+  270 |       const dialog = page.getByRole('dialog');
+  271 |       await dialog.getByRole('button', { name: 'Save' }).click();
+  272 |       // Observe behavior - may succeed or show error
+  273 |       await captureScreenshot(page, 'opportunity-past-date-validation');
+  274 |     });
+  275 |   });
+  276 | 
+  277 |   test('TC2.4: Close Date Too Far in Future', async ({ page }) => {
+  278 |     const oppName = uniqueName('Agentic Test Far Future');
+  279 | 
+  280 |     await sfStep('Navigate and Open Modal', page, async () => {
+  281 |       await page.getByRole('link', { name: 'Opportunities' }).click();
+  282 |       await waitForSFLoad(page);
+  283 |       await page.getByRole('button', { name: 'New' }).click();
+  284 |       await page.getByRole('dialog').waitFor({ state: 'visible' });
+  285 |     });
+  286 | 
+  287 |     await sfStep('Fill Form with Far Future Date', page, async () => {
+  288 |       await page.getByLabel('Opportunity Name').fill(oppName);
+  289 |       await page.getByLabel('Account Name').fill('Acme Corp');
+  290 |       await page.waitForTimeout(600);
+  291 |       await page.getByRole('option', { name: 'Acme Corp' }).first().click();
+  292 |       await page.getByLabel('Close Date').fill('12/31/2099');
+  293 |       await page.getByLabel('Stage').click();
+  294 |       await page.getByRole('option', { name: 'Needs Analysis' }).click();
+  295 |       await page.getByLabel('Amount').fill('100000');
+  296 |     });
+  297 | 
+  298 |     await sfStep('Save and Verify', page, async () => {
+  299 |       const dialog = page.getByRole('dialog');
+  300 |       await dialog.getByRole('button', { name: 'Save' }).click();
+  301 |       await expect(dialog).not.toBeVisible();
+  302 |       await expect(page.locator('.toastMessage')).toBeVisible({ timeout: 15000 });
+  303 |       await expect(page.locator('.toastMessage')).toContainText('was created');
+  304 |       await waitForSFLoad(page);
+  305 |       await expect(page.getByRole('heading', { name: new RegExp(oppName) })).toBeVisible();
+  306 |       await captureScreenshot(page, 'opportunity-far-future-date-saved');
+  307 |     });
+  308 |   });
+  309 | 
+  310 |   test('TC2.5: Amount Field — Special Characters & Formatting', async ({ page }) => {
+  311 |     const oppName = uniqueName('Agentic Test Amount Format');
+  312 | 
+  313 |     await sfStep('Navigate and Open Modal', page, async () => {
+  314 |       await page.getByRole('link', { name: 'Opportunities' }).click();
+  315 |       await waitForSFLoad(page);
+  316 |       await page.getByRole('button', { name: 'New' }).click();
+  317 |       await page.getByRole('dialog').waitFor({ state: 'visible' });
+  318 |     });
+  319 | 
+  320 |     await sfStep('Fill Form with Formatted Amount', page, async () => {
+  321 |       await page.getByLabel('Opportunity Name').fill(oppName);
+  322 |       await page.getByLabel('Account Name').fill('Acme Corp');
+  323 |       await page.waitForTimeout(600);
+  324 |       await page.getByRole('option', { name: 'Acme Corp' }).first().click();
+  325 |       await page.getByLabel('Close Date').fill(getDatePlusDays(30));
+  326 |       await page.getByLabel('Stage').click();
+  327 |       await page.getByRole('option', { name: 'Needs Analysis' }).click();
+  328 |       await page.getByLabel('Amount').fill('50,000.50');
+  329 |       // Tab away or click elsewhere to trigger formatting
+  330 |       await page.getByLabel('Opportunity Name').click();
+  331 |     });
+  332 | 
+  333 |     await sfStep('Save and Verify', page, async () => {
+  334 |       const dialog = page.getByRole('dialog');
+  335 |       await dialog.getByRole('button', { name: 'Save' }).click();
+  336 |       await expect(dialog).not.toBeVisible();
+  337 |       await expect(page.locator('.toastMessage')).toBeVisible({ timeout: 15000 });
+  338 |       await expect(page.locator('.toastMessage')).toContainText('was created');
+  339 |       await waitForSFLoad(page);
+  340 |       await expect(page.getByText('50,000.50')).toBeVisible();
+  341 |       await captureScreenshot(page, 'opportunity-amount-formatting');
+  342 |     });
+  343 |   });
+  344 | 
+  345 |   test('TC2.6: Account Lookup With Autocomplete', async ({ page }) => {
+  346 |     await sfStep('Navigate and Open Modal', page, async () => {
+  347 |       await page.getByRole('link', { name: 'Opportunities' }).click();
+  348 |       await waitForSFLoad(page);
+  349 |       await page.getByRole('button', { name: 'New' }).click();
+  350 |       await page.getByRole('dialog').waitFor({ state: 'visible' });
+  351 |     });
+  352 | 
+  353 |     await sfStep('Test Autocomplete', page, async () => {
+  354 |       const accountField = page.getByLabel('Account Name');
+  355 |       await accountField.fill('Acm');
+  356 |       await page.waitForTimeout(600);
+  357 |       const option = page.getByRole('option', { name: /Acme Corp/ }).first();
+  358 |       await expect(option).toBeVisible();
+  359 |       await option.click();
+  360 |       await expect(accountField).toHaveValue('Acme Corp');
+  361 |       await captureScreenshot(page, 'account-lookup-autocomplete');
+  362 |     });
+  363 |   });
+  364 | 
+  365 |   // Suite 3: Multi-Step Workflows
+  366 |   test('TC3.1: Create Opportunity → Edit Detail → Verify Changes', async ({ page }) => {
+  367 |     const oppName = uniqueName('Agentic Test Edit');
+  368 | 
+  369 |     await sfStep('Create Opportunity', page, async () => {
+> 370 |       await page.getByRole('link', { name: 'Opportunities' }).click();
+      |                                                               ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  371 |       await waitForSFLoad(page);
+  372 |       await page.getByRole('button', { name: 'New' }).click();
+  373 |       await page.getByRole('dialog').waitFor({ state: 'visible' });
+  374 |       await page.getByLabel('Opportunity Name').fill(oppName);
+  375 |       await page.getByLabel('Account Name').fill('Acme Corp');
+  376 |       await page.waitForTimeout(600);
+  377 |       await page.getByRole('option', { name: 'Acme Corp' }).first().click();
+  378 |       await page.getByLabel('Close Date').fill(getDatePlusDays(30));
+  379 |       await page.getByLabel('Stage').click();
+  380 |       await page.getByRole('option', { name: 'Needs Analysis' }).click();
+  381 |       await page.getByLabel('Amount').fill('50000');
+  382 |       const dialog = page.getByRole('dialog');
+  383 |       await dialog.getByRole('button', { name: 'Save' }).click();
+  384 |       await expect(dialog).not.toBeVisible();
+  385 |       await waitForSFLoad(page);
+  386 |     });
+  387 | 
+  388 |     await sfStep('Edit Opportunity', page, async () => {
+  389 |       await page.getByRole('button', { name: 'Edit' }).click();
+  390 |       await page.getByRole('dialog').waitFor({ state: 'visible' });
+  391 |       await page.getByLabel('Stage').click();
+  392 |       await page.getByRole('option', { name: 'Qualification' }).click();
+  393 |       await page.getByLabel('Amount').fill('75000');
+  394 |       await captureScreenshot(page, 'opportunity-edit-stage-and-amount');
+  395 |       const dialog = page.getByRole('dialog');
+  396 |       await dialog.getByRole('button', { name: 'Save' }).click();
+  397 |       await expect(dialog).not.toBeVisible();
+  398 |       await expect(page.locator('.toastMessage')).toBeVisible({ timeout: 15000 });
+  399 |       await expect(page.locator('.toastMessage')).toContainText('was saved');
+  400 |       await waitForSFLoad(page);
+  401 |       await expect(page.getByText('Qualification')).toBeVisible();
+  402 |       await expect(page.getByText('75,000')).toBeVisible();
+  403 |       await captureScreenshot(page, 'opportunity-after-edit-verification');
+  404 |     });
+  405 |   });
+  406 | 
+  407 |   test('TC3.2: Create Two Opportunities → Same Account — Verify in List', async ({ page }) => {
+  408 |     const oppName1 = uniqueName('Agentic Test First');
+  409 |     const oppName2 = uniqueName('Agentic Test Second');
+  410 | 
+  411 |     await sfStep('Create First Opportunity', page, async () => {
+  412 |       await page.getByRole('link', { name: 'Opportunities' }).click();
+  413 |       await waitForSFLoad(page);
+  414 |       await page.getByRole('button', { name: 'New' }).click();
+  415 |       await page.getByRole('dialog').waitFor({ state: 'visible' });
+  416 |       await page.getByLabel('Opportunity Name').fill(oppName1);
+  417 |       await page.getByLabel('Account Name').fill('Acme Corp');
+  418 |       await page.waitForTimeout(600);
+  419 |       await page.getByRole('option', { name: 'Acme Corp' }).first().click();
+  420 |       await page.getByLabel('Close Date').fill(getDatePlusDays(30));
+  421 |       await page.getByLabel('Stage').click();
+  422 |       await page.getByRole('option', { name: 'Needs Analysis' }).click();
+  423 |       await page.getByLabel('Amount').fill('50000');
+  424 |       const dialog = page.getByRole('dialog');
+  425 |       await dialog.getByRole('button', { name: 'Save' }).click();
+  426 |       await expect(dialog).not.toBeVisible();
+  427 |       await waitForSFLoad(page);
+  428 |     });
+  429 | 
+  430 |     await sfStep('Create Second Opportunity', page, async () => {
+  431 |       await page.getByRole('link', { name: 'Opportunities' }).click();
+  432 |       await waitForSFLoad(page);
+  433 |       await page.getByRole('button', { name: 'New' }).click();
+  434 |       await page.getByRole('dialog').waitFor({ state: 'visible' });
+  435 |       await page.getByLabel('Opportunity Name').fill(oppName2);
+  436 |       await page.getByLabel('Account Name').fill('Acme Corp');
+  437 |       await page.waitForTimeout(600);
+  438 |       await page.getByRole('option', { name: 'Acme Corp' }).first().click();
+  439 |       await page.getByLabel('Close Date').fill(getDatePlusDays(37));
+  440 |       await page.getByLabel('Stage').click();
+  441 |       await page.getByRole('option', { name: 'Qualification' }).click();
+  442 |       await page.getByLabel('Amount').fill('75000');
+  443 |       const dialog = page.getByRole('dialog');
+  444 |       await dialog.getByRole('button', { name: 'Save' }).click();
+  445 |       await expect(dialog).not.toBeVisible();
+  446 |       await waitForSFLoad(page);
+  447 |     });
+  448 | 
+  449 |     await sfStep('Verify Both in List', page, async () => {
+  450 |       await page.getByRole('link', { name: 'Opportunities' }).click();
+  451 |       await waitForSFLoad(page);
+  452 |       await switchToAllRecords(page, 'Opportunities');
+  453 |       await expect(page.getByRole('link', { name: new RegExp(oppName1) })).toBeVisible();
+  454 |       await expect(page.getByRole('link', { name: new RegExp(oppName2) })).toBeVisible();
+  455 |       await captureScreenshot(page, 'opportunities-list-multiple-records');
+  456 |     });
+  457 |   });
+  458 | });
+```
