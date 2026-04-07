@@ -7,7 +7,7 @@ pipeline {
    * ─────────────────────────────────────────────────────────────────── */
   tools {
     nodejs 'Node20'
-    allure  'allure'
+   // allure  'allure'
   }
 
   /* ── Parameters — selectable from Jenkins "Build with Parameters" UI */
@@ -56,7 +56,7 @@ pipeline {
     stage('Checkout') {
       steps {
         checkout scm
-        sh '''
+        bat '''
           echo "Branch: ${GIT_BRANCH}"
           echo "Commit: ${GIT_COMMIT}"
           node --version
@@ -67,7 +67,7 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
-        sh 'npm ci'
+        bat 'npm ci'
       }
     }
 
@@ -75,7 +75,7 @@ pipeline {
       steps {
         // Skip this stage if using the official Playwright Docker agent
         // (mcr.microsoft.com/playwright) — browsers are already in the image
-        sh 'npx playwright install chromium --with-deps'
+        bat 'npx playwright install chromium --with-deps'
       }
     }
 
@@ -86,8 +86,7 @@ pipeline {
           string(credentialsId: 'SF_URL',            variable: 'SF_URL'),
           string(credentialsId: 'SF_USERNAME',        variable: 'SF_USERNAME'),
           string(credentialsId: 'SF_PASSWORD',        variable: 'SF_PASSWORD'),
-          string(credentialsId: 'SF_SECURITY_TOKEN',  variable: 'SF_SECURITY_TOKEN')
-        ]) {
+            ]) {
           script {
             // Build the Playwright command based on the TEST_SUITE parameter
             def cmd = 'npx playwright test --config=config/playwright.config.js'
@@ -105,7 +104,7 @@ pipeline {
                 break
             }
 
-            sh cmd
+            bat cmd
           }
         }
       }
@@ -120,7 +119,7 @@ pipeline {
     stage('Generate Reports') {
       steps {
         unstash 'test-results'
-        sh '''
+        bat '''
           allure generate reports/allure-results \
             -o reports/allure-report --clean || true
         '''
@@ -133,13 +132,13 @@ pipeline {
   post {
     always {
       // Allure plugin — renders the report in the build sidebar
-      allure([
-        includeProperties: false,
-        jdk: '',
-        results: [[path: 'reports/allure-results']],
-        report: 'reports/allure-report',
-        reportBuildPolicy: 'ALWAYS'
-      ])
+      // allure([
+      //   includeProperties: false,
+      //   jdk: '',
+      //   results: [[path: 'reports/allure-results']],
+      //   report: 'reports/allure-report',
+      //   reportBuildPolicy: 'ALWAYS'
+      // ])
 
       // JUnit results — powers the test trend graph on the job page
       junit(
