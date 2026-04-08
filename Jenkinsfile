@@ -14,7 +14,7 @@ pipeline {
   parameters {
     choice(
       name: 'TEST_SUITE',
-      choices: ['all', 'lead', 'opportunity'],
+      choices: ['all', 'lead', 'account', 'opportunity'],
       description: 'Which test suite to run'
     )
     booleanParam(
