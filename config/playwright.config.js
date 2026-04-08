@@ -10,15 +10,9 @@ export default defineConfig({
   workers: 1,
   timeout: parseInt(process.env.TIMEOUT) || 80000,
   expect: { timeout: 15000 },
-<<<<<<< Updated upstream
   
 reporter: [
   ['html', { outputFolder: 'reports/playwright-report', open: 'never' }],
-=======
-
-reporter: [
-  ['html', { outputFolder: 'reports/playwright-report' }],
->>>>>>> Stashed changes
   ['allure-playwright', { outputFolder: 'reports/allure-results' }],
   ['junit', { outputFile: 'reports/junit-results.xml' }]
 ],
