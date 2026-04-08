@@ -119,15 +119,15 @@ pipeline {
       }
     }
 
-    stage('Generate Reports') {
-      steps {
-        unstash 'test-results'
-        bat '''
-          allure generate reports/allure-results \
-            -o reports/allure-report --clean || true
-        '''
-      }
-    }
+    // stage('Generate Reports') {
+    //   steps {
+    //     unstash 'test-results'
+    //     bat '''
+    //       allure generate reports/allure-results \
+    //         -o reports/allure-report --clean || true
+    //     '''
+    //   }
+    // }
 
   }
 
