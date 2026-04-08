@@ -1,53 +1,181 @@
-import { defineConfig, devices } from '@playwright/test';
-import 'dotenv/config';
+pipeline {
+  agent any
 
-export default defineConfig({
-  testDir: '../tests',
-  outputDir: '../reports/test-results',
-  fullyParallel: false,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: 1,
-  timeout: parseInt(process.env.TIMEOUT) || 80000,
-  expect: { timeout: 15000 },
+  /* ── Tools ─────────────────────────────────────────────────────────
+   * NodeJS Plugin: configure a tool named 'Node20' pointing to Node 20.x
+   * Allure Plugin:  configure a tool named 'allure' pointing to 2.30.x
+   * ─────────────────────────────────────────────────────────────────── */
+  tools {
+    nodejs 'Node20'
+   allure  'allure'
+  }
 
-reporter: [
-  ['html', { outputFolder: 'reports/playwright-report' }],
-  ['allure-playwright', { outputFolder: 'reports/allure-results' }],
-  ['junit', { outputFile: 'reports/junit-results.xml' }]
-],
-  // reporter: [
-    
-  //   ['list'],
-  //   ['html', { outputFolder: '../reports/playwright-report', open: 'never' }],
-  //   ['allure-playwright', {
-  //     detail: true,
-  //     outputFolder: '../reports/allure-results',
-  //     suiteTitle: false,
-  //   }],
-  //   ['junit', { outputFile: '../reports/junit-results.xml' }],
-  // ],
+  /* ── Parameters — selectable from Jenkins "Build with Parameters" UI */
+  parameters {
+    choice(
+      name: 'TEST_SUITE',
+      choices: ['all', 'lead', 'account', 'opportunity'],
+      description: 'Which test suite to run'
+    )
+    booleanParam(
+      name: 'HEADED',
+      defaultValue: false,
+      description: 'Run browser in headed mode (requires Xvfb on agent)'
+    )
+    string(
+      name: 'RETRIES',
+      defaultValue: '2',
+      description: 'Playwright retry count on failure'
+    )
+  }
 
-  use: {
-    baseURL: process.env.BASE_URL || process.env.SF_URL,
-    headless: process.env.HEADLESS !== 'false',
-    slowMo: parseInt(process.env.SLOW_MO) || 0,
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-    trace: 'retain-on-failure',
-    viewport: { width: 1920, height: 1080 },
-    ignoreHTTPSErrors: true,
-    navigationTimeout: 30000,
-    actionTimeout: 15000,
-    permissions: [], // Block all browser permissions
-  },
+  /* ── Environment ───────────────────────────────────────────────────── */
+  environment {
+    CI         = 'true'
+    HEADLESS   = "${!params.HEADED}"
+    ALLURE_DIR = 'reports/allure-results'
+    NODE_PATH  = "${WORKSPACE}/node_modules"
+  }
 
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    },
-  ],
+  /* ── Options ───────────────────────────────────────────────────────── */
+  options {
+    timeout(time: 60, unit: 'MINUTES')
+    disableConcurrentBuilds()
+    buildDiscarder(logRotator(numToKeepStr: '20'))
+    timestamps()
+  }
 
-  globalSetup: '../utils/sf-helpers.js',
-});
+  /* ── Triggers ──────────────────────────────────────────────────────── */
+  triggers {
+    cron('H 2 * * *')   // nightly at ~2 AM
+  }
+
+  /* ── Stages ────────────────────────────────────────────────────────── */
+  stages {
+
+    stage('Checkout') {
+      steps {
+        checkout scm
+        bat '''
+          echo "Branch: ${GIT_BRANCH}"
+          echo "Commit: ${GIT_COMMIT}"
+          node --version
+          npm  --version
+        '''
+      }
+    }
+
+    stage('Install Dependencies') {
+      steps {
+        bat 'npm ci'
+      }
+    }
+
+    stage('Install Playwright Browsers') {
+      steps {
+        // Skip this stage if using the official Playwright Docker agent
+        // (mcr.microsoft.com/playwright) — browsers are already in the image
+        bat 'npx playwright install chromium --with-deps'
+      }
+    }
+
+    stage('Run Tests') {
+      steps {
+        // Inject SF credentials from Jenkins credential store
+        withCredentials([
+          string(credentialsId: 'SF_URL',            variable: 'SF_URL'),
+          string(credentialsId: 'SF_USERNAME',        variable: 'SF_USERNAME'),
+          string(credentialsId: 'SF_PASSWORD',        variable: 'SF_PASSWORD'),
+            ]) {
+          script {
+            // Build the Playwright command based on the TEST_SUITE parameter
+            def cmd = 'npx playwright test --config=config/playwright.config.js'
+            cmd += " --retries=${params.RETRIES}"
+
+            switch (params.TEST_SUITE) {
+              case 'lead':
+                cmd += ' tests/lead-creation.spec.js'
+                break
+              case 'opportunity':
+                cmd += ' tests/opportunity-flow.spec.js'
+                break
+              case 'account':
+                cmd += ' tests/account-creation.spec.js'
+              break
+              default:
+                // 'all' — run everything inside tests/
+                break
+            }
+
+            bat cmd
+          }
+        }
+      }
+      post {
+        always {
+          // Stash results so the Reporting stage always has them
+          stash includes: 'reports/**', name: 'test-results', allowEmpty: true
+        }
+      }
+    }
+
+    stage('Generate Reports') {
+      steps {
+        unstash 'test-results'
+        bat '''
+          allure generate reports/allure-results \
+            -o reports/allure-report --clean || true
+        '''
+      }
+    }
+
+  }
+
+  /* ── Post Actions ──────────────────────────────────────────────────── */
+  post {
+    always {
+      // Allure plugin — renders the report in the build sidebar
+      allure([
+        includeProperties: false,
+        jdk: '',
+        results: [[path: 'reports/allure-results']],
+        report: 'reports/allure-report',
+        reportBuildPolicy: 'ALWAYS'
+      ])
+
+      // JUnit results — powers the test trend graph on the job page
+      junit(
+        testResults: 'reports/junit-results.xml',
+        allowEmptyResults: true
+      )
+
+      // Archive failure screenshots and Playwright traces
+      archiveArtifacts(
+        artifacts: 'reports/test-results/**,screenshots/**',
+        allowEmptyArchive: true
+      )
+
+      // Playwright HTML report as a clickable sidebar link
+      publishHTML(target: [
+        allowMissing:          true,
+        alwaysLinkToLastBuild: true,
+        keepAll:               true,
+        reportDir:             'reports/playwright-report',
+        reportFiles:           'index.html',
+        reportName:            'Playwright Report'
+      ])
+    }
+
+    success {
+      echo '✅ All SF tests passed!'
+    }
+
+    failure {
+      echo '❌ Tests failed — check Allure report and archived screenshots.'
+    }
+
+    unstable {
+      echo '⚠️  Some tests are unstable (flaky). Review the Allure trend.'
+    }
+  }
+}
