@@ -10,18 +10,23 @@ export default defineConfig({
   workers: 1,
   timeout: parseInt(process.env.TIMEOUT) || 80000,
   expect: { timeout: 15000 },
-
-  reporter: [
+  
+reporter: [
+  ['html', { outputFolder: 'reports/playwright-report' }],
+  ['allure-playwright', { outputFolder: 'reports/allure-results' }],
+  ['junit', { outputFile: 'reports/junit-results.xml' }]
+],
+  // reporter: [
     
-    ['list'],
-    ['html', { outputFolder: '../reports/playwright-report', open: 'never' }],
-    ['allure-playwright', {
-      detail: true,
-      outputFolder: '../reports/allure-results',
-      suiteTitle: false,
-    }],
-    ['junit', { outputFile: '../reports/junit-results.xml' }],
-  ],
+  //   ['list'],
+  //   ['html', { outputFolder: '../reports/playwright-report', open: 'never' }],
+  //   ['allure-playwright', {
+  //     detail: true,
+  //     outputFolder: '../reports/allure-results',
+  //     suiteTitle: false,
+  //   }],
+  //   ['junit', { outputFile: '../reports/junit-results.xml' }],
+  // ],
 
   use: {
     baseURL: process.env.BASE_URL || process.env.SF_URL,
