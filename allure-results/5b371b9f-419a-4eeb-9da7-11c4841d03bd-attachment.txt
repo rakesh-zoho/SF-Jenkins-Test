@@ -1,1 +1,0 @@
-✓ Auth valid, page: https://nexturninc6.lightning.force.com/lightning/page/home

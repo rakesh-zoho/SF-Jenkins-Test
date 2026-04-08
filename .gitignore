@@ -11,6 +11,9 @@ screenshots/
 *.spec.js.bak
 .DS_Store
 allure-history
-allure-report
-allure-results
-test-results
+# Reports
+reports/
+allure-results/
+allure-report/
+playwright-report/
+test-results/
