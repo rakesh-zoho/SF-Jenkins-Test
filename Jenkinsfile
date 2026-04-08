@@ -7,7 +7,7 @@ pipeline {
    * ─────────────────────────────────────────────────────────────────── */
   tools {
     nodejs 'Node20'
-   // allure  'allure'
+   allure  'allure'
   }
 
   /* ── Parameters — selectable from Jenkins "Build with Parameters" UI */
@@ -135,13 +135,13 @@ pipeline {
   post {
     always {
       // Allure plugin — renders the report in the build sidebar
-      // allure([
-      //   includeProperties: false,
-      //   jdk: '',
-      //   results: [[path: 'reports/allure-results']],
-      //   report: 'reports/allure-report',
-      //   reportBuildPolicy: 'ALWAYS'
-      // ])
+      allure([
+        includeProperties: false,
+        jdk: '',
+        results: [[path: 'reports/allure-results']],
+        report: 'reports/allure-report',
+        reportBuildPolicy: 'ALWAYS'
+      ])
 
       // JUnit results — powers the test trend graph on the job page
       junit(
