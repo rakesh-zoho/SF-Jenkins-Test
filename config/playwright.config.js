@@ -12,6 +12,7 @@ export default defineConfig({
   expect: { timeout: 15000 },
   
 reporter: [
+   ['list'],
   ['html', { outputFolder: 'reports/playwright-report', open: 'never' }],
   ['allure-playwright', { outputFolder: 'reports/allure-results' }],
   ['junit', { outputFile: 'reports/junit-results.xml' }]
