@@ -99,6 +99,9 @@ pipeline {
               case 'opportunity':
                 cmd += ' tests/opportunity-flow.spec.js'
                 break
+              case 'account':
+                cmd += ' tests/account-creation.spec.js'
+              break
               default:
                 // 'all' — run everything inside tests/
                 break
