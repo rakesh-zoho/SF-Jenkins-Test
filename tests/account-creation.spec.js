@@ -29,7 +29,7 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 async function navigateToAccounts(page) {
-  await page.getByRole('link', { name: 'Accounts' }).click({ timeout: 10000 });
+  await page.getByRole('link', { name: 'Accounts' }).click();
   await waitForSFLoad(page);
 }
 
@@ -40,13 +40,13 @@ sfTest('Create Account end to end', async ({ sfPage: page }, testInfo) => {
 
   // 1. Navigate to Salesforce Lightning and click the Accounts tab.
   await navigateToAccounts(page);
-  await expect(page.getByRole('heading', { name: 'Accounts', exact: true })).toBeVisible({ timeout: 10000 });
+  await expect(page.getByRole('heading', { name: 'Accounts', exact: true })).toBeVisible();
   await captureScreenshot(page, 'Navigate-to-Accounts-tab');
 
   // 2. Click the New button to open the Account creation dialog.
-  await page.getByRole('button', { name: 'New' }).click({ timeout: 10000 });
+  await page.getByRole('button', { name: 'New' }).click();
   const dialog = page.getByRole('dialog');
-  await expect(dialog).toBeVisible({ timeout: 10000 });
+  await expect(dialog).toBeVisible();
   await captureScreenshot(page, 'Open-New-Account-form');
 
   // 3. Fill the Account creation form inside the dialog.
@@ -63,11 +63,11 @@ sfTest('Create Account end to end', async ({ sfPage: page }, testInfo) => {
   await fillField(page, 'Employees', '500');
   await fillField(page, 'Annual Revenue', '5000000');
   await fillField(page, 'Description', 'Created by SF Agentic Framework');
-  await expect(page.getByRole('textbox', { name: 'Account Name' })).toHaveValue(accountName, { timeout: 10000 });
+  await expect(page.getByRole('textbox', { name: 'Account Name' })).toHaveValue(accountName);
   await captureScreenshot(page, 'Fill-Account-form');
 
   // 4. Click the Save button within the dialog.
-  await page.getByRole('button', { name: 'Save', exact: true }).click({ timeout: 10000 });
+  await page.getByRole('button', { name: 'Save', exact: true }).click();
   const toastText = await assertSuccessToast(page, 'Account');
   expect(toastText).toContain('created');
   await captureScreenshot(page, 'Account-toast-success');

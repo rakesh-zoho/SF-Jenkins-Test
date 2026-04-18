@@ -1,8 +1,5 @@
-import path from 'path';
 import { test } from '@playwright/test';
 import { waitForSFLoad } from '../utils/sf-helpers.js';
-
-const authStatePath = path.resolve(process.cwd(), 'reports/.auth-state.json');
 
 /**
  * FIXTURES — Salesforce Lightning
@@ -20,13 +17,12 @@ export const sfTest = test.extend({
   sfPage: async ({ browser }, use) => {
     // Create context with NO permissions allowed (blocks notifications, camera, microphone, etc.)
     const context = await browser.newContext({
-      storageState: authStatePath,
+      storageState: './reports/.auth-state.json',
       permissions: [], // Block all permissions
     });
 
     const page = await context.newPage();
-    const lightningHome = new URL('/lightning/page/home', process.env.SF_URL).toString();
-    await page.goto(lightningHome, { waitUntil: 'domcontentloaded' }); // HEALED: Open Lightning home directly to avoid root-domain login redirect
+    await page.goto(process.env.SF_URL);
     await waitForSFLoad(page);
 
     await use(page);

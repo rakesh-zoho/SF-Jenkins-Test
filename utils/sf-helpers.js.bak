@@ -1,6 +1,5 @@
 import { chromium, expect } from '@playwright/test';
 import fs from 'fs/promises';
-import path from 'path';
 import 'dotenv/config';
 
 /**
@@ -30,10 +29,10 @@ export default async function globalSetup() {
     );
 
     // Ensure reports directory exists
-    await fs.mkdir(path.resolve(process.cwd(), 'reports'), { recursive: true });
+    await fs.mkdir('./reports', { recursive: true });
 
     // Save auth — all tests reuse this session
-    await page.context().storageState({ path: path.resolve(process.cwd(), 'reports/.auth-state.json') });
+    await page.context().storageState({ path: './reports/.auth-state.json' });
     console.log('✅ Auth state saved to reports/.auth-state.json\n');
 
   } catch (err) {
@@ -104,10 +103,10 @@ export async function navigateToApp(page, appName) {
   if ((await appLauncherButton.count()) === 0) {
     appLauncherButton = page.getByRole('button', { name: /App Launcher/i }).first();
   }
-  await expect(appLauncherButton).toBeVisible({ timeout: 15000 }); // HEALED: Use accessible App Launcher button locator
+  await expect(appLauncherButton).toBeVisible({ timeout: 15000 });
   await appLauncherButton.click({ timeout: 10000 });
   const appSearchInput = page.getByPlaceholder(/search apps and items...|search/i).first();
-  await expect(appSearchInput).toBeVisible({ timeout: 15000 }); // HEALED: Use a flexible search placeholder locator
+  await expect(appSearchInput).toBeVisible({ timeout: 15000 });
   await appSearchInput.fill(appName, { timeout: 5000 });
   await page.waitForTimeout(500);
   const appOption = page.getByRole('option', { name: new RegExp(`^${appName}$`, 'i') }).first();

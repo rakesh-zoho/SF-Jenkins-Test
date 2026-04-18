@@ -61,10 +61,12 @@ await page.getByRole('option', { name: 'Needs Analysis' }).click();
 
 ### Lookup field (Account Name etc.)
 ```javascript
-await page.getByLabel('Account Name').fill('Acme Corp');
-await page.waitForTimeout(600); // autocomplete debounce
-await page.getByRole('option', { name: 'Acme Corp' }).first().click();
+import { fillLookup } from '../utils/locator-utils.js';
+await fillLookup(page, 'Account Name', 'Acme Corp');
 ```
+
+- Use lookup autocomplete for Salesforce lookup fields.
+- Search the label, wait for the list, then choose the first valid option.
 
 ### Date field (SF requires MM/DD/YYYY)
 ```javascript

@@ -52,7 +52,15 @@ pipeline {
 
   /* ── Stages ────────────────────────────────────────────────────────── */
   stages {
-
+stage('Clean Workspace') {
+  steps {
+    // Delete stale allure-results so they don't bleed into new report
+    bat 'if exist reports\\allure-results rmdir /s /q reports\\allure-results'
+    bat 'if exist reports\\allure-report rmdir /s /q reports\\allure-report'
+    bat 'if exist reports\\playwright-report rmdir /s /q reports\\playwright-report'
+    bat 'if exist reports\\junit-results.xml del /f reports\\junit-results.xml'
+  }
+}
     stage('Checkout') {
       steps {
         checkout scm
