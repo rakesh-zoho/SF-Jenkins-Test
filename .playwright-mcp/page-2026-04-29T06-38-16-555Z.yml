@@ -1,0 +1,376 @@
+- generic:
+  - generic:
+    - generic [ref=e2]:
+      - generic [ref=e3]:
+        - link [ref=e2146] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Navigation
+        - link [ref=e2147] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Main Content
+        - generic [ref=e6]:
+          - button [ref=e2148]:
+            - img [ref=e14]
+            - text: Search...
+          - navigation [ref=e2149]:
+            - list [ref=e19]:
+              - listitem [ref=e20]:
+                - group [ref=e21]:
+                  - button [ref=e2150] [cursor=pointer]:
+                    - img [ref=e28]
+                  - button [ref=e2151] [cursor=pointer]:
+                    - img [ref=e37]
+              - listitem [ref=e40]:
+                - button [disabled] [ref=e2152]:
+                  - img [ref=e46]
+              - listitem [ref=e49]:
+                - button [ref=e2153] [cursor=pointer]:
+                  - img [ref=e56]
+              - listitem [ref=e59]:
+                - button [ref=e2154] [cursor=pointer]:
+                  - img [ref=e67]
+              - listitem [ref=e70]:
+                - button [ref=e2155] [cursor=pointer]:
+                  - img [ref=e81]
+              - listitem [ref=e84]:
+                - button [ref=e2156] [cursor=pointer]:
+                  - img [ref=e93]
+              - listitem [ref=e97]:
+                - button [ref=e2157] [cursor=pointer]
+      - generic [ref=e105]:
+        - generic [ref=e108]:
+          - generic [ref=e110]:
+            - navigation [ref=e2158]:
+              - button [ref=e2159] [cursor=pointer]:
+                - generic [ref=e124]: App Launcher
+            - heading [level=1] [ref=e2160]:
+              - generic [ref=e2161]: Sales
+          - navigation [ref=e2162]:
+            - list [ref=e130]:
+              - listitem [ref=e131]:
+                - link [ref=e2163] [cursor=pointer]:
+                  - /url: /lightning/page/home
+                  - generic [ref=e133]: Home
+              - listitem [ref=e134]:
+                - link [ref=e2164] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                  - generic [ref=e136]: Opportunities
+                - button [ref=e2165] [cursor=pointer]:
+                  - img [ref=e144]
+                  - generic [ref=e147]: Opportunities List
+              - listitem [ref=e148] [cursor=pointer]:
+                - link [ref=e2166]:
+                  - /url: /lightning/o/Lead/home
+                  - generic [ref=e150]: Leads
+                - button [ref=e2167]:
+                  - img [ref=e158]
+                  - generic [ref=e161]: Leads List
+              - listitem [ref=e162]:
+                - link [ref=e2168] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                  - generic [ref=e164]: Tasks
+                - button [ref=e2169] [cursor=pointer]:
+                  - img [ref=e172]
+                  - generic [ref=e175]: Tasks List
+              - listitem [ref=e176]:
+                - link [ref=e2170] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                  - generic [ref=e178]: Files
+                - button [ref=e2171] [cursor=pointer]:
+                  - img [ref=e186]
+                  - generic [ref=e189]: Files List
+              - listitem [ref=e190]:
+                - link [ref=e2172] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                  - generic [ref=e192]: Accounts
+                - button [ref=e2173] [cursor=pointer]:
+                  - img [ref=e200]
+                  - generic [ref=e203]: Accounts List
+              - listitem [ref=e204]:
+                - link [ref=e2174] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                  - generic [ref=e206]: Contacts
+                - button [ref=e2175] [cursor=pointer]:
+                  - img [ref=e214]
+                  - generic [ref=e217]: Contacts List
+              - listitem [ref=e218]:
+                - link [ref=e2176] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                  - generic [ref=e220]: Campaigns
+                - button [ref=e2177] [cursor=pointer]:
+                  - img [ref=e228]
+                  - generic [ref=e231]: Campaigns List
+              - listitem [ref=e232]:
+                - link [ref=e2178] [cursor=pointer]:
+                  - /url: /lightning/o/Dashboard/home
+                  - generic [ref=e234]: Dashboards
+                - button [ref=e2179] [cursor=pointer]:
+                  - img [ref=e242]
+                  - generic [ref=e245]: Dashboards List
+              - listitem [ref=e246]:
+                - link [ref=e2180] [cursor=pointer]:
+                  - /url: /lightning/o/Report/home
+                  - generic [ref=e248]: Reports
+                - button [ref=e2181] [cursor=pointer]:
+                  - img [ref=e256]
+                  - generic [ref=e259]: Reports List
+              - listitem [ref=e260]:
+                - link [ref=e2182] [cursor=pointer]:
+                  - /url: /lightning/page/chatter
+                  - generic [ref=e262]: Chatter
+              - listitem [ref=e263]:
+                - button [ref=e2183] [cursor=pointer]:
+                  - generic [ref=e266]: More
+                  - img [ref=e270]
+                  - generic [ref=e273]: Show more navigation items
+              - listitem [ref=e274]:
+                - button [ref=e2184] [cursor=pointer]:
+                  - img [ref=e278]
+                  - generic [ref=e281]: Edit nav items
+        - main [ref=e1834]:
+          - generic [ref=e1850]:
+            - generic [ref=e1859]:
+              - generic [ref=e1860]:
+                - heading [level=1] [ref=e2185]:
+                  - generic [ref=e1870]: Lead
+                  - generic [ref=e1871]: John Doe
+                - button [ref=e2186] [cursor=pointer]:
+                  - generic [ref=e1877]:
+                    - img [ref=e1881]
+                    - text: Follow
+                - generic [ref=e1886]:
+                  - button [ref=e2188] [cursor=pointer]: Convert
+                  - button [ref=e2190] [cursor=pointer]: Edit
+                  - button [ref=e2192] [cursor=pointer]: Delete
+                  - button [ref=e2193] [cursor=pointer]:
+                    - img [ref=e1908]
+                    - generic [ref=e1911]: Show more actions
+              - generic [ref=e1912]:
+                - paragraph [ref=e1915]: Title
+                - generic [ref=e1917]:
+                  - paragraph [ref=e1918]: Company
+                  - paragraph [ref=e1919]:
+                    - generic [ref=e1920]: Acme Corporation
+                - generic [ref=e1922]:
+                  - button [ref=e2194] [cursor=pointer]:
+                    - paragraph [ref=e1924]:
+                      - text: Phone (2)
+                      - img [ref=e1929]
+                  - list [ref=e1932]
+                - paragraph [ref=e1938]: Email
+            - article [ref=e1947]:
+              - generic [ref=e1948]:
+                - heading [level=2] [ref=e2195]: Path
+                - generic [ref=e1952]:
+                  - listbox [ref=e2196]:
+                    - option [ref=e2197] [cursor=pointer]:
+                      - generic [ref=e1961]:
+                        - img [ref=e1963]
+                        - generic [ref=e1966]: stage complete
+                      - generic [ref=e1967]: Contacted
+                    - option [selected] [ref=e2198] [cursor=pointer]:
+                      - generic [ref=e1969]: Open
+                    - option [ref=e2199] [cursor=pointer]:
+                      - generic [ref=e1971]: Unqualified
+                    - option [ref=e2200] [cursor=pointer]:
+                      - generic [ref=e1973]: Converted
+                  - button [ref=e2201] [cursor=pointer]:
+                    - img [ref=e1979]
+                    - generic [ref=e1982]: Mark Status as Complete
+            - generic [ref=e1983]:
+              - generic [ref=e1989]:
+                - heading [level=2] [ref=e2202]: Tabs
+                - generic [ref=e1992]:
+                  - heading [level=2] [ref=e2204]: Tabs
+                  - tablist [ref=e2205]:
+                    - tab [selected] [ref=e2206] [cursor=pointer]: Activity
+                    - tab [ref=e2207] [cursor=pointer]: Details
+                    - tab [ref=e2208] [cursor=pointer]: Chatter
+                  - tabpanel [ref=e2209]:
+                    - generic [ref=e2007]:
+                      - heading [level=2] [ref=e2210]: Activity Publisher
+                      - group [ref=e2010]:
+                        - generic [ref=e2012]:
+                          - button [ref=e2211] [cursor=pointer]:
+                            - generic [ref=e2015]:
+                              - img [ref=e2017]
+                              - generic [ref=e2020]: Email
+                            - generic [ref=e2021]: Email
+                          - button [ref=e2212] [cursor=pointer]:
+                            - img [ref=e2025]
+                            - generic [ref=e2028]: More Email Actions
+                      - heading [level=2] [ref=e2213]: Activity Timeline
+                      - generic [ref=e2031]:
+                        - link [ref=e2214] [cursor=pointer]:
+                          - /url: javascript:void(0);
+                          - text: Skip to the bottom of the activity timeline
+                        - generic [ref=e2034]:
+                          - generic [ref=e2036]: "Filters: All time • All activities • All types"
+                          - button [ref=e2215] [cursor=pointer]:
+                            - img [ref=e2039]
+                            - generic [ref=e2042]: Timeline Settings
+                        - generic [ref=e2045]:
+                          - button [ref=e2216] [cursor=pointer]: Refresh
+                          - text: •
+                          - button [ref=e2217] [cursor=pointer]: Expand All
+                          - text: •
+                          - button [ref=e2218] [cursor=pointer]: View All
+                        - generic [ref=e2050]:
+                          - heading [level=3] [ref=e2219]:
+                            - button [expanded] [ref=e2220] [cursor=pointer]:
+                              - img [ref=e2054]
+                              - text: Upcoming & Overdue
+                          - generic [ref=e2060]: No activities to show. Get started by sending an email, scheduling a task, and more.
+                        - status [ref=e2061]:
+                          - generic [ref=e2062]: No past activity. Past meetings and tasks marked as done show up here.
+                        - link [ref=e2221] [cursor=pointer]:
+                          - /url: javascript:void(0);
+                          - text: Skip to the top of the activity timeline
+              - generic [ref=e2070]:
+                - heading [level=2] [ref=e2222]: Tabs
+                - generic [ref=e2073]:
+                  - heading [level=2] [ref=e2224]: Tabs
+                  - tablist [ref=e2225]:
+                    - tab [selected] [ref=e2226] [cursor=pointer]: Related
+                  - tabpanel [ref=e2227]:
+                    - generic [ref=e2081]:
+                      - article [ref=e2086]:
+                        - generic [ref=e2088]:
+                          - img [ref=e2093]
+                          - heading [level=2] [ref=e2228]:
+                            - generic [ref=e2229]: We found no potential duplicates of this Lead.
+                        - generic [ref=e2100]: No duplicate rules are activated. Activate duplicate rules to identify potential duplicate records.
+                      - generic [ref=e2104]:
+                        - article [ref=e2230]:
+                          - generic [ref=e2113]:
+                            - heading [level=2] [ref=e2231]:
+                              - link [ref=e2232] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QdN00000DjNNbUAN/related/CampaignMembers/view
+                                - generic [ref=e2233]: Campaign History
+                                - generic [ref=e2234]: (0)
+                            - button [ref=e2235] [cursor=pointer]:
+                              - generic [ref=e2128]:
+                                - img [ref=e2130]
+                                - generic [ref=e2133]: Show actions for Campaign History
+                        - article [ref=e2139]:
+                          - generic [ref=e2140]:
+                            - img [ref=e2142]
+                            - heading [level=2] [ref=e2236]: Licenses
+      - list [ref=e1821]:
+        - listitem [ref=e1822]:
+          - button [ref=e2237] [cursor=pointer]:
+            - img [ref=e1829]
+            - generic [ref=e1832]: To Do List
+    - dialog "Convert Lead" [ref=e2239]:
+      - generic [ref=e2240]:
+        - generic [ref=e2241]:
+          - heading "Convert Lead" [active] [level=1] [ref=e2242]
+          - button "Cancel and close" [ref=e2243] [cursor=pointer]:
+            - generic [ref=e2244]: Cancel and close
+            - img [ref=e2248]
+        - generic [ref=e2251]:
+          - generic [ref=e2252]:
+            - generic [ref=e2253]:
+              - group "Account" [ref=e2254]:
+                - generic [ref=e2255]: Account
+                - generic [ref=e2257]:
+                  - heading "Account" [level=2] [ref=e2262]:
+                    - button "Account" [expanded] [ref=e2263] [cursor=pointer]:
+                      - img [ref=e2269]
+                      - generic "Account" [ref=e2272]
+                  - generic [ref=e2274]:
+                    - generic [ref=e2276]:
+                      - radio "Create New Account" [checked] [ref=e2277]
+                      - generic [ref=e2278]: Create New Account
+                    - generic [ref=e2283]:
+                      - generic [ref=e2284]:
+                        - text: Account Name
+                        - generic "required" [ref=e2285]: "*"
+                      - textbox "Account Name *" [ref=e2286]:
+                        - /placeholder: ""
+                        - text: Acme Corporation
+                  - generic [ref=e2290]: "- OR -"
+                  - generic [ref=e2294]:
+                    - generic [ref=e2296]:
+                      - radio "Choose Existing Account" [ref=e2297]
+                      - generic [ref=e2298]: Choose Existing Account
+                    - generic [ref=e2302]:
+                      - generic [ref=e2303]:
+                        - generic [ref=e2304]: Account Search
+                        - generic [ref=e2307]:
+                          - combobox "Account Search" [ref=e2309]
+                          - img [ref=e2313]
+                      - status [ref=e2317]
+                      - alert [ref=e2318]
+              - group "Contact" [ref=e2319]:
+                - generic [ref=e2320]: Contact
+                - generic [ref=e2322]:
+                  - heading "Contact" [level=2] [ref=e2327]:
+                    - button "Contact" [ref=e2328] [cursor=pointer]:
+                      - img [ref=e2334]
+                      - generic "Contact" [ref=e2337]
+                  - generic [ref=e2339]:
+                    - generic [ref=e2341]:
+                      - radio "Create New Contact" [checked] [ref=e2342]
+                      - generic [ref=e2343]: Create New Contact
+                    - button "John Doe" [ref=e2347] [cursor=pointer]
+                  - generic [ref=e2351]: "- OR -"
+                  - generic [ref=e2354]:
+                    - generic [ref=e2356]:
+                      - radio "Choose Existing Contact" [ref=e2357]
+                      - generic [ref=e2358]: Choose Existing Contact
+                    - status [ref=e2361]: No active duplicate rule
+              - group "Opportunity" [ref=e2362]:
+                - generic [ref=e2363]: Opportunity
+                - generic [ref=e2365]:
+                  - heading "Opportunity" [level=2] [ref=e2370]:
+                    - button "Opportunity" [ref=e2371] [cursor=pointer]:
+                      - img [ref=e2377]
+                      - generic "Opportunity" [ref=e2380]
+                  - generic [ref=e2381]:
+                    - generic [ref=e2382]:
+                      - generic [ref=e2384]:
+                        - radio "Create New Opportunity" [checked] [ref=e2385]
+                        - generic [ref=e2386]: Create New Opportunity
+                      - button "Acme Corporation-" [ref=e2390] [cursor=pointer]
+                    - generic [ref=e2392]:
+                      - generic [ref=e2396]:
+                        - checkbox "Don't create an opportunity upon conversion checkbox" [ref=e2397]
+                        - generic [ref=e2400]: Don't create an opportunity upon conversion checkbox
+                      - generic [ref=e2402]: Don't create an opportunity upon conversion
+                  - generic [ref=e2405]: "- OR -"
+                  - generic [ref=e2408]:
+                    - generic [ref=e2410]:
+                      - radio "Choose Existing Opportunity" [disabled] [ref=e2411]
+                      - generic [ref=e2412]: Choose Existing Opportunity
+                    - status [ref=e2415]: To find opportunity, choose an existing account
+            - generic [ref=e2416]:
+              - generic [ref=e2418]:
+                - generic [ref=e2419]:
+                  - text: Record Owner
+                  - generic "required" [ref=e2420]: "*"
+                - generic [ref=e2422]:
+                  - generic [ref=e2423]: "Record Owner - Current Selection: Rakesh Sharma"
+                  - application [ref=e2425]:
+                    - generic [ref=e2426]: "Record Owner - Current Selection: Rakesh Sharma"
+                    - 'list "Record Owner - Current Selection: Rakesh Sharma" [ref=e2427]':
+                      - listitem [ref=e2428]:
+                        - generic [ref=e2429]:
+                          - generic [ref=e2432]: Rakesh Sharma
+                          - button "Press delete or backspace to remove" [ref=e2433]:
+                            - generic [ref=e2434]: ✕
+                            - generic [ref=e2435]: Press delete or backspace to remove
+                      - listitem
+              - generic [ref=e2438]:
+                - generic [ref=e2440]: "*Converted Status"
+                - generic [ref=e2444]:
+                  - combobox "Converted Status" [ref=e2445] [cursor=pointer]:
+                    - generic [ref=e2446]: Qualified
+                  - img [ref=e2450]
+                - status
+          - status [ref=e2453]
+        - generic [ref=e2454]:
+          - button "Cancel" [ref=e2455] [cursor=pointer]
+          - button "Convert" [ref=e2457] [cursor=pointer]
+  - generic:
+    - status

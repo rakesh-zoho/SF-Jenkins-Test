@@ -1,41 +1,11 @@
 import { expect } from '@playwright/test';
 import 'dotenv/config';
+// HEALED: Fixed import path - removed /index.js suffix which doesn't exist
 import { waitForSFLoad, switchToAllRecords, navigateToApp } from '../utils/sf-helpers.js';
 import { captureScreenshot, sfStep, setAllureMeta } from '../utils/reporter-utils.js';
 import { fillField, fillLookup, selectPicklist, uniqueName } from '../utils/locator-utils.js';
-import { sfTest } from './fixtures.js';
-
-const navigateToCases = async (page) => {
-  await navigateToApp(page, 'Cases'); // HEALED: Reuse shared Salesforce app navigation helper
-};
-
-const openCasesNewDialog = async (page) => {
-  await navigateToCases(page);
-  const newButton = page.getByRole('button', { name: 'New' });
-  await expect(newButton).toBeVisible({ timeout: 10000 });
-  await newButton.click({ timeout: 10000 });
-  await waitForSFLoad(page);
-  const dialog = page.getByRole('dialog');
-  await expect(dialog).toBeVisible({ timeout: 10000 });
-  await expect(dialog.getByText('New Case')).toBeVisible({ timeout: 10000 });
-};
-
-const fillLookupByFirstResult = async (page, fieldLabel, searchTerm) => {
-  await fillLookup(page, fieldLabel, searchTerm);
-  const dialog = page.getByRole('dialog');
-  const lookup = dialog.getByRole('combobox', { name: fieldLabel }).first();
-  await expect(lookup).not.toHaveValue('', { timeout: 10000 });
-};
-
-const selectFirstValidOption = async (page, fieldLabel) => {
-  const dialog = page.getByRole('dialog');
-  const field = dialog.getByRole('combobox', { name: fieldLabel }).first();
-  await expect(field).toBeVisible({ timeout: 15000 });
-  await field.click();
-  const option = page.getByRole('option').filter({ hasText: /^(?!\-\-None\-\-).+/ }).first();
-  await expect(option).toBeVisible({ timeout: 15000 }); // HEALED: Picklist options may render outside the dialog container
-  await option.click();
-};
+import { sfTest } from '../fixtures/fixtures.js';
+import { CasesPage } from '../pages/cases.page.js';
 
 sfTest.describe('Case Creation', () => {
   sfTest.afterEach(async ({ sfPage }, testInfo) => {
@@ -55,25 +25,28 @@ sfTest.describe('Case Creation', () => {
     const caseSubject = uniqueName('Agentic Case');
 
     await sfStep('Navigate to Cases using App Launcher and open New Case modal', page, async () => {
-      await openCasesNewDialog(page); // HEALED: Use App Launcher search navigation like Lead-creation.spec.js
+      const casesPage = new CasesPage(page);
+      await casesPage.navigate();
+      await casesPage.openNewCaseDialog();
       await captureScreenshot(page, 'new-case-modal-open');
     });
 
     await sfStep('Fill Case form', page, async () => {
+      const casesPage = new CasesPage(page);
       const dialog = page.getByRole('dialog');
       await expect(dialog).toBeVisible();
 
-      await fillLookupByFirstResult(page, 'Contact Name', 'contact');
-      await fillLookupByFirstResult(page, 'Account Name', 'agentic');
+      await casesPage.fillContactName('contact');
+      await casesPage.fillAccountName('agentic');
 
-      await selectPicklist(page, 'Status', 'New');
-      await selectPicklist(page, 'Priority', 'Medium');
-      await selectPicklist(page, 'Case Origin', 'Web');
-      await selectFirstValidOption(page, 'Type');
-      await selectFirstValidOption(page, 'Case Reason');
+      await casesPage.selectStatus('New');
+      await casesPage.selectPriority('Medium');
+      await casesPage.selectCaseOrigin('Web');
+      await casesPage.selectFirstValidOption('Type');
+      await casesPage.selectFirstValidOption('Case Reason');
 
-      await fillField(page, 'Subject', caseSubject);
-      await fillField(page, 'Description', 'Automated test case creation flow');
+      await casesPage.fillSubject(caseSubject);
+      await casesPage.fillDescription('Automated test case creation flow');
 
       await expect(dialog.getByRole('textbox', { name: 'Subject' })).toHaveValue(caseSubject);
       await expect(dialog.getByRole('textbox', { name: 'Description' })).toHaveValue('Automated test case creation flow');
@@ -83,13 +56,9 @@ sfTest.describe('Case Creation', () => {
     });
 
     await sfStep('Save the new Case', page, async () => {
-      const saveButton = page.getByRole('dialog').getByRole('button', { name: 'Save' }).first();
-      await expect(saveButton).toBeVisible();
-      await saveButton.click();
-      await waitForSFLoad(page);
-      const toast = page.locator('.toastMessage');
-      await expect(toast).toBeVisible({ timeout: 15000 });
-      await expect(toast).toContainText('was created');
+      const casesPage = new CasesPage(page);
+      await casesPage.save();
+      await casesPage.expectToastCreated();
       await captureScreenshot(page, 'case-toast-success');
     });
 
@@ -100,10 +69,10 @@ sfTest.describe('Case Creation', () => {
     });
 
     await sfStep('Verify Case in All Cases view', page, async () => {
-      await navigateToCases(page); // HEALED: Reuse Cases navigation helper for consistency
+      const casesPage = new CasesPage(page);
+      await casesPage.navigate();
       await switchToAllRecords(page, 'Cases');
-      const caseLink = page.getByRole('link', { name: caseSubject });
-      await expect(caseLink).toBeVisible({ timeout: 10000 });
+      await casesPage.verifyCaseVisible(caseSubject);
       await captureScreenshot(page, 'case-in-list-view');
     });
 
@@ -121,14 +90,17 @@ sfTest.describe('Case Creation', () => {
     const caseSubject = uniqueName('Agentic Validation');
 
     await sfStep('Navigate to Cases and open New dialog', page, async () => {
-      await openCasesNewDialog(page);
+      const casesPage = new CasesPage(page);
+      await casesPage.navigate();
+      await casesPage.openNewCaseDialog();
       await captureScreenshot(page, 'validation-new-dialog-open');
     });
 
     await sfStep('Fill form without Contact Name and attempt save', page, async () => {
+      const casesPage = new CasesPage(page);
       const dialog = page.getByRole('dialog');
-      await fillLookupByFirstResult(page, 'Account Name', 'agentic');
-      await selectPicklist(page, 'Status', 'New');
+      await casesPage.fillAccountName('agentic');
+      await casesPage.selectStatus('New');
       await selectPicklist(page, 'Priority', 'Medium');
       await selectPicklist(page, 'Case Origin', 'Web');
       await fillField(page, 'Subject', caseSubject);

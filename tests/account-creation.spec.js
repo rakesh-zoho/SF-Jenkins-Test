@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
 import * as allure from 'allure-js-commons';
 import 'dotenv/config';
-import { sfTest } from './fixtures.js';
+import { sfTest } from '../fixtures/fixtures.js';
 import { setAllureMeta, captureScreenshot, sfStep } from '../utils/reporter-utils.js';
 import { fillField, selectPicklist, uniqueName, assertSuccessToast } from '../utils/locator-utils.js';
+// HEALED: Fixed import path - removed /index.js suffix which doesn't exist
 import { waitForSFLoad, switchToAllRecords } from '../utils/sf-helpers.js';
-
+import { AccountsPage } from '../pages/accounts.page.js';
 /**
  * ACCOUNT CREATION TEST SUITE
  * Epic: CRM, Feature: Lead Management, Story: Create Account, Severity: Critical
@@ -28,47 +29,37 @@ test.afterEach(async ({ page }, testInfo) => {
   }
 });
 
-async function navigateToAccounts(page) {
-  await page.getByRole('link', { name: 'Accounts' }).click();
-  await waitForSFLoad(page);
-}
 
 sfTest('Create Account end to end', async ({ sfPage: page }, testInfo) => {
   await allure.description('Create a new Account, validate detail page, verify it in All Accounts, and update the Type value.');
 
   const accountName = uniqueName('Agentic Corp');
 
-  // 1. Navigate to Salesforce Lightning and click the Accounts tab.
-  await navigateToAccounts(page);
-  await expect(page.getByRole('heading', { name: 'Accounts', exact: true })).toBeVisible();
+  // 1. Navigate to Salesforce Lightning and open the Accounts creation form.
+  const accountsPage = new AccountsPage(page);
+  await accountsPage.navigate();
+  await accountsPage.openNewAccountDialog();
   await captureScreenshot(page, 'Navigate-to-Accounts-tab');
 
-  // 2. Click the New button to open the Account creation dialog.
-  await page.getByRole('button', { name: 'New' }).click();
-  const dialog = page.getByRole('dialog');
-  await expect(dialog).toBeVisible();
-  await captureScreenshot(page, 'Open-New-Account-form');
-
-  // 3. Fill the Account creation form inside the dialog.
-  await fillField(page, 'Account Name', accountName);
-  await fillField(page, 'Phone', '+91-9800000001');
-  await fillField(page, 'Website', 'https://agentic-framework.com');
-  await selectPicklist(page, 'Industry', 'Technology');
-  await selectPicklist(page, 'Type', 'Prospect');
-  await fillField(page, 'Billing Street', '123 Test Street');
-  await fillField(page, 'Billing City', 'Jaipur');
-  await fillField(page, 'Billing State', 'Rajasthan');
-  await fillField(page, 'Billing Zip', '302001');
-  await fillField(page, 'Billing Country', 'India');
-  await fillField(page, 'Employees', '500');
-  await fillField(page, 'Annual Revenue', '5000000');
-  await fillField(page, 'Description', 'Created by SF Agentic Framework');
+  // 2. Fill the Account creation form inside the dialog.
+  await accountsPage.fillAccountName(accountName);
+  await accountsPage.fillPhone('+91-9800000001');
+  await accountsPage.fillWebsite('https://agentic-framework.com');
+  await accountsPage.selectIndustry('Technology');
+  await accountsPage.selectType('Prospect');
+  await accountsPage.fillBillingStreet('123 Test Street');
+  await accountsPage.fillBillingCity('Jaipur');
+  await accountsPage.fillBillingState('Rajasthan');
+  await accountsPage.fillBillingZip('302001');
+  await accountsPage.fillBillingCountry('India');
+  await accountsPage.fillEmployees('500');
+  await accountsPage.fillAnnualRevenue('5000000');
+  await accountsPage.fillDescription('Created by SF Agentic Framework');
   await expect(page.getByRole('textbox', { name: 'Account Name' })).toHaveValue(accountName);
   await captureScreenshot(page, 'Fill-Account-form');
 
   // 4. Click the Save button within the dialog.
-  await page.getByRole('button', { name: 'Save', exact: true }).click();
-  const toastText = await assertSuccessToast(page, 'Account');
+  const toastText = await accountsPage.save();
   expect(toastText).toContain('created');
   await captureScreenshot(page, 'Account-toast-success');
   // HEALED: Removed detail page verification; browser closes after toast, which is normal Salesforce behavior
