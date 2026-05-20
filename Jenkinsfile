@@ -75,7 +75,8 @@ stage('Clean Workspace') {
 
     stage('Install Dependencies') {
       steps {
-        bat 'npm ci'
+        bat 'npm ci',
+        bat 'npm audit fix'
       }
     }
 

@@ -1,5 +1,14 @@
 {
 	"servers": {
+	"atlassian": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://mcp.atlassian.com/v1/mcp/authv2"
+      ]
+    },
 		"playwright": {
 			"command": "npx",
 			"args": [
@@ -8,5 +17,6 @@
 			"type": "stdio"
 		}
 	},
+	
 	"inputs": []
 }
