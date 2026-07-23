@@ -1,0 +1,91 @@
+// import path from 'path';
+// import { test } from '@playwright/test';
+// import { waitForSFLoad } from '../utils/sf-helpers.js';
+
+// const authStatePath = path.resolve(process.cwd(), 'reports/.auth-state.json');
+
+// /**
+//  * FIXTURES — Salesforce Lightning
+//  * ─────────────────────────────────
+//  * Extended test fixture for pre-authenticated Salesforce Lightning page.
+//  * Separates fixture definition from test definitions to avoid import conflicts.
+//  */
+
+// /**
+//  * Extended test fixture: sfPage
+//  * Provides a pre-authenticated Salesforce Lightning page with blocked permissions.
+//  * Agents use this in all generated tests.
+//  */
+// export const sfTest = test.extend({
+//   sfPage: async ({ browser }, use) => {
+//     // Create context with NO permissions allowed (blocks notifications, camera, microphone, etc.)
+//     const context = await browser.newContext({
+//       storageState: authStatePath,
+//       permissions: [], // Block all permissions
+//     });
+
+//     const page = await context.newPage();
+//     const lightningHome = new URL('/lightning/page/home', process.env.SF_URL).toString();
+//     await page.goto(lightningHome, { waitUntil: 'domcontentloaded' }); // HEALED: Open Lightning home directly to avoid root-domain login redirect
+//     await waitForSFLoad(page);
+
+//     await use(page);
+
+//     // Cleanup
+//     await context.close();
+//   },
+// });
+//----------------------ChatGpt------------------
+import path from 'path';
+import { test } from '@playwright/test';
+import { waitForSFLoad } from '../utils/sf-helpers.js';
+
+const authStatePath = path.resolve(process.cwd(), 'reports/.auth-state.json');
+
+export const sfTest = test.extend({
+  // Claude fixed it: Use test.info() to access testInfo inside fixture (not as parameter)
+  sfPage: async ({ browser }, use) => {
+    // Claude fixed it: Get test info via test.info() to access outputDir for video recording
+    const testInfo = test.info();
+
+    const context = await browser.newContext({
+      storageState: authStatePath,
+      permissions: [],
+
+      // Claude fixed it: Enable video recording with proper testInfo.outputDir and matching viewport size (1920x1080)
+      recordVideo: {
+        dir: testInfo.outputDir,
+        size: { width: 1920, height: 1080 },
+      },
+    });
+
+    const page = await context.newPage();
+
+    try {
+      const lightningHome = new URL(
+        '/lightning/page/home',
+        process.env.SF_URL
+      ).toString();
+
+      await page.goto(lightningHome, {
+        waitUntil: 'domcontentloaded',
+        timeout: 30000,
+      });
+
+      // ✅ PRIMARY: wait for SF UI readiness
+      await waitForSFLoad(page);
+
+      // ✅ EXTRA: ensure App Launcher is actually clickable
+      const appLauncher = page.locator('[title="App Launcher"]').first();
+      await appLauncher.waitFor({ state: 'visible', timeout: 20000 });
+
+      // small buffer for rendering (helps video + stability)
+      await page.waitForTimeout(1000);
+
+      await use(page);
+
+    } finally {
+      await context.close();
+    }
+  },
+});

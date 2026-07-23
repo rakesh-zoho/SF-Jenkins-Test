@@ -42,7 +42,7 @@ Scope all interactions to the dialog element.
 | Email       | agentic.test@sf-framework.com      | getByLabel     |
 | Phone       | +91-9876543210                     | getByLabel     |
 | Lead Source | Web                                | picklist       |
-| Status      | Open - Not Contacted               | picklist       |
+| Status      | Open                               | picklist       |
 
 Screenshot: lead-form-filled
 

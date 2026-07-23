@@ -1,0 +1,491 @@
+- generic:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to Navigation" [ref=e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=e6]:
+        - button "Search" [ref=e12]:
+          - img [ref=e14]
+          - text: Search...
+        - navigation "Global Header" [ref=e17]:
+          - list [ref=e19]:
+            - listitem [ref=e20]:
+              - group [ref=e21]:
+                - button "Add favorite" [ref=e792] [cursor=pointer]:
+                  - generic [ref=e24]:
+                    - img [ref=e28]
+                    - tooltip "Add favorite"
+                - button "Favorites list" [ref=e32] [cursor=pointer]:
+                  - generic [ref=e33]:
+                    - img [ref=e37]
+                    - tooltip "Favorites list"
+            - listitem [ref=e40]:
+              - button "Global Actions" [disabled] [ref=e42]:
+                - img [ref=e46]
+            - listitem [ref=e478]:
+              - button "Guidance Center" [ref=e480] [cursor=pointer]:
+                - generic [ref=e481]:
+                  - img [ref=e485]
+                  - tooltip "Guidance Center"
+            - listitem [ref=e49]:
+              - button "Salesforce Help" [ref=e52] [cursor=pointer]:
+                - generic [ref=e53]:
+                  - img [ref=e57]
+                  - tooltip "Salesforce Help"
+            - listitem [ref=e60]:
+              - button "Setup" [ref=e66] [cursor=pointer]:
+                - generic [ref=e67]:
+                  - img [ref=e71]
+                  - tooltip "Setup"
+            - listitem [ref=e74]:
+              - button "Notifications" [ref=e77] [cursor=pointer]:
+                - generic [ref=e78]:
+                  - img [ref=e83]
+                  - tooltip "Notifications"
+            - listitem [ref=e87]:
+              - button "View profile" [ref=e90] [cursor=pointer]:
+                - generic [ref=e91]:
+                  - tooltip "View profile"
+    - generic [ref=e95]:
+      - generic [ref=e98]:
+        - generic [ref=e100]:
+          - navigation "App" [ref=e101]:
+            - button "App Launcher" [active] [ref=e103] [cursor=pointer]:
+              - generic [ref=e114]: App Launcher
+          - heading "Sales" [level=1] [ref=e115]:
+            - generic "Sales" [ref=e116]
+        - navigation "Global" [ref=e119]:
+          - list [ref=e120]:
+            - listitem [ref=e121]:
+              - link "Home" [ref=e122] [cursor=pointer]:
+                - /url: /lightning/page/home
+                - generic [ref=e123]: Home
+            - listitem [ref=e124] [cursor=pointer]:
+              - link "Opportunities" [ref=e125]:
+                - /url: /lightning/o/Opportunity/home
+                - generic [ref=e126]: Opportunities
+              - button "Opportunities List" [ref=e130]:
+                - img [ref=e134]
+                - generic [ref=e137]: Opportunities List
+            - listitem [ref=e138]:
+              - link "Leads" [ref=e139] [cursor=pointer]:
+                - /url: /lightning/o/Lead/home
+                - generic [ref=e140]: Leads
+              - button "Leads List" [ref=e144] [cursor=pointer]:
+                - img [ref=e148]
+                - generic [ref=e151]: Leads List
+            - listitem [ref=e152]:
+              - link "Tasks" [ref=e153] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+                - generic [ref=e154]: Tasks
+              - button "Tasks List" [ref=e158] [cursor=pointer]:
+                - img [ref=e162]
+                - generic [ref=e165]: Tasks List
+            - listitem [ref=e166]:
+              - link "Files" [ref=e167] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+                - generic [ref=e168]: Files
+              - button "Files List" [ref=e172] [cursor=pointer]:
+                - img [ref=e176]
+                - generic [ref=e179]: Files List
+            - listitem [ref=e180]:
+              - link "Accounts" [ref=e181] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+                - generic [ref=e182]: Accounts
+              - button "Accounts List" [ref=e186] [cursor=pointer]:
+                - img [ref=e190]
+                - generic [ref=e193]: Accounts List
+            - listitem [ref=e194]:
+              - link "Contacts" [ref=e195] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+                - generic [ref=e196]: Contacts
+              - button "Contacts List" [ref=e200] [cursor=pointer]:
+                - img [ref=e204]
+                - generic [ref=e207]: Contacts List
+            - listitem [ref=e208]:
+              - link "Campaigns" [ref=e209] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+                - generic [ref=e210]: Campaigns
+              - button "Campaigns List" [ref=e214] [cursor=pointer]:
+                - img [ref=e218]
+                - generic [ref=e221]: Campaigns List
+            - listitem [ref=e222]:
+              - link "Dashboards" [ref=e223] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+                - generic [ref=e224]: Dashboards
+              - button "Dashboards List" [ref=e228] [cursor=pointer]:
+                - img [ref=e232]
+                - generic [ref=e235]: Dashboards List
+            - listitem [ref=e236]:
+              - link "Reports" [ref=e237] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+                - generic [ref=e238]: Reports
+              - button "Reports List" [ref=e242] [cursor=pointer]:
+                - img [ref=e246]
+                - generic [ref=e249]: Reports List
+            - listitem [ref=e250]:
+              - link "Chatter" [ref=e251] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+                - generic [ref=e252]: Chatter
+            - listitem [ref=e253]:
+              - button "Show more navigation items" [ref=e255] [cursor=pointer]:
+                - generic [ref=e256]: More
+                - img [ref=e260]
+                - generic [ref=e263]: Show more navigation items
+            - listitem [ref=e264]:
+              - button "Edit nav items" [ref=e266] [cursor=pointer]:
+                - img [ref=e268]
+                - generic [ref=e271]: Edit nav items
+      - main [ref=e793]:
+        - generic [ref=e803]:
+          - generic [ref=e805]:
+            - generic [ref=e806]:
+              - generic [ref=e808]:
+                - img [ref=e812]
+                - generic [ref=e813]:
+                  - heading "Opportunities" [level=1] [ref=e817]
+                  - generic [ref=e818]:
+                    - generic [ref=e820] [cursor=pointer]:
+                      - heading "Opportunities Recently Viewed" [level=1] [ref=e821]:
+                        - generic [ref=e822]: Opportunities
+                        - generic [ref=e823]: Recently Viewed
+                      - 'button "Select a List View: Opportunities" [ref=e826]':
+                        - img [ref=e828]
+                        - generic [ref=e831]: "Select a List View: Opportunities"
+                    - button "This list is pinned." [disabled] [ref=e835] [cursor=pointer]:
+                      - img [ref=e837]
+                      - generic [ref=e840]: This list is pinned.
+              - list [ref=e843]:
+                - listitem [ref=e844]:
+                  - button "New" [ref=e845] [cursor=pointer]:
+                    - generic "New" [ref=e846]
+                - listitem [ref=e847]:
+                  - button "Assign Label" [ref=e848] [cursor=pointer]:
+                    - generic "Assign Label" [ref=e849]
+            - generic [ref=e850]:
+              - paragraph [ref=e852]:
+                - generic [ref=e854]:
+                  - status "Recently Viewed" [ref=e855]: 5 items •
+                  - text: Updated a few seconds ago
+              - generic [ref=e861]:
+                - generic [ref=e862]: Search this list...
+                - generic [ref=e863]:
+                  - searchbox "Search this list..." [ref=e864]
+                  - img [ref=e865]
+              - generic [ref=e868]:
+                - button "List View Controls" [ref=e872] [cursor=pointer]:
+                  - img [ref=e874]
+                  - img [ref=e878]
+                  - generic [ref=e881]: List View Controls
+                - button "Select list display" [ref=e884] [cursor=pointer]:
+                  - img [ref=e886]
+                  - img [ref=e890]
+                  - generic [ref=e893]: Select list display
+                - generic [ref=e895]:
+                  - button "Refresh" [ref=e898] [cursor=pointer]:
+                    - img [ref=e900]
+                    - generic [ref=e903]: Refresh
+                  - button "Column sort" [ref=e906] [cursor=pointer]:
+                    - img [ref=e908]
+                    - generic [ref=e911]: Column sort
+                  - button "Edit List" [ref=e914] [cursor=pointer]:
+                    - img [ref=e916]
+                    - generic [ref=e919]: Edit List
+                  - group [ref=e920]:
+                    - generic [ref=e922]:
+                      - generic:
+                        - generic:
+                          - button "Charts" [disabled]:
+                            - generic:
+                              - img
+                            - generic: Charts
+                      - generic:
+                        - generic:
+                          - button "Filters" [disabled]:
+                            - generic:
+                              - img
+                            - generic: Filters
+          - generic [ref=e929]:
+            - generic [ref=e930]: Navigation Mode
+            - grid [ref=e934]:
+              - rowgroup:
+                - row "Row Number Choose a Row Select 5 items Opportunity Name Account Name Stage Close Date Opportunity Owner Alias Action":
+                  - columnheader "Row Number":
+                    - generic [ref=e937]:
+                      - generic "Row Number"
+                  - gridcell "Choose a Row Select 5 items":
+                    - generic [ref=e938]:
+                      - generic [ref=e939]: Choose a Row
+                      - generic [ref=e941]:
+                        - checkbox "Select 5 items" [ref=e942]
+                        - generic [ref=e945]: Select 5 items
+                  - columnheader "Opportunity Name":
+                    - generic [ref=e947]:
+                      - 'button "Sort by: Opportunity Name" [ref=e948] [cursor=pointer]':
+                        - generic [ref=e949]: "Sort by:"
+                        - generic "Opportunity Name" [ref=e950]
+                      - generic [ref=e951]: "Sorted: None"
+                      - button "Show Opportunity Name column actions" [ref=e953] [cursor=pointer]:
+                        - img [ref=e955]
+                        - generic [ref=e958]: Show Opportunity Name column actions
+                      - slider "Opportunity Name column width" [ref=e959]: "303"
+                  - columnheader "Account Name":
+                    - generic [ref=e963]:
+                      - 'button "Sort by: Account Name" [ref=e964] [cursor=pointer]':
+                        - generic [ref=e965]: "Sort by:"
+                        - generic "Account Name" [ref=e966]
+                      - generic [ref=e967]: "Sorted: None"
+                      - button "Show Account Name column actions" [ref=e969] [cursor=pointer]:
+                        - img [ref=e971]
+                        - generic [ref=e974]: Show Account Name column actions
+                      - slider "Account Name column width" [ref=e975]: "288"
+                  - columnheader "Stage":
+                    - generic [ref=e979]:
+                      - 'button "Sort by: Stage" [ref=e980] [cursor=pointer]':
+                        - generic [ref=e981]: "Sort by:"
+                        - generic "Stage" [ref=e982]
+                      - generic [ref=e983]: "Sorted: None"
+                      - button "Show Stage column actions" [ref=e985] [cursor=pointer]:
+                        - img [ref=e987]
+                        - generic [ref=e990]: Show Stage column actions
+                      - slider "Stage column width" [ref=e991]: "202"
+                  - columnheader "Close Date":
+                    - generic [ref=e995]:
+                      - 'button "Sort by: Close Date" [ref=e996] [cursor=pointer]':
+                        - generic [ref=e997]: "Sort by:"
+                        - generic "Close Date" [ref=e998]
+                      - generic [ref=e999]: "Sorted: None"
+                      - button "Show Close Date column actions" [ref=e1001] [cursor=pointer]:
+                        - img [ref=e1003]
+                        - generic [ref=e1006]: Show Close Date column actions
+                      - slider "Close Date column width" [ref=e1007]: "199"
+                  - columnheader "Opportunity Owner Alias":
+                    - generic [ref=e1011]:
+                      - 'button "Sort by: Opportunity Owner Alias" [ref=e1012] [cursor=pointer]':
+                        - generic [ref=e1013]: "Sort by:"
+                        - generic "Opportunity Owner Alias" [ref=e1014]
+                      - generic [ref=e1015]: "Sorted: None"
+                      - button "Show Opportunity Owner Alias column actions" [ref=e1017] [cursor=pointer]:
+                        - img [ref=e1019]
+                        - generic [ref=e1022]: Show Opportunity Owner Alias column actions
+                      - slider "Opportunity Owner Alias column width" [ref=e1023]: "115"
+                  - columnheader "Action":
+                    - generic [ref=e1028]:
+                      - generic "Action"
+              - rowgroup [ref=e1029]:
+                - row "Select Item 1 Choose a Row Tech Innovations Inc- Edit Opportunity Name Tech Innovations Inc Edit Account Name Prospecting Edit Stage 30/06/2026 Edit Close Date RShar Locked Opportunity Owner Alias Show Actions" [ref=e1030]:
+                  - gridcell [ref=e1031]
+                  - gridcell "Select Item 1 Choose a Row" [ref=e1035]:
+                    - generic [ref=e1036]:
+                      - checkbox "Select Item 1 Choose a Row" [ref=e1037]
+                      - generic [ref=e1040]: Select Item 1
+                  - rowheader "Tech Innovations Inc- Edit Opportunity Name" [ref=e1041]:
+                    - generic [ref=e1042]:
+                      - link "Tech Innovations Inc-" [ref=e1048] [cursor=pointer]:
+                        - /url: /lightning/r/006dN00000Cz7VWQAZ/view
+                        - generic [ref=e1049]: Tech Innovations Inc-
+                      - button "Edit Opportunity Name" [ref=e1050] [cursor=pointer]:
+                        - img [ref=e1051]
+                  - gridcell "Tech Innovations Inc Edit Account Name" [ref=e1054]:
+                    - generic [ref=e1055]:
+                      - link "Tech Innovations Inc" [ref=e1060] [cursor=pointer]:
+                        - /url: /lightning/r/001dN00000s6MbTQAU/view
+                        - generic [ref=e1061]: Tech Innovations Inc
+                      - button "Edit Account Name" [ref=e1062] [cursor=pointer]:
+                        - img [ref=e1063]
+                  - gridcell "Prospecting Edit Stage" [ref=e1066]:
+                    - generic [ref=e1067]:
+                      - generic [ref=e1070]: Prospecting
+                      - button "Edit Stage" [ref=e1071] [cursor=pointer]:
+                        - img [ref=e1072]
+                  - gridcell "30/06/2026 Edit Close Date" [ref=e1075]:
+                    - generic [ref=e1076]:
+                      - generic [ref=e1078]: 30/06/2026
+                      - button "Edit Close Date" [ref=e1079] [cursor=pointer]:
+                        - img [ref=e1080]
+                  - gridcell "RShar Locked Opportunity Owner Alias" [ref=e1083]:
+                    - generic [ref=e1084]:
+                      - link "RShar" [ref=e1089] [cursor=pointer]:
+                        - /url: /lightning/r/005dN00000AKqG1QAL/view
+                        - generic [ref=e1090]: RShar
+                      - img "Locked Opportunity Owner Alias" [ref=e1091]:
+                        - img [ref=e1092]
+                  - gridcell "Show Actions" [ref=e1095]:
+                    - button "Show Actions" [ref=e1101] [cursor=pointer]:
+                      - img [ref=e1103]
+                      - generic [ref=e1106]: Show Actions
+                - row "Select Item 2 Choose a Row Acme Corporation- Edit Opportunity Name Acme Corporation Edit Account Name Prospecting Edit Stage 30/06/2026 Edit Close Date RShar Locked Opportunity Owner Alias Show Actions" [ref=e1107]:
+                  - gridcell [ref=e1108]
+                  - gridcell "Select Item 2 Choose a Row" [ref=e1112]:
+                    - generic [ref=e1113]:
+                      - checkbox "Select Item 2 Choose a Row" [ref=e1114]
+                      - generic [ref=e1117]: Select Item 2
+                  - rowheader "Acme Corporation- Edit Opportunity Name" [ref=e1118]:
+                    - generic [ref=e1119]:
+                      - link "Acme Corporation-" [ref=e1125] [cursor=pointer]:
+                        - /url: /lightning/r/006dN00000Cy3IhQAJ/view
+                        - generic [ref=e1126]: Acme Corporation-
+                      - button "Edit Opportunity Name" [ref=e1127] [cursor=pointer]:
+                        - img [ref=e1128]
+                  - gridcell "Acme Corporation Edit Account Name" [ref=e1131]:
+                    - generic [ref=e1132]:
+                      - link "Acme Corporation" [ref=e1137] [cursor=pointer]:
+                        - /url: /lightning/r/001dN00000s3RELQA2/view
+                        - generic [ref=e1138]: Acme Corporation
+                      - button "Edit Account Name" [ref=e1139] [cursor=pointer]:
+                        - img [ref=e1140]
+                  - gridcell "Prospecting Edit Stage" [ref=e1143]:
+                    - generic [ref=e1144]:
+                      - generic [ref=e1147]: Prospecting
+                      - button "Edit Stage" [ref=e1148] [cursor=pointer]:
+                        - img [ref=e1149]
+                  - gridcell "30/06/2026 Edit Close Date" [ref=e1152]:
+                    - generic [ref=e1153]:
+                      - generic [ref=e1155]: 30/06/2026
+                      - button "Edit Close Date" [ref=e1156] [cursor=pointer]:
+                        - img [ref=e1157]
+                  - gridcell "RShar Locked Opportunity Owner Alias" [ref=e1160]:
+                    - generic [ref=e1161]:
+                      - link "RShar" [ref=e1166] [cursor=pointer]:
+                        - /url: /lightning/r/005dN00000AKqG1QAL/view
+                        - generic [ref=e1167]: RShar
+                      - img "Locked Opportunity Owner Alias" [ref=e1168]:
+                        - img [ref=e1169]
+                  - gridcell "Show Actions" [ref=e1172]:
+                    - button "Show Actions" [ref=e1178] [cursor=pointer]:
+                      - img [ref=e1180]
+                      - generic [ref=e1183]: Show Actions
+                - row "Select Item 3 Choose a Row Acme Corporation- Edit Opportunity Name Acme Corporation Edit Account Name Prospecting Edit Stage 30/06/2026 Edit Close Date RShar Locked Opportunity Owner Alias Show Actions" [ref=e1184]:
+                  - gridcell [ref=e1185]
+                  - gridcell "Select Item 3 Choose a Row" [ref=e1189]:
+                    - generic [ref=e1190]:
+                      - checkbox "Select Item 3 Choose a Row" [ref=e1191]
+                      - generic [ref=e1194]: Select Item 3
+                  - rowheader "Acme Corporation- Edit Opportunity Name" [ref=e1195]:
+                    - generic [ref=e1196]:
+                      - link "Acme Corporation-" [ref=e1202] [cursor=pointer]:
+                        - /url: /lightning/r/006dN00000Cy4BVQAZ/view
+                        - generic [ref=e1203]: Acme Corporation-
+                      - button "Edit Opportunity Name" [ref=e1204] [cursor=pointer]:
+                        - img [ref=e1205]
+                  - gridcell "Acme Corporation Edit Account Name" [ref=e1208]:
+                    - generic [ref=e1209]:
+                      - link "Acme Corporation" [ref=e1214] [cursor=pointer]:
+                        - /url: /lightning/r/001dN00000s3X3ZQAU/view
+                        - generic [ref=e1215]: Acme Corporation
+                      - button "Edit Account Name" [ref=e1216] [cursor=pointer]:
+                        - img [ref=e1217]
+                  - gridcell "Prospecting Edit Stage" [ref=e1220]:
+                    - generic [ref=e1221]:
+                      - generic [ref=e1224]: Prospecting
+                      - button "Edit Stage" [ref=e1225] [cursor=pointer]:
+                        - img [ref=e1226]
+                  - gridcell "30/06/2026 Edit Close Date" [ref=e1229]:
+                    - generic [ref=e1230]:
+                      - generic [ref=e1232]: 30/06/2026
+                      - button "Edit Close Date" [ref=e1233] [cursor=pointer]:
+                        - img [ref=e1234]
+                  - gridcell "RShar Locked Opportunity Owner Alias" [ref=e1237]:
+                    - generic [ref=e1238]:
+                      - link "RShar" [ref=e1243] [cursor=pointer]:
+                        - /url: /lightning/r/005dN00000AKqG1QAL/view
+                        - generic [ref=e1244]: RShar
+                      - img "Locked Opportunity Owner Alias" [ref=e1245]:
+                        - img [ref=e1246]
+                  - gridcell "Show Actions" [ref=e1249]:
+                    - button "Show Actions" [ref=e1255] [cursor=pointer]:
+                      - img [ref=e1257]
+                      - generic [ref=e1260]: Show Actions
+                - row "Select Item 4 Choose a Row Tech Innovations Inc- Edit Opportunity Name Tech Innovations Inc Edit Account Name Prospecting Edit Stage 30/06/2026 Edit Close Date RShar Locked Opportunity Owner Alias Show Actions" [ref=e1261]:
+                  - gridcell [ref=e1262]
+                  - gridcell "Select Item 4 Choose a Row" [ref=e1266]:
+                    - generic [ref=e1267]:
+                      - checkbox "Select Item 4 Choose a Row" [ref=e1268]
+                      - generic [ref=e1271]: Select Item 4
+                  - rowheader "Tech Innovations Inc- Edit Opportunity Name" [ref=e1272]:
+                    - generic [ref=e1273]:
+                      - link "Tech Innovations Inc-" [ref=e1279] [cursor=pointer]:
+                        - /url: /lightning/r/006dN00000Cy3tlQAB/view
+                        - generic [ref=e1280]: Tech Innovations Inc-
+                      - button "Edit Opportunity Name" [ref=e1281] [cursor=pointer]:
+                        - img [ref=e1282]
+                  - gridcell "Tech Innovations Inc Edit Account Name" [ref=e1285]:
+                    - generic [ref=e1286]:
+                      - link "Tech Innovations Inc" [ref=e1291] [cursor=pointer]:
+                        - /url: /lightning/r/001dN00000s3LAXQA2/view
+                        - generic [ref=e1292]: Tech Innovations Inc
+                      - button "Edit Account Name" [ref=e1293] [cursor=pointer]:
+                        - img [ref=e1294]
+                  - gridcell "Prospecting Edit Stage" [ref=e1297]:
+                    - generic [ref=e1298]:
+                      - generic [ref=e1301]: Prospecting
+                      - button "Edit Stage" [ref=e1302] [cursor=pointer]:
+                        - img [ref=e1303]
+                  - gridcell "30/06/2026 Edit Close Date" [ref=e1306]:
+                    - generic [ref=e1307]:
+                      - generic [ref=e1309]: 30/06/2026
+                      - button "Edit Close Date" [ref=e1310] [cursor=pointer]:
+                        - img [ref=e1311]
+                  - gridcell "RShar Locked Opportunity Owner Alias" [ref=e1314]:
+                    - generic [ref=e1315]:
+                      - link "RShar" [ref=e1320] [cursor=pointer]:
+                        - /url: /lightning/r/005dN00000AKqG1QAL/view
+                        - generic [ref=e1321]: RShar
+                      - img "Locked Opportunity Owner Alias" [ref=e1322]:
+                        - img [ref=e1323]
+                  - gridcell "Show Actions" [ref=e1326]:
+                    - button "Show Actions" [ref=e1332] [cursor=pointer]:
+                      - img [ref=e1334]
+                      - generic [ref=e1337]: Show Actions
+                - row "Select Item 5 Choose a Row Premier Industries- Edit Opportunity Name Premier Industries Edit Account Name Prospecting Edit Stage 30/06/2026 Edit Close Date RShar Locked Opportunity Owner Alias Show Actions" [ref=e1338]:
+                  - gridcell [ref=e1339]
+                  - gridcell "Select Item 5 Choose a Row" [ref=e1343]:
+                    - generic [ref=e1344]:
+                      - checkbox "Select Item 5 Choose a Row" [ref=e1345]
+                      - generic [ref=e1348]: Select Item 5
+                  - rowheader "Premier Industries- Edit Opportunity Name" [ref=e1349]:
+                    - generic [ref=e1350]:
+                      - link "Premier Industries-" [ref=e1356] [cursor=pointer]:
+                        - /url: /lightning/r/006dN00000Cy1K6QAJ/view
+                        - generic [ref=e1357]: Premier Industries-
+                      - button "Edit Opportunity Name" [ref=e1358] [cursor=pointer]:
+                        - img [ref=e1359]
+                  - gridcell "Premier Industries Edit Account Name" [ref=e1362]:
+                    - generic [ref=e1363]:
+                      - link "Premier Industries" [ref=e1368] [cursor=pointer]:
+                        - /url: /lightning/r/001dN00000s3NAhQAM/view
+                        - generic [ref=e1369]: Premier Industries
+                      - button "Edit Account Name" [ref=e1370] [cursor=pointer]:
+                        - img [ref=e1371]
+                  - gridcell "Prospecting Edit Stage" [ref=e1374]:
+                    - generic [ref=e1375]:
+                      - generic [ref=e1378]: Prospecting
+                      - button "Edit Stage" [ref=e1379] [cursor=pointer]:
+                        - img [ref=e1380]
+                  - gridcell "30/06/2026 Edit Close Date" [ref=e1383]:
+                    - generic [ref=e1384]:
+                      - generic [ref=e1386]: 30/06/2026
+                      - button "Edit Close Date" [ref=e1387] [cursor=pointer]:
+                        - img [ref=e1388]
+                  - gridcell "RShar Locked Opportunity Owner Alias" [ref=e1391]:
+                    - generic [ref=e1392]:
+                      - link "RShar" [ref=e1397] [cursor=pointer]:
+                        - /url: /lightning/r/005dN00000AKqG1QAL/view
+                        - generic [ref=e1398]: RShar
+                      - img "Locked Opportunity Owner Alias" [ref=e1399]:
+                        - img [ref=e1400]
+                  - gridcell "Show Actions" [ref=e1403]:
+                    - button "Show Actions" [ref=e1409] [cursor=pointer]:
+                      - img [ref=e1411]
+                      - generic [ref=e1414]: Show Actions
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=e465]:
+          - listitem [ref=e466]:
+            - button "To Do List" [ref=e469] [cursor=pointer]:
+              - img [ref=e473]
+              - generic [ref=e476]: To Do List
+  - generic:
+    - status

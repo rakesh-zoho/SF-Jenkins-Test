@@ -23,6 +23,7 @@
 5. Explore each UI step — take screenshots
 6. Write detailed plan to `specs/[name]-plan.md`
 7. Plan must include: exact locators, wait conditions, assertions, screenshot points
+8. Make sure to search the objects and tabs from the  App Launcher while expoliring the application.
 
 ## Generator Agent — What to Produce
 1. Read `specs/[name]-plan.md`
@@ -36,6 +37,7 @@
    - `expect()` assertions after every action
    - `afterEach` that screenshots on failure
    - Imports from `../utils/sf-helpers.js`, `../utils/reporter-utils.js`, `../utils/locator-utils.js`
+   -  Make sure to search the objects and tabs from the  App Launcher
 
 ## Healer Agent — How to Fix
 1. Run `npx playwright test tests/[name].spec.js --config=config/playwright.config.js`
