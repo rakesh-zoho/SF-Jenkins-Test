@@ -7,7 +7,7 @@ pipeline {
    * ─────────────────────────────────────────────────────────────────── */
   tools {
     nodejs 'Node20'
-   allure  'allure'
+ //  allure  'allure'
   }
 
   /* ── Parameters — selectable from Jenkins "Build with Parameters" UI */
