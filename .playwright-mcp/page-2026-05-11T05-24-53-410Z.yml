@@ -1,0 +1,348 @@
+- generic:
+  - generic:
+    - generic [ref=e2]:
+      - generic [ref=e3]:
+        - link "Skip to Navigation" [ref=e4] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - link "Skip to Main Content" [ref=e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+        - generic [ref=e6]:
+          - button "Search" [ref=e12]:
+            - img [ref=e14]
+            - text: Search...
+          - navigation "Global Header" [ref=e17]:
+            - list [ref=e19]:
+              - listitem [ref=e20]:
+                - group [ref=e21]:
+                  - button "This item doesn't support favorites" [ref=e23] [cursor=pointer]:
+                    - generic [ref=e24]:
+                      - img [ref=e28]
+                      - tooltip "This item doesn't support favorites"
+                  - button "Favorites list" [ref=e32] [cursor=pointer]:
+                    - generic [ref=e33]:
+                      - img [ref=e37]
+                      - tooltip "Favorites list"
+              - listitem [ref=e40]:
+                - button "Global Actions" [disabled] [ref=e42]:
+                  - img [ref=e46]
+              - listitem [ref=e478]:
+                - button "Guidance Center" [ref=e480] [cursor=pointer]:
+                  - generic [ref=e481]:
+                    - img [ref=e485]
+                    - tooltip "Guidance Center"
+              - listitem [ref=e49]:
+                - button "Salesforce Help" [ref=e52] [cursor=pointer]:
+                  - generic [ref=e53]:
+                    - img [ref=e57]
+                    - tooltip "Salesforce Help"
+              - listitem [ref=e60]:
+                - button "Setup" [ref=e66] [cursor=pointer]:
+                  - generic [ref=e67]:
+                    - img [ref=e71]
+                    - tooltip "Setup"
+              - listitem [ref=e74]:
+                - button "Notifications" [ref=e77] [cursor=pointer]:
+                  - generic [ref=e78]:
+                    - img [ref=e83]
+                    - tooltip "Notifications"
+              - listitem [ref=e87]:
+                - button "View profile" [ref=e90] [cursor=pointer]:
+                  - generic [ref=e91]:
+                    - tooltip "View profile"
+      - generic [ref=e95]:
+        - generic [ref=e98]:
+          - generic [ref=e100]:
+            - navigation "App" [ref=e101]:
+              - button "App Launcher" [expanded] [ref=e103] [cursor=pointer]:
+                - generic [ref=e114]: App Launcher
+            - heading "Sales" [level=1] [ref=e115]:
+              - generic "Sales" [ref=e116]
+          - navigation "Global" [ref=e119]:
+            - list [ref=e120]:
+              - listitem [ref=e121] [cursor=pointer]:
+                - link "Home" [ref=e122]:
+                  - /url: /lightning/page/home
+                  - generic [ref=e123]: Home
+              - listitem [ref=e124]:
+                - link "Opportunities" [ref=e125] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                  - generic [ref=e126]: Opportunities
+                - button "Opportunities List" [ref=e130] [cursor=pointer]:
+                  - img [ref=e134]
+                  - generic [ref=e137]: Opportunities List
+              - listitem [ref=e138]:
+                - link "Leads" [ref=e139] [cursor=pointer]:
+                  - /url: /lightning/o/Lead/home
+                  - generic [ref=e140]: Leads
+                - button "Leads List" [ref=e144] [cursor=pointer]:
+                  - img [ref=e148]
+                  - generic [ref=e151]: Leads List
+              - listitem [ref=e152]:
+                - link "Tasks" [ref=e153] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                  - generic [ref=e154]: Tasks
+                - button "Tasks List" [ref=e158] [cursor=pointer]:
+                  - img [ref=e162]
+                  - generic [ref=e165]: Tasks List
+              - listitem [ref=e166]:
+                - link "Files" [ref=e167] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                  - generic [ref=e168]: Files
+                - button "Files List" [ref=e172] [cursor=pointer]:
+                  - img [ref=e176]
+                  - generic [ref=e179]: Files List
+              - listitem [ref=e180]:
+                - link "Accounts" [ref=e181] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                  - generic [ref=e182]: Accounts
+                - button "Accounts List" [ref=e186] [cursor=pointer]:
+                  - img [ref=e190]
+                  - generic [ref=e193]: Accounts List
+              - listitem [ref=e194]:
+                - link "Contacts" [ref=e195] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                  - generic [ref=e196]: Contacts
+                - button "Contacts List" [ref=e200] [cursor=pointer]:
+                  - img [ref=e204]
+                  - generic [ref=e207]: Contacts List
+              - listitem [ref=e208]:
+                - link "Campaigns" [ref=e209] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                  - generic [ref=e210]: Campaigns
+                - button "Campaigns List" [ref=e214] [cursor=pointer]:
+                  - img [ref=e218]
+                  - generic [ref=e221]: Campaigns List
+              - listitem [ref=e222]:
+                - link "Dashboards" [ref=e223] [cursor=pointer]:
+                  - /url: /lightning/o/Dashboard/home
+                  - generic [ref=e224]: Dashboards
+                - button "Dashboards List" [ref=e228] [cursor=pointer]:
+                  - img [ref=e232]
+                  - generic [ref=e235]: Dashboards List
+              - listitem [ref=e236]:
+                - link "Reports" [ref=e237] [cursor=pointer]:
+                  - /url: /lightning/o/Report/home
+                  - generic [ref=e238]: Reports
+                - button "Reports List" [ref=e242] [cursor=pointer]:
+                  - img [ref=e246]
+                  - generic [ref=e249]: Reports List
+              - listitem [ref=e250]:
+                - link "Chatter" [ref=e251] [cursor=pointer]:
+                  - /url: /lightning/page/chatter
+                  - generic [ref=e252]: Chatter
+              - listitem [ref=e253]:
+                - button "Show more navigation items" [ref=e255] [cursor=pointer]:
+                  - generic [ref=e256]: More
+                  - img [ref=e260]
+                  - generic [ref=e263]: Show more navigation items
+              - listitem [ref=e264]:
+                - button "Edit nav items" [ref=e266] [cursor=pointer]:
+                  - img [ref=e268]
+                  - generic [ref=e271]: Edit nav items
+        - main [ref=e273]:
+          - generic [ref=e281]:
+            - heading "Home" [level=1] [ref=e282]
+            - article [ref=e284]:
+              - heading "Seller HomeGood morning, Rakesh. Let's get selling!" [level=1] [ref=e285]
+            - generic [ref=e286]:
+              - article [ref=e289]:
+                - heading "Close Deals" [level=2] [ref=e490]
+                - generic [ref=e491]:
+                  - generic [ref=e492]: Opportunities owned by me and closing this quarter
+                  - generic [ref=e493]:
+                    - generic [ref=e496]:
+                      - img [ref=e498]
+                      - generic [ref=e500]:
+                        - generic [ref=e501]: ₹0
+                        - generic [ref=e502]: Total Pipeline
+                    - generic [ref=e504]:
+                      - generic [ref=e510]: ₹0 Open
+                      - generic [ref=e516]: ₹0 Won
+                      - generic [ref=e522]: ₹0 Lost
+                - button "View Opportunities (opens in new tab)" [ref=e523] [cursor=pointer]: View Opportunities
+              - article [ref=e295]:
+                - heading "Plan My Accounts" [level=2] [ref=e526]
+                - generic [ref=e527]:
+                  - generic [ref=e528]: Accounts owned by me
+                  - generic [ref=e529]:
+                    - generic [ref=e532]:
+                      - img [ref=e534]
+                      - generic [ref=e536]:
+                        - generic [ref=e537]: "74"
+                        - generic [ref=e538]: Accounts
+                    - generic [ref=e540]:
+                      - generic [ref=e546]: 0 Upcoming Activity
+                      - generic [ref=e552]: 0 Past Activity
+                      - generic [ref=e558]: 74 No Activity
+                - button "View Accounts (opens in new tab)" [ref=e559] [cursor=pointer]: View Accounts
+              - article [ref=e301]:
+                - heading "Grow Relationships" [level=2] [ref=e562]
+                - generic [ref=e563]:
+                  - generic [ref=e564]: Contacts owned by me and created in the last 90 days
+                  - generic [ref=e565]:
+                    - generic [ref=e568]:
+                      - img [ref=e570]
+                      - generic [ref=e572]:
+                        - generic [ref=e573]: "7"
+                        - generic [ref=e574]: Contacts
+                    - generic [ref=e576]:
+                      - generic [ref=e582]: 0 Upcoming Activity
+                      - generic [ref=e588]: 0 Past Activity
+                      - generic [ref=e594]: 7 No Activity
+                - button "View Contacts (opens in new tab)" [ref=e595] [cursor=pointer]: View Contacts
+              - article [ref=e307]:
+                - heading "Build Pipeline" [level=2] [ref=e598]
+                - generic [ref=e599]:
+                  - generic [ref=e600]: Leads owned by me and created in the last 30 days
+                  - generic [ref=e601]:
+                    - generic [ref=e604]:
+                      - img [ref=e606]
+                      - generic [ref=e608]:
+                        - generic [ref=e609]: "489"
+                        - generic [ref=e610]: Leads
+                    - generic [ref=e612]:
+                      - generic [ref=e618]: 0 Upcoming Activity
+                      - generic [ref=e624]: 0 Past Activity
+                      - generic [ref=e630]: 489 No Activity
+                - button "View Leads (opens in new tab)" [ref=e631] [cursor=pointer]: View Leads
+              - generic [ref=e319]:
+                - article [ref=e322]:
+                  - generic [ref=e325]:
+                    - heading "My Goals" [level=2] [ref=e326]:
+                      - generic [ref=e327]: My Goals
+                    - button "Edit my goals" [ref=e329] [cursor=pointer]:
+                      - img [ref=e331]
+                  - generic [ref=e632]:
+                    - generic [ref=e633]: Set personal weekly or monthly goals for emails, calls, and meetings.
+                    - button "Set goals" [ref=e635] [cursor=pointer]
+                - article [ref=e340]:
+                  - heading "Set Goals" [level=2] [ref=e344]:
+                    - generic [ref=e345]: Set Goals
+                  - generic [ref=e346]:
+                    - generic [ref=e347]:
+                      - generic [ref=e639]:
+                        - generic [ref=e640]: Meetings
+                        - spinbutton "Meetings" [disabled] [ref=e642]
+                      - generic [ref=e646]:
+                        - generic [ref=e647]: Calls
+                        - spinbutton "Calls" [disabled] [ref=e649]
+                      - generic [ref=e653]:
+                        - generic [ref=e654]: Emails
+                        - spinbutton "Emails" [disabled] [ref=e656]
+                      - generic [ref=e350]:
+                        - generic [ref=e352]: Time Frame
+                        - generic [ref=e356]:
+                          - combobox "Time Frame" [disabled] [ref=e357]:
+                            - generic [ref=e358]: Monthly
+                          - img [ref=e362]
+                        - status
+                    - generic [ref=e365]:
+                      - generic:
+                        - button "Cancel" [disabled]
+                      - generic:
+                        - button "Save" [disabled]
+              - article [ref=e368]:
+                - heading "Today's Events" [level=2] [ref=e372]:
+                  - generic "Today's Events" [ref=e373]
+                - generic [ref=e377]:
+                  - img [ref=e378]
+                  - generic [ref=e379]: Looks like you're free and clear the rest of the day.
+                - button "View Calendar" [ref=e381] [cursor=pointer]
+              - article [ref=e384]:
+                - generic [ref=e385]:
+                  - heading "Today’s Tasks" [level=2] [ref=e388]:
+                    - generic "Today’s Tasks" [ref=e389]
+                  - button "Select a view of your tasks" [ref=e392] [cursor=pointer]:
+                    - img [ref=e394]
+                    - generic [ref=e397]: Select a view of your tasks
+                - generic [ref=e401]:
+                  - img [ref=e402]
+                  - generic [ref=e403]: Nothing due today. Be a go-getter, and check back soon.
+                - button "View All Tasks" [ref=e405] [cursor=pointer]: View All
+              - article [ref=e408]:
+                - heading "Recent Records" [level=2] [ref=e412]:
+                  - generic "Recent Records" [ref=e413]
+                - list [ref=e415]:
+                  - listitem [ref=e416]:
+                    - generic [ref=e417]:
+                      - img [ref=e421]
+                      - link "Emily Davis" [ref=e424] [cursor=pointer]:
+                        - /url: /lightning/r/00QdN00000DwDBtUAN/view
+                  - listitem [ref=e425]:
+                    - generic [ref=e426]:
+                      - img [ref=e430]
+                      - link "Mark Wilson" [ref=e433] [cursor=pointer]:
+                        - /url: /lightning/r/00QdN00000DwB8TUAV/view
+                  - listitem [ref=e434]:
+                    - generic [ref=e435]:
+                      - img [ref=e439]
+                      - link "François O'Sullivan" [ref=e442] [cursor=pointer]:
+                        - /url: /lightning/r/00QdN00000DwB3dUAF/view
+                  - listitem [ref=e443]:
+                    - generic [ref=e444]:
+                      - img [ref=e448]
+                      - link "David Miller" [ref=e451] [cursor=pointer]:
+                        - /url: /lightning/r/00QdN00000DwB21UAF/view
+                  - listitem [ref=e452]:
+                    - generic [ref=e453]:
+                      - img [ref=e457]
+                      - link "Robert Brown" [ref=e460] [cursor=pointer]:
+                        - /url: /lightning/r/00QdN00000DwAsLUAV/view
+                - button "View All Recent Records" [ref=e462] [cursor=pointer]: View All
+              - article [ref=e659]:
+                - heading "Salesblazer" [level=2] [ref=e663]
+                - generic [ref=e664]:
+                  - heading "What Is SPIN Selling? A Way to Build Trust With Your Customers (Link opens in new window)" [level=3] [ref=e665]:
+                    - link "What Is SPIN Selling? A Way to Build Trust With Your Customers (Link opens in new window)" [ref=e668] [cursor=pointer]:
+                      - /url: /HelpAndTrainingDoor?version=2&resource=https%3A%2F%2Fwww.salesforce.com%2Fblog%2Fsales%2Fspin-selling%2F
+                      - generic [ref=e670]:
+                        - text: What Is SPIN Selling? A Way to Build Trust With Your Customers
+                        - generic [ref=e672]:
+                          - img [ref=e674]
+                          - generic [ref=e677]: (Link opens in new window)
+                  - generic [ref=e678]: Learn how to focus on asking the right questions to become a trusted advisor to your customers.
+                  - paragraph [ref=e679]: 8 minute read
+                - button "Join the Community linkNewWindowAssistiveTextLabel" [ref=e681] [cursor=pointer]:
+                  - text: Join the Community
+                  - generic [ref=e683]:
+                    - img [ref=e685]
+                    - generic [ref=e688]: linkNewWindowAssistiveTextLabel
+      - generic:
+        - contentinfo "Utility Bar":
+          - list [ref=e465]:
+            - listitem [ref=e466]:
+              - button "To Do List" [ref=e469] [cursor=pointer]:
+                - img [ref=e473]
+                - generic [ref=e476]: To Do List
+    - dialog "App Launcher" [ref=e689]:
+      - generic [ref=e690]:
+        - generic [ref=e691]:
+          - heading "App Launcher" [level=2] [ref=e692]
+          - button "Close" [ref=e693] [cursor=pointer]:
+            - img [ref=e695]
+            - generic [ref=e698]: Close
+        - generic [ref=e701]:
+          - generic [ref=e705]:
+            - generic [ref=e706]: Search apps and items...
+            - generic [ref=e707]:
+              - combobox "Search apps and items..." [expanded] [active] [ref=e708]
+              - img [ref=e709]
+          - heading "Apps" [level=3] [ref=e713]
+          - listbox "Apps" [ref=e714]:
+            - option "Service" [ref=e716] [cursor=pointer]:
+              - paragraph [ref=e722]: Service
+            - option "Marketing CRM Classic" [ref=e724] [cursor=pointer]:
+              - paragraph [ref=e730]: Marketing CRM Classic
+            - option "Salesforce Chatter" [ref=e732] [cursor=pointer]:
+              - paragraph [ref=e738]: Salesforce Chatter
+            - option "Community" [ref=e740] [cursor=pointer]:
+              - paragraph [ref=e746]: Community
+            - option "License Management App" [ref=e748] [cursor=pointer]:
+              - paragraph [ref=e754]: License Management App
+            - option "Partner Order" [ref=e756] [cursor=pointer]:
+              - paragraph [ref=e762]: Partner Order
+            - option "Sales" [ref=e764] [cursor=pointer]:
+              - paragraph [ref=e770]: Sales
+          - button "View All Applications" [ref=e772] [cursor=pointer]: View All
+  - generic:
+    - status

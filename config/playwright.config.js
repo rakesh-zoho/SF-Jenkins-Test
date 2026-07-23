@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 export default defineConfig({
   testDir: '../tests',
-  outputDir: '../reports/test-results',
+  outputDir: './reports/test-results', // relative to Jenkins workspace
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
@@ -34,19 +34,19 @@ export default defineConfig({
     headless: process.env.HEADLESS !== 'false',
     slowMo: parseInt(process.env.SLOW_MO) || 0,
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: 'on', // record all tests
     trace: 'retain-on-failure',
     viewport: { width: 1920, height: 1080 },
     ignoreHTTPSErrors: true,
     navigationTimeout: 30000,
     actionTimeout: 15000,
-    permissions: [], // Block all browser permissions
+    permissions: [],
   },
 
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
 

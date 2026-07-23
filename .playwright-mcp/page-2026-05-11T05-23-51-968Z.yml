@@ -1,0 +1,52 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e7]:
+        - img [ref=e8]
+        - generic [ref=e9]: Salesforce login
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - heading "Salesforce login" [level=1] [ref=e13]
+          - generic [ref=e14]:
+            - text: Username
+            - textbox "Username" [active] [ref=e16]: rakesh.sharma@nexturn.com.sfpartner
+          - text: Password
+          - textbox "Password" [ref=e17]: Rakesh@97.
+          - button "Log In" [ref=e18] [cursor=pointer]
+          - generic [ref=e19]:
+            - checkbox "Remember me" [ref=e20]
+            - generic [ref=e21]: Remember me
+        - link "Forgot Your Password?" [ref=e23] [cursor=pointer]:
+          - /url: /secur/forgotpassword.jsp?locale=in
+    - generic [ref=e24]: © 2026 Salesforce, Inc. All rights reserved.
+  - iframe [ref=e26]:
+    - generic [active] [ref=f1e1]:
+      - generic [ref=f1e2]:
+        - main [ref=f1e3]:
+          - generic [ref=f1e4]:
+            - generic [ref=f1e5]:
+              - generic [ref=f1e6]:
+                - article [ref=f1e7]:
+                  - generic [ref=f1e9]:
+                    - generic [ref=f1e10]:
+                      - heading "Introducing Slack CRM for Growing Indian Businesses" [level=2] [ref=f1e11]:
+                        - text: Introducing Slack CRM for
+                        - strong [ref=f1e12]: Growing Indian Businesses
+                      - strong [ref=f1e13]:
+                        - paragraph [ref=f1e15]: Powered by the all-new, intelligent Slackbot
+                    - strong [ref=f1e16]:
+                      - 'link "Know more: Introducing Slack CRM for Growing Indian Businesses" [ref=f1e19] [cursor=pointer]':
+                        - /url: https://www.salesforce.com/in/slack/contact/slack-crm/?d=pb
+                        - text: Know more
+                        - img [ref=f1e20]
+                  - strong
+                - strong
+              - strong:
+                - img [ref=f1e25]
+            - strong
+          - strong
+        - strong
+      - strong
+  - generic: Login
+  - iframe [ref=e27]:
+    

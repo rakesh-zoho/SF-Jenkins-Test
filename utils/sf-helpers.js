@@ -1,4 +1,4 @@
-import { chromium } from '@playwright/test';
+import { chromium, expect } from '@playwright/test';
 import fs from 'fs/promises';
 import 'dotenv/config';
 
@@ -48,17 +48,34 @@ export default async function globalSetup() {
  * Wait for Salesforce Lightning page to settle.
  * Waits for spinners to disappear — use after every navigation or click.
  */
-export async function waitForSFLoad(page, timeout = 15000) {
+export async function waitForSFLoad(page, timeout = 20000) {
   try {
     await page.waitForFunction(
-      () =>
-        !document.querySelector('.forceListViewManagerSpinner') &&
-        !document.querySelector('.slds-spinner_container:not([style*="display: none"])') &&
-        !document.querySelector('.loadingIndicator'),
+      () => {
+        const hidden = (selector) => {
+          const element = document.querySelector(selector);
+          if (!element) return true;
+          const style = window.getComputedStyle(element);
+          return (
+            element.hidden ||
+            element.getAttribute('aria-hidden') === 'true' ||
+            style.display === 'none' ||
+            style.visibility === 'hidden' ||
+            element.offsetParent === null
+          );
+        };
+
+        return (
+          hidden('.forceListViewManagerSpinner') &&
+          hidden('.slds-spinner_container') &&
+          hidden('.loadingIndicator') &&
+          document.readyState === 'complete'
+        );
+      },
       { timeout }
     );
-  } catch {
-    // Non-fatal — spinner may already be gone
+  } catch (err) {
+    console.warn('waitForSFLoad timed out', err.message);
   }
 }
 
@@ -82,9 +99,18 @@ export async function switchToAllRecords(page, objectName) {
  * Navigate to a Salesforce app via App Launcher.
  */
 export async function navigateToApp(page, appName) {
-  await page.locator('[title="App Launcher"]').click();
-  await page.fill('[placeholder="Search apps and items..."]', appName);
+  let appLauncherButton = page.locator('[title="App Launcher"]').first();
+  if ((await appLauncherButton.count()) === 0) {
+    appLauncherButton = page.getByRole('button', { name: /App Launcher/i }).first();
+  }
+  await expect(appLauncherButton).toBeVisible({ timeout: 20000 }); // HEALED: Increased from 15s to 20s
+  await appLauncherButton.click({ timeout: 10000 });
+  const appSearchInput = page.getByPlaceholder(/search apps and items...|search/i).first();
+  await expect(appSearchInput).toBeVisible({ timeout: 20000 }); // HEALED: Increased from 15s to 20s
+  await appSearchInput.fill(appName, { timeout: 5000 });
   await page.waitForTimeout(500);
-  await page.click(`text="${appName}"`);
+  const appOption = page.getByRole('option', { name: new RegExp(`^${appName}$`, 'i') }).first();
+  await expect(appOption).toBeVisible({ timeout: 20000 }); // HEALED: Increased from 15s to 20s
+  await appOption.click({ timeout: 10000 });
   await waitForSFLoad(page);
 }

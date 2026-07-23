@@ -1,3 +1,5 @@
+import { expect } from '@playwright/test';
+
 /**
  * LOCATOR UTILITIES — Salesforce Lightning
  *
@@ -22,16 +24,58 @@ export async function fillField(page, label, value) {
  * Tries selectOption first (native), falls back to click+option (SF custom).
  */
 export async function selectPicklist(page, label, value) {
-  const field = page.getByLabel(label).first();
-  // HEALED: Salesforce picklists often expose both the combobox control and the listbox as the same label.
+  const dialog = page.getByRole('dialog');
+  const isDialogOpen = await dialog.isVisible().catch(() => false);
+  const scope = isDialogOpen ? dialog : page;
+  let field = scope.getByRole('combobox', { name: label }).first();
+  if ((await field.count()) === 0) {
+    field = scope.getByLabel(label).first();
+  }
+
+  await expect(field).toBeVisible({ timeout: 15000 });
+
   try {
     await field.selectOption(value, { timeout: 3000 });
     return;
   } catch {
-    await field.click();
-    const option = page.getByRole('option', { name: value }).first();
-    await option.waitFor({ state: 'visible', timeout: 5000 });
-    await option.click();
+    await field.scrollIntoViewIfNeeded();
+    await field.click({ timeout: 5000 });
+    await page.waitForTimeout(500);
+    const listbox = page.locator('div[role="listbox"]:visible').first();
+    await expect(listbox).toBeVisible({ timeout: 10000 });
+
+    let option = listbox.getByRole('option', { name: value }).first();
+    if ((await option.count()) === 0) {
+      option = listbox.getByText(value, { exact: true }).first();
+    }
+    if ((await option.count()) === 0) {
+      option = listbox.locator(`lightning-base-combobox-item[data-value="${value}"]`).first();
+    }
+    if ((await option.count()) === 0) {
+      option = listbox.locator('lightning-base-combobox-item').filter({ hasText: value }).first();
+    }
+
+    await expect(option).toBeVisible({ timeout: 10000 });
+    await option.scrollIntoViewIfNeeded();
+    try {
+      await option.click({ timeout: 10000 });
+    } catch {
+      const handle = await option.elementHandle();
+      if (handle) {
+        await handle.evaluate((node) => node.click());
+      } else {
+        throw new Error(`Could not click option '${value}'`);
+      }
+    }
+
+    await page.keyboard.press('Escape').catch(() => null);
+    await page.waitForTimeout(250);
+    await page.click('body', { position: { x: 10, y: 10 }, timeout: 3000 }).catch(() => null);
+    await page.waitForTimeout(250);
+
+    await listbox.waitFor({ state: 'hidden', timeout: 10000 }).catch(async () => {
+      await page.keyboard.press('Escape').catch(() => null);
+    });
   }
 }
 
@@ -40,9 +84,28 @@ export async function selectPicklist(page, label, value) {
  * Types the value, waits for autocomplete, clicks the first match.
  */
 export async function fillLookup(page, label, value) {
-  await page.getByLabel(label).fill(value);
-  await page.waitForTimeout(600); // SF autocomplete debounce
-  await page.getByRole('option', { name: value }).first().click();
+  const dialog = page.getByRole('dialog');
+  const isDialogOpen = await dialog.isVisible().catch(() => false);
+  const scope = isDialogOpen ? dialog : page;
+  const lookup = scope.getByRole('combobox', { name: label }).first();
+  await expect(lookup).toBeVisible({ timeout: 15000 });
+  await lookup.click();
+  await lookup.fill(value);
+  await page.waitForTimeout(900); // SF autocomplete debounce
+
+  const secondOption = page
+    .getByRole('option')
+    .filter({ hasText: /^(?!\-\-None\-\-).+/ })
+    .nth(1);
+
+  if (await secondOption.isVisible().catch(() => false)) {
+    await secondOption.click();
+  } else {
+    await lookup.press('ArrowDown');
+    await lookup.press('Enter');
+  }
+
+  await page.waitForTimeout(600);
 }
 
 /**

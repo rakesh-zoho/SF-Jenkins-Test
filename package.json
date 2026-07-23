@@ -18,7 +18,7 @@
     "setup": "node scripts/setup.js"
   },
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
+    "@playwright/test": "^1.60.0",
     "allure-playwright": "^3.6.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.0.0",
@@ -27,6 +27,12 @@
   "dependencies": {
     "allure": "^3.3.1",
     "allure-js-commons": "^3.0.0",
-    "dotenv": "^16.6.1"
+    "axios": "^1.16.0",
+    "dotenv": "^16.6.1",
+    "form-data": "^4.0.5",
+    "nodemailer": "^8.0.7",
+    "playwright": "^1.60.0",
+    "resend": "^6.12.2",
+    "uuid": "^14.0.0"
   }
 }

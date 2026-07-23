@@ -1,0 +1,697 @@
+- generic:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to Navigation" [ref=e4] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=e6]:
+        - button "Search" [ref=e12]:
+          - img [ref=e14]
+          - text: Search...
+        - navigation "Global Header" [ref=e17]:
+          - list [ref=e19]:
+            - listitem [ref=e20]:
+              - group [ref=e21]:
+                - button "Add favorite" [ref=e23] [cursor=pointer]:
+                  - generic [ref=e24]:
+                    - img [ref=e28]
+                    - tooltip "Add favorite"
+                - button "Favorites list" [ref=e32] [cursor=pointer]:
+                  - generic [ref=e33]:
+                    - img [ref=e37]
+                    - tooltip "Favorites list"
+            - listitem [ref=e40]:
+              - button "Global Actions" [ref=e42]:
+                - img [ref=e46]
+            - listitem [ref=e49]:
+              - button "Salesforce Help" [ref=e52] [cursor=pointer]:
+                - generic [ref=e53]:
+                  - img [ref=e57]
+                  - tooltip "Salesforce Help"
+            - listitem [ref=e60]:
+              - button "Setup" [ref=e66] [cursor=pointer]:
+                - generic [ref=e67]:
+                  - img [ref=e71]
+                  - tooltip "Setup"
+            - listitem [ref=e74]:
+              - button "Notifications" [ref=e77] [cursor=pointer]:
+                - generic [ref=e78]:
+                  - img [ref=e83]
+                  - tooltip "Notifications"
+            - listitem [ref=e87]:
+              - button "View profile" [ref=e90] [cursor=pointer]:
+                - generic [ref=e91]:
+                  - tooltip "View profile"
+    - generic [ref=e95]:
+      - generic [ref=e98]:
+        - generic [ref=e100]:
+          - navigation "App" [ref=e101]:
+            - button "App Launcher" [ref=e103] [cursor=pointer]:
+              - generic [ref=e114]: App Launcher
+          - heading "Sales" [level=1] [ref=e115]:
+            - generic "Sales" [ref=e116]
+        - navigation "Global" [ref=e119]:
+          - list [ref=e120]:
+            - listitem [ref=e121]:
+              - link "Home" [ref=e122] [cursor=pointer]:
+                - /url: /lightning/page/home
+                - generic [ref=e123]: Home
+            - listitem [ref=e124]:
+              - link "Opportunities" [ref=e125] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+                - generic [ref=e126]: Opportunities
+              - button "Opportunities List" [ref=e130] [cursor=pointer]:
+                - img [ref=e134]
+                - generic [ref=e137]: Opportunities List
+            - listitem [ref=e138] [cursor=pointer]:
+              - link "Leads" [ref=e139]:
+                - /url: /lightning/o/Lead/home
+                - generic [ref=e140]: Leads
+              - button "Leads List" [ref=e144]:
+                - img [ref=e148]
+                - generic [ref=e151]: Leads List
+            - listitem [ref=e152]:
+              - link "Tasks" [ref=e153] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+                - generic [ref=e154]: Tasks
+              - button "Tasks List" [ref=e158] [cursor=pointer]:
+                - img [ref=e162]
+                - generic [ref=e165]: Tasks List
+            - listitem [ref=e166]:
+              - link "Files" [ref=e167] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+                - generic [ref=e168]: Files
+              - button "Files List" [ref=e172] [cursor=pointer]:
+                - img [ref=e176]
+                - generic [ref=e179]: Files List
+            - listitem [ref=e180]:
+              - link "Accounts" [ref=e181] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+                - generic [ref=e182]: Accounts
+              - button "Accounts List" [ref=e186] [cursor=pointer]:
+                - img [ref=e190]
+                - generic [ref=e193]: Accounts List
+            - listitem [ref=e194]:
+              - link "Contacts" [ref=e195] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+                - generic [ref=e196]: Contacts
+              - button "Contacts List" [ref=e200] [cursor=pointer]:
+                - img [ref=e204]
+                - generic [ref=e207]: Contacts List
+            - listitem [ref=e208]:
+              - link "Campaigns" [ref=e209] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+                - generic [ref=e210]: Campaigns
+              - button "Campaigns List" [ref=e214] [cursor=pointer]:
+                - img [ref=e218]
+                - generic [ref=e221]: Campaigns List
+            - listitem [ref=e222]:
+              - link "Dashboards" [ref=e223] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+                - generic [ref=e224]: Dashboards
+              - button "Dashboards List" [ref=e228] [cursor=pointer]:
+                - img [ref=e232]
+                - generic [ref=e235]: Dashboards List
+            - listitem [ref=e236]:
+              - link "Reports" [ref=e237] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+                - generic [ref=e238]: Reports
+              - button "Reports List" [ref=e242] [cursor=pointer]:
+                - img [ref=e246]
+                - generic [ref=e249]: Reports List
+            - listitem [ref=e250]:
+              - link "Chatter" [ref=e251] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+                - generic [ref=e252]: Chatter
+            - listitem [ref=e253]:
+              - button "Show more navigation items" [ref=e255] [cursor=pointer]:
+                - generic [ref=e256]: More
+                - img [ref=e260]
+                - generic [ref=e263]: Show more navigation items
+            - listitem [ref=e264]:
+              - button "Edit nav items" [ref=e266] [cursor=pointer]:
+                - img [ref=e268]
+                - generic [ref=e271]: Edit nav items
+      - main [ref=e273]:
+        - generic [ref=e283]:
+          - generic [ref=e285]:
+            - generic [ref=e286]:
+              - generic [ref=e288]:
+                - img [ref=e292]
+                - generic [ref=e293]:
+                  - heading "Leads" [level=1] [ref=e297]
+                  - generic [ref=e298]:
+                    - generic [ref=e300] [cursor=pointer]:
+                      - heading "Leads Recently Viewed" [level=1] [ref=e301]:
+                        - generic [ref=e302]: Leads
+                        - generic [ref=e303]: Recently Viewed
+                      - 'button "Select a List View: Leads" [active] [ref=e306]':
+                        - generic [ref=e307]:
+                          - img
+                        - generic [ref=e308]: "Select a List View: Leads"
+                    - button "This list is pinned." [disabled] [ref=e312] [cursor=pointer]:
+                      - img [ref=e314]
+                      - generic [ref=e317]: This list is pinned.
+              - list [ref=e320]:
+                - listitem [ref=e321]:
+                  - button "New" [ref=e322] [cursor=pointer]:
+                    - generic "New" [ref=e323]
+                - listitem [ref=e324]:
+                  - button "Intelligence View" [ref=e325] [cursor=pointer]:
+                    - generic "Intelligence View" [ref=e326]
+                - listitem [ref=e327]:
+                  - button "Import" [ref=e328] [cursor=pointer]:
+                    - generic "Import" [ref=e329]
+                - listitem [ref=e330]:
+                  - button "Change Status" [ref=e331] [cursor=pointer]:
+                    - generic "Change Status" [ref=e332]
+                - listitem [ref=e333]:
+                  - button "Change Owner" [ref=e334] [cursor=pointer]:
+                    - generic "Change Owner" [ref=e335]
+                - listitem [ref=e336]:
+                  - button "Show more actions" [ref=e341] [cursor=pointer]:
+                    - generic [ref=e343]:
+                      - generic [ref=e344]:
+                        - img
+                      - generic [ref=e345]: Show more actions
+            - generic [ref=e346]:
+              - paragraph [ref=e348]:
+                - generic [ref=e350]:
+                  - status "Recently Viewed" [ref=e351]: 50+ items •
+                  - text: Updated a few seconds ago
+              - generic [ref=e357]:
+                - generic [ref=e358]: Search this list...
+                - generic [ref=e359]:
+                  - searchbox "Search this list..." [ref=e360]
+                  - img [ref=e361]
+              - generic [ref=e364]:
+                - button "List View Controls" [ref=e368] [cursor=pointer]:
+                  - img [ref=e370]
+                  - img [ref=e374]
+                  - generic [ref=e377]: List View Controls
+                - button "Select list display" [ref=e380] [cursor=pointer]:
+                  - img [ref=e382]
+                  - img [ref=e386]
+                  - generic [ref=e389]: Select list display
+                - generic [ref=e391]:
+                  - button "Refresh" [ref=e394] [cursor=pointer]:
+                    - img [ref=e396]
+                    - generic [ref=e399]: Refresh
+                  - button "Column sort" [ref=e402] [cursor=pointer]:
+                    - img [ref=e404]
+                    - generic [ref=e407]: Column sort
+                  - button "Edit List" [ref=e410] [cursor=pointer]:
+                    - img [ref=e412]
+                    - generic [ref=e415]: Edit List
+                  - group [ref=e416]:
+                    - generic [ref=e418]:
+                      - generic:
+                        - generic:
+                          - button "Charts" [disabled]:
+                            - generic:
+                              - img
+                            - generic: Charts
+                      - generic:
+                        - generic:
+                          - button "Filters" [disabled]:
+                            - generic:
+                              - img
+                            - generic: Filters
+          - generic [ref=e425]:
+            - generic [ref=e426]: Navigation Mode
+            - grid [ref=e430]:
+              - rowgroup:
+                - row "Row Number Choose a Row Select 50 items Name Title Company Phone Mobile Email Lead Status Owner Alias Action":
+                  - columnheader "Row Number":
+                    - generic [ref=e433]:
+                      - generic "Row Number"
+                  - gridcell "Choose a Row Select 50 items":
+                    - generic [ref=e434]:
+                      - generic [ref=e435]: Choose a Row
+                      - generic [ref=e437]:
+                        - checkbox "Select 50 items" [ref=e438]
+                        - generic [ref=e441]: Select 50 items
+                  - columnheader "Name":
+                    - generic [ref=e443]:
+                      - 'button "Sort by: Name" [ref=e444] [cursor=pointer]':
+                        - generic [ref=e445]: "Sort by:"
+                        - generic "Name" [ref=e446]
+                      - generic [ref=e447]: "Sorted: None"
+                      - button "Show Name column actions" [ref=e449] [cursor=pointer]:
+                        - img [ref=e451]
+                        - generic [ref=e454]: Show Name column actions
+                      - slider "Name column width" [ref=e455]: "338"
+                  - columnheader "Title":
+                    - generic [ref=e459]:
+                      - 'button "Sort by: Title" [ref=e460] [cursor=pointer]':
+                        - generic [ref=e461]: "Sort by:"
+                        - generic "Title" [ref=e462]
+                      - generic [ref=e463]: "Sorted: None"
+                      - button "Show Title column actions" [ref=e465] [cursor=pointer]:
+                        - img [ref=e467]
+                        - generic [ref=e470]: Show Title column actions
+                      - slider "Title column width" [ref=e471]: "63"
+                  - columnheader "Company":
+                    - generic [ref=e475]:
+                      - 'button "Sort by: Company" [ref=e476] [cursor=pointer]':
+                        - generic [ref=e477]: "Sort by:"
+                        - generic "Company" [ref=e478]
+                      - generic [ref=e479]: "Sorted: None"
+                      - button "Show Company column actions" [ref=e481] [cursor=pointer]:
+                        - img [ref=e483]
+                        - generic [ref=e486]: Show Company column actions
+                      - slider "Company column width" [ref=e487]: "265"
+                  - columnheader "Phone":
+                    - generic [ref=e491]:
+                      - 'button "Sort by: Phone" [ref=e492] [cursor=pointer]':
+                        - generic [ref=e493]: "Sort by:"
+                        - generic "Phone" [ref=e494]
+                      - generic [ref=e495]: "Sorted: None"
+                      - button "Show Phone column actions" [ref=e497] [cursor=pointer]:
+                        - img [ref=e499]
+                        - generic [ref=e502]: Show Phone column actions
+                      - slider "Phone column width" [ref=e503]: "63"
+                  - columnheader "Mobile":
+                    - generic [ref=e507]:
+                      - 'button "Sort by: Mobile" [ref=e508] [cursor=pointer]':
+                        - generic [ref=e509]: "Sort by:"
+                        - generic "Mobile" [ref=e510]
+                      - generic [ref=e511]: "Sorted: None"
+                      - button "Show Mobile column actions" [ref=e513] [cursor=pointer]:
+                        - img [ref=e515]
+                        - generic [ref=e518]: Show Mobile column actions
+                      - slider "Mobile column width" [ref=e519]: "63"
+                  - columnheader "Email":
+                    - generic [ref=e523]:
+                      - 'button "Sort by: Email" [ref=e524] [cursor=pointer]':
+                        - generic [ref=e525]: "Sort by:"
+                        - generic "Email" [ref=e526]
+                      - generic [ref=e527]: "Sorted: None"
+                      - button "Show Email column actions" [ref=e529] [cursor=pointer]:
+                        - img [ref=e531]
+                        - generic [ref=e534]: Show Email column actions
+                      - slider "Email column width" [ref=e535]: "63"
+                  - columnheader "Lead Status":
+                    - generic [ref=e539]:
+                      - 'button "Sort by: Lead Status" [ref=e540] [cursor=pointer]':
+                        - generic [ref=e541]: "Sort by:"
+                        - generic "Lead Status" [ref=e542]
+                      - generic [ref=e543]: "Sorted: None"
+                      - button "Show Lead Status column actions" [ref=e545] [cursor=pointer]:
+                        - img [ref=e547]
+                        - generic [ref=e550]: Show Lead Status column actions
+                      - slider "Lead Status column width" [ref=e551]: "126"
+                  - columnheader "Owner Alias":
+                    - generic [ref=e555]:
+                      - 'button "Sort by: Owner Alias" [ref=e556] [cursor=pointer]':
+                        - generic [ref=e557]: "Sort by:"
+                        - generic "Owner Alias" [ref=e558]
+                      - generic [ref=e559]: "Sorted: None"
+                      - button "Show Owner Alias column actions" [ref=e561] [cursor=pointer]:
+                        - img [ref=e563]
+                        - generic [ref=e566]: Show Owner Alias column actions
+                      - slider "Owner Alias column width" [ref=e567]: "130"
+                  - columnheader "Action":
+                    - generic [ref=e572]:
+                      - generic "Action"
+              - rowgroup [ref=e573]:
+                - row "Select Item 1 Choose a Row KeyboardTest User KeyboardCorp Open RShar Show Actions" [ref=e574]:
+                  - gridcell [ref=e575]
+                  - gridcell "Select Item 1 Choose a Row" [ref=e579]:
+                    - generic [ref=e580]:
+                      - checkbox "Select Item 1 Choose a Row" [ref=e581]
+                      - generic [ref=e584]: Select Item 1
+                  - rowheader "KeyboardTest User" [ref=e585]:
+                    - link "KeyboardTest User" [ref=e592] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdRhUAL/view
+                      - generic [ref=e593]: KeyboardTest User
+                  - gridcell [ref=e594]
+                  - gridcell "KeyboardCorp" [ref=e595]:
+                    - link "KeyboardCorp" [ref=e602] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdRhUAL/view
+                      - generic [ref=e603]: KeyboardCorp
+                  - gridcell [ref=e604]
+                  - gridcell [ref=e605]
+                  - gridcell [ref=e606]
+                  - gridcell "Open" [ref=e607]:
+                    - generic [ref=e611]: Open
+                  - gridcell "RShar" [ref=e612]:
+                    - link "RShar" [ref=e618] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e619]: RShar
+                  - gridcell "Show Actions" [ref=e620]:
+                    - button "Show Actions" [ref=e626] [cursor=pointer]:
+                      - img [ref=e628]
+                      - generic [ref=e631]: Show Actions
+                - row "Select Item 2 Mark Wilson Innovation Labs Open RShar Show Actions" [ref=e632]:
+                  - gridcell [ref=e633]
+                  - gridcell "Select Item 2" [ref=e637]:
+                    - generic [ref=e638]:
+                      - checkbox "Select Item 2" [ref=e639]
+                      - generic [ref=e642]: Select Item 2
+                  - rowheader "Mark Wilson" [ref=e643]:
+                    - link "Mark Wilson" [ref=e650] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdQ5UAL/view
+                      - generic [ref=e651]: Mark Wilson
+                  - gridcell [ref=e652]
+                  - gridcell "Innovation Labs" [ref=e653]:
+                    - link "Innovation Labs" [ref=e660] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdQ5UAL/view
+                      - generic [ref=e661]: Innovation Labs
+                  - gridcell [ref=e662]
+                  - gridcell [ref=e663]
+                  - gridcell [ref=e664]
+                  - gridcell "Open" [ref=e665]:
+                    - generic [ref=e669]: Open
+                  - gridcell "RShar" [ref=e670]:
+                    - link "RShar" [ref=e676] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e677]: RShar
+                  - gridcell "Show Actions" [ref=e678]:
+                    - button "Show Actions" [ref=e684] [cursor=pointer]:
+                      - img [ref=e686]
+                      - generic [ref=e689]: Show Actions
+                - row "Select Item 3 François O'Sullivan Société Générale & Partners Open RShar Show Actions" [ref=e690]:
+                  - gridcell [ref=e691]
+                  - gridcell "Select Item 3" [ref=e695]:
+                    - generic [ref=e696]:
+                      - checkbox "Select Item 3" [ref=e697]
+                      - generic [ref=e700]: Select Item 3
+                  - rowheader "François O'Sullivan" [ref=e701]:
+                    - link "François O'Sullivan" [ref=e708] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdOTUA1/view
+                      - generic [ref=e709]: François O'Sullivan
+                  - gridcell [ref=e710]
+                  - gridcell "Société Générale & Partners" [ref=e711]:
+                    - link "Société Générale & Partners" [ref=e718] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdOTUA1/view
+                      - generic [ref=e719]: Société Générale & Partners
+                  - gridcell [ref=e720]
+                  - gridcell [ref=e721]
+                  - gridcell [ref=e722]
+                  - gridcell "Open" [ref=e723]:
+                    - generic [ref=e727]: Open
+                  - gridcell "RShar" [ref=e728]:
+                    - link "RShar" [ref=e734] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e735]: RShar
+                  - gridcell "Show Actions" [ref=e736]:
+                    - button "Show Actions" [ref=e742] [cursor=pointer]:
+                      - img [ref=e744]
+                      - generic [ref=e747]: Show Actions
+                - row "Select Item 4 David Miller Premier Industries Open RShar Show Actions" [ref=e748]:
+                  - gridcell [ref=e749]
+                  - gridcell "Select Item 4" [ref=e753]:
+                    - generic [ref=e754]:
+                      - checkbox "Select Item 4" [ref=e755]
+                      - generic [ref=e758]: Select Item 4
+                  - rowheader "David Miller" [ref=e759]:
+                    - link "David Miller" [ref=e766] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDcp0UAD/view
+                      - generic [ref=e767]: David Miller
+                  - gridcell [ref=e768]
+                  - gridcell "Premier Industries" [ref=e769]:
+                    - link "Premier Industries" [ref=e776] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDcp0UAD/view
+                      - generic [ref=e777]: Premier Industries
+                  - gridcell [ref=e778]
+                  - gridcell [ref=e779]
+                  - gridcell [ref=e780]
+                  - gridcell "Open" [ref=e781]:
+                    - generic [ref=e785]: Open
+                  - gridcell "RShar" [ref=e786]:
+                    - link "RShar" [ref=e792] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e793]: RShar
+                  - gridcell "Show Actions" [ref=e794]:
+                    - button "Show Actions" [ref=e800] [cursor=pointer]:
+                      - img [ref=e802]
+                      - generic [ref=e805]: Show Actions
+                - row "Select Item 5 Emily Davis Growth Ventures Open RShar Show Actions" [ref=e806]:
+                  - gridcell [ref=e807]
+                  - gridcell "Select Item 5" [ref=e811]:
+                    - generic [ref=e812]:
+                      - checkbox "Select Item 5" [ref=e813]
+                      - generic [ref=e816]: Select Item 5
+                  - rowheader "Emily Davis" [ref=e817]:
+                    - link "Emily Davis" [ref=e824] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdLFUA1/view
+                      - generic [ref=e825]: Emily Davis
+                  - gridcell [ref=e826]
+                  - gridcell "Growth Ventures" [ref=e827]:
+                    - link "Growth Ventures" [ref=e834] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdLFUA1/view
+                      - generic [ref=e835]: Growth Ventures
+                  - gridcell [ref=e836]
+                  - gridcell [ref=e837]
+                  - gridcell [ref=e838]
+                  - gridcell "Open" [ref=e839]:
+                    - generic [ref=e843]: Open
+                  - gridcell "RShar" [ref=e844]:
+                    - link "RShar" [ref=e850] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e851]: RShar
+                  - gridcell "Show Actions" [ref=e852]:
+                    - button "Show Actions" [ref=e858] [cursor=pointer]:
+                      - img [ref=e860]
+                      - generic [ref=e863]: Show Actions
+                - row "Select Item 6 Robert Brown Enterprise Corp Open RShar Show Actions" [ref=e864]:
+                  - gridcell [ref=e865]
+                  - gridcell "Select Item 6" [ref=e869]:
+                    - generic [ref=e870]:
+                      - checkbox "Select Item 6" [ref=e871]
+                      - generic [ref=e874]: Select Item 6
+                  - rowheader "Robert Brown" [ref=e875]:
+                    - link "Robert Brown" [ref=e882] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdJdUAL/view
+                      - generic [ref=e883]: Robert Brown
+                  - gridcell [ref=e884]
+                  - gridcell "Enterprise Corp" [ref=e885]:
+                    - link "Enterprise Corp" [ref=e892] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdJdUAL/view
+                      - generic [ref=e893]: Enterprise Corp
+                  - gridcell [ref=e894]
+                  - gridcell [ref=e895]
+                  - gridcell [ref=e896]
+                  - gridcell "Open" [ref=e897]:
+                    - generic [ref=e901]: Open
+                  - gridcell "RShar" [ref=e902]:
+                    - link "RShar" [ref=e908] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e909]: RShar
+                  - gridcell "Show Actions" [ref=e910]:
+                    - button "Show Actions" [ref=e916] [cursor=pointer]:
+                      - img [ref=e918]
+                      - generic [ref=e921]: Show Actions
+                - row "Select Item 7 Jane Smith Tech Innovations Inc (555) 123-4567 Open RShar Show Actions" [ref=e922]:
+                  - gridcell [ref=e923]
+                  - gridcell "Select Item 7" [ref=e927]:
+                    - generic [ref=e928]:
+                      - checkbox "Select Item 7" [ref=e929]
+                      - generic [ref=e932]: Select Item 7
+                  - rowheader "Jane Smith" [ref=e933]:
+                    - link "Jane Smith" [ref=e940] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdI1UAL/view
+                      - generic [ref=e941]: Jane Smith
+                  - gridcell [ref=e942]
+                  - gridcell "Tech Innovations Inc" [ref=e943]:
+                    - link "Tech Innovations Inc" [ref=e950] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDdI1UAL/view
+                      - generic [ref=e951]: Tech Innovations Inc
+                  - gridcell "(555) 123-4567" [ref=e952]:
+                    - link "(555) 123-4567" [ref=e957] [cursor=pointer]:
+                      - /url: tel:(555) 123-4567
+                  - gridcell [ref=e958]
+                  - gridcell [ref=e959]
+                  - gridcell "Open" [ref=e960]:
+                    - generic [ref=e964]: Open
+                  - gridcell "RShar" [ref=e965]:
+                    - link "RShar" [ref=e971] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e972]: RShar
+                  - gridcell "Show Actions" [ref=e973]:
+                    - button "Show Actions" [ref=e979] [cursor=pointer]:
+                      - img [ref=e981]
+                      - generic [ref=e984]: Show Actions
+                - row "Select Item 8 John Doe Acme Corporation Open RShar Show Actions" [ref=e985]:
+                  - gridcell [ref=e986]
+                  - gridcell "Select Item 8" [ref=e990]:
+                    - generic [ref=e991]:
+                      - checkbox "Select Item 8" [ref=e992]
+                      - generic [ref=e995]: Select Item 8
+                  - rowheader "John Doe" [ref=e996]:
+                    - link "John Doe" [ref=e1003] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDaC6UAL/view
+                      - generic [ref=e1004]: John Doe
+                  - gridcell [ref=e1005]
+                  - gridcell "Acme Corporation" [ref=e1006]:
+                    - link "Acme Corporation" [ref=e1013] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDaC6UAL/view
+                      - generic [ref=e1014]: Acme Corporation
+                  - gridcell [ref=e1015]
+                  - gridcell [ref=e1016]
+                  - gridcell [ref=e1017]
+                  - gridcell "Open" [ref=e1018]:
+                    - generic [ref=e1022]: Open
+                  - gridcell "RShar" [ref=e1023]:
+                    - link "RShar" [ref=e1029] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e1030]: RShar
+                  - gridcell "Show Actions" [ref=e1031]:
+                    - button "Show Actions" [ref=e1037] [cursor=pointer]:
+                      - img [ref=e1039]
+                      - generic [ref=e1042]: Show Actions
+                - row "Select Item 9 Mark Wilson Innovation Labs Open RShar Show Actions" [ref=e1043]:
+                  - gridcell [ref=e1044]
+                  - gridcell "Select Item 9" [ref=e1048]:
+                    - generic [ref=e1049]:
+                      - checkbox "Select Item 9" [ref=e1050]
+                      - generic [ref=e1053]: Select Item 9
+                  - rowheader "Mark Wilson" [ref=e1054]:
+                    - link "Mark Wilson" [ref=e1061] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDPAEUA5/view
+                      - generic [ref=e1062]: Mark Wilson
+                  - gridcell [ref=e1063]
+                  - gridcell "Innovation Labs" [ref=e1064]:
+                    - link "Innovation Labs" [ref=e1071] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDPAEUA5/view
+                      - generic [ref=e1072]: Innovation Labs
+                  - gridcell [ref=e1073]
+                  - gridcell [ref=e1074]
+                  - gridcell [ref=e1075]
+                  - gridcell "Open" [ref=e1076]:
+                    - generic [ref=e1080]: Open
+                  - gridcell "RShar" [ref=e1081]:
+                    - link "RShar" [ref=e1087] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e1088]: RShar
+                  - gridcell "Show Actions" [ref=e1089]:
+                    - button "Show Actions" [ref=e1095] [cursor=pointer]:
+                      - img [ref=e1097]
+                      - generic [ref=e1100]: Show Actions
+                - row "Select Item 10 François O'Sullivan Société Générale & Partners francois@test.com Open RShar Show Actions" [ref=e1101]:
+                  - gridcell [ref=e1102]
+                  - gridcell "Select Item 10" [ref=e1106]:
+                    - generic [ref=e1107]:
+                      - checkbox "Select Item 10" [ref=e1108]
+                      - generic [ref=e1111]: Select Item 10
+                  - rowheader "François O'Sullivan" [ref=e1112]:
+                    - link "François O'Sullivan" [ref=e1119] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDUD7UAP/view
+                      - generic [ref=e1120]: François O'Sullivan
+                  - gridcell [ref=e1121]
+                  - gridcell "Société Générale & Partners" [ref=e1122]:
+                    - link "Société Générale & Partners" [ref=e1129] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDUD7UAP/view
+                      - generic [ref=e1130]: Société Générale & Partners
+                  - gridcell [ref=e1131]
+                  - gridcell [ref=e1132]
+                  - gridcell "francois@test.com" [ref=e1133]:
+                    - link "francois@test.com" [ref=e1139] [cursor=pointer]:
+                      - /url: mailto:francois@test.com
+                  - gridcell "Open" [ref=e1140]:
+                    - generic [ref=e1144]: Open
+                  - gridcell "RShar" [ref=e1145]:
+                    - link "RShar" [ref=e1151] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e1152]: RShar
+                  - gridcell "Show Actions" [ref=e1153]:
+                    - button "Show Actions" [ref=e1159] [cursor=pointer]:
+                      - img [ref=e1161]
+                      - generic [ref=e1164]: Show Actions
+                - row "Select Item 11 David Miller Premier Industries Open RShar Show Actions" [ref=e1165]:
+                  - gridcell [ref=e1166]
+                  - gridcell "Select Item 11" [ref=e1170]:
+                    - generic [ref=e1171]:
+                      - checkbox "Select Item 11" [ref=e1172]
+                      - generic [ref=e1175]: Select Item 11
+                  - rowheader "David Miller" [ref=e1176]:
+                    - link "David Miller" [ref=e1183] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDU9tUAH/view
+                      - generic [ref=e1184]: David Miller
+                  - gridcell [ref=e1185]
+                  - gridcell "Premier Industries" [ref=e1186]:
+                    - link "Premier Industries" [ref=e1193] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDU9tUAH/view
+                      - generic [ref=e1194]: Premier Industries
+                  - gridcell [ref=e1195]
+                  - gridcell [ref=e1196]
+                  - gridcell [ref=e1197]
+                  - gridcell "Open" [ref=e1198]:
+                    - generic [ref=e1202]: Open
+                  - gridcell "RShar" [ref=e1203]:
+                    - link "RShar" [ref=e1209] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e1210]: RShar
+                  - gridcell "Show Actions" [ref=e1211]:
+                    - button "Show Actions" [ref=e1217] [cursor=pointer]:
+                      - img [ref=e1219]
+                      - generic [ref=e1222]: Show Actions
+                - row "Select Item 12 Emily Davis Growth Ventures Open RShar Show Actions" [ref=e1223]:
+                  - gridcell [ref=e1224]
+                  - gridcell "Select Item 12" [ref=e1228]:
+                    - generic [ref=e1229]:
+                      - checkbox "Select Item 12" [ref=e1230]
+                      - generic [ref=e1233]: Select Item 12
+                  - rowheader "Emily Davis" [ref=e1234]:
+                    - link "Emily Davis" [ref=e1241] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDU6fUAH/view
+                      - generic [ref=e1242]: Emily Davis
+                  - gridcell [ref=e1243]
+                  - gridcell "Growth Ventures" [ref=e1244]:
+                    - link "Growth Ventures" [ref=e1251] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDU6fUAH/view
+                      - generic [ref=e1252]: Growth Ventures
+                  - gridcell [ref=e1253]
+                  - gridcell [ref=e1254]
+                  - gridcell [ref=e1255]
+                  - gridcell "Open" [ref=e1256]:
+                    - generic [ref=e1260]: Open
+                  - gridcell "RShar" [ref=e1261]:
+                    - link "RShar" [ref=e1267] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e1268]: RShar
+                  - gridcell "Show Actions" [ref=e1269]:
+                    - button "Show Actions" [ref=e1275] [cursor=pointer]:
+                      - img [ref=e1277]
+                      - generic [ref=e1280]: Show Actions
+                - row "Select Item 13 Robert Brown Enterprise Corp robert.brown@enterprisecorp.com Open RShar Show Actions" [ref=e1281]:
+                  - gridcell [ref=e1282]
+                  - gridcell "Select Item 13" [ref=e1286]:
+                    - generic [ref=e1287]:
+                      - checkbox "Select Item 13" [ref=e1288]
+                      - generic [ref=e1291]: Select Item 13
+                  - rowheader "Robert Brown" [ref=e1292]:
+                    - link "Robert Brown" [ref=e1299] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDU1pUAH/view
+                      - generic [ref=e1300]: Robert Brown
+                  - gridcell [ref=e1301]
+                  - gridcell "Enterprise Corp" [ref=e1302]:
+                    - link "Enterprise Corp" [ref=e1309] [cursor=pointer]:
+                      - /url: /lightning/r/00QdN00000EDU1pUAH/view
+                      - generic [ref=e1310]: Enterprise Corp
+                  - gridcell [ref=e1311]
+                  - gridcell [ref=e1312]
+                  - gridcell "robert.brown@enterprisecorp.com" [ref=e1313]:
+                    - link "robert.brown@enterprisecorp.com" [ref=e1319] [cursor=pointer]:
+                      - /url: mailto:robert.brown@enterprisecorp.com
+                  - gridcell "Open" [ref=e1320]:
+                    - generic [ref=e1324]: Open
+                  - gridcell "RShar" [ref=e1325]:
+                    - link "RShar" [ref=e1331] [cursor=pointer]:
+                      - /url: /lightning/r/005dN00000AKqG1QAL/view
+                      - generic [ref=e1332]: RShar
+                  - gridcell "Show Actions" [ref=e1333]:
+                    - button "Show Actions" [ref=e1339] [cursor=pointer]:
+                      - img [ref=e1341]
+                      - generic [ref=e1344]: Show Actions
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=e1348]:
+          - listitem [ref=e1349]:
+            - button "To Do List" [ref=e1352] [cursor=pointer]:
+              - img [ref=e1356]
+              - generic [ref=e1359]: To Do List
+  - generic:
+    - status

@@ -4,9 +4,9 @@
 ---
 
 ## Stack
-- **Playwright Test Agents** v1.56+ (official Microsoft — `npx playwright init-agents --loop=vscode`)
+- **Playwright Test Agents** v1.59+ (official Microsoft — `npx playwright init-agents --loop=vscode`)
 - **VS Code** v1.105+ with GitHub Copilot Chat (agent mode)
-- **Agent files**: `.github/agents/` — Planner, Generator, Healer `.chatmode.md`
+- **Agent files**: `.github/agents/` — Planner, Generator, Healer `.agents.md`
 - **MCP**: `.vscode/mcp.json` — connects Copilot to Playwright's browser tools
 - **Auth**: `utils/sf-helpers.js` globalSetup → `reports/.auth-state.json` → all tests reuse
 - **Reports**: Allure HTML + Playwright HTML + JUnit (for CI)
@@ -61,10 +61,12 @@ await page.getByRole('option', { name: 'Needs Analysis' }).click();
 
 ### Lookup field (Account Name etc.)
 ```javascript
-await page.getByLabel('Account Name').fill('Acme Corp');
-await page.waitForTimeout(600); // autocomplete debounce
-await page.getByRole('option', { name: 'Acme Corp' }).first().click();
+import { fillLookup } from '../utils/locator-utils.js';
+await fillLookup(page, 'Account Name', 'Acme Corp');
 ```
+
+- Use lookup autocomplete for Salesforce lookup fields.
+- Search the label, wait for the list, then choose the first valid option.
 
 ### Date field (SF requires MM/DD/YYYY)
 ```javascript

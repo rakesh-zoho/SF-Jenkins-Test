@@ -1,0 +1,250 @@
+- generic [active]:
+  - generic:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link [ref=e5] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Navigation
+        - link [ref=e6] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - text: Skip to Main Content
+        - generic [ref=e7]:
+          - button [ref=e13]:
+            - img [ref=e15]
+            - text: Search...
+          - navigation [ref=e18]:
+            - list [ref=e20]:
+              - listitem [ref=e21]:
+                - group [ref=e22]:
+                  - button [ref=e24] [cursor=pointer]:
+                    - img [ref=e29]
+                  - button [ref=e33] [cursor=pointer]:
+                    - img [ref=e38]
+              - listitem [ref=e41]:
+                - button [disabled] [ref=e43]:
+                  - img [ref=e47]
+              - listitem [ref=e50]:
+                - button [ref=e52] [cursor=pointer]:
+                  - img [ref=e57]
+              - listitem [ref=e60]:
+                - button [ref=e63] [cursor=pointer]:
+                  - img [ref=e68]
+              - listitem [ref=e71]:
+                - button [ref=e77] [cursor=pointer]:
+                  - img [ref=e82]
+              - listitem [ref=e85]:
+                - button [ref=e88] [cursor=pointer]:
+                  - img [ref=e94]
+              - listitem [ref=e98]:
+                - button [ref=e101] [cursor=pointer]
+      - generic [ref=e106]:
+        - generic [ref=e109]:
+          - generic [ref=e111]:
+            - navigation [ref=e112]:
+              - button [ref=e114] [cursor=pointer]:
+                - generic [ref=e125]: App Launcher
+            - heading [level=1] [ref=e126]:
+              - generic [ref=e127]: Sales
+          - navigation [ref=e130]:
+            - list [ref=e131]:
+              - listitem [ref=e132]:
+                - link [ref=e133] [cursor=pointer]:
+                  - /url: /lightning/page/home
+                  - generic [ref=e134]: Home
+              - listitem [ref=e135]:
+                - link [ref=e136] [cursor=pointer]:
+                  - /url: /lightning/o/Opportunity/home
+                  - generic [ref=e137]: Opportunities
+                - button [ref=e141] [cursor=pointer]:
+                  - img [ref=e145]
+                  - generic [ref=e148]: Opportunities List
+              - listitem [ref=e149]:
+                - link [ref=e150] [cursor=pointer]:
+                  - /url: /lightning/o/Lead/home
+                  - generic [ref=e151]: Leads
+                - button [ref=e155] [cursor=pointer]:
+                  - img [ref=e159]
+                  - generic [ref=e162]: Leads List
+              - listitem [ref=e163]:
+                - link [ref=e164] [cursor=pointer]:
+                  - /url: /lightning/o/Task/home
+                  - generic [ref=e165]: Tasks
+                - button [ref=e169] [cursor=pointer]:
+                  - img [ref=e173]
+                  - generic [ref=e176]: Tasks List
+              - listitem [ref=e177]:
+                - link [ref=e178] [cursor=pointer]:
+                  - /url: /lightning/o/ContentDocument/home
+                  - generic [ref=e179]: Files
+                - button [ref=e183] [cursor=pointer]:
+                  - img [ref=e187]
+                  - generic [ref=e190]: Files List
+              - listitem [ref=e191]:
+                - link [ref=e192] [cursor=pointer]:
+                  - /url: /lightning/o/Account/home
+                  - generic [ref=e193]: Accounts
+                - button [ref=e197] [cursor=pointer]:
+                  - img [ref=e201]
+                  - generic [ref=e204]: Accounts List
+              - listitem [ref=e205]:
+                - link [ref=e206] [cursor=pointer]:
+                  - /url: /lightning/o/Contact/home
+                  - generic [ref=e207]: Contacts
+                - button [ref=e211] [cursor=pointer]:
+                  - img [ref=e215]
+                  - generic [ref=e218]: Contacts List
+              - listitem [ref=e219]:
+                - link [ref=e220] [cursor=pointer]:
+                  - /url: /lightning/o/Campaign/home
+                  - generic [ref=e221]: Campaigns
+                - button [ref=e225] [cursor=pointer]:
+                  - img [ref=e229]
+                  - generic [ref=e232]: Campaigns List
+              - listitem [ref=e233]:
+                - link [ref=e234] [cursor=pointer]:
+                  - /url: /lightning/o/Dashboard/home
+                  - generic [ref=e235]: Dashboards
+                - button [ref=e239] [cursor=pointer]:
+                  - img [ref=e243]
+                  - generic [ref=e246]: Dashboards List
+              - listitem [ref=e247]:
+                - link [ref=e248] [cursor=pointer]:
+                  - /url: /lightning/o/Report/home
+                  - generic [ref=e249]: Reports
+                - button [ref=e253] [cursor=pointer]:
+                  - img [ref=e257]
+                  - generic [ref=e260]: Reports List
+              - listitem [ref=e261]:
+                - link [ref=e262] [cursor=pointer]:
+                  - /url: /lightning/page/chatter
+                  - generic [ref=e263]: Chatter
+              - listitem [ref=e264]:
+                - button [ref=e266] [cursor=pointer]:
+                  - generic [ref=e267]: More
+                  - img [ref=e271]
+                  - generic [ref=e274]: Show more navigation items
+              - listitem [ref=e275]:
+                - button [ref=e277] [cursor=pointer]:
+                  - img [ref=e279]
+                  - generic [ref=e282]: Edit nav items
+        - main [ref=e284]
+      - list [ref=e291]:
+        - listitem [ref=e292]:
+          - button [ref=e295] [cursor=pointer]:
+            - img [ref=e299]
+            - generic [ref=e302]: To Do List
+    - dialog "New Opportunity" [ref=e305]:
+      - generic [ref=e306]:
+        - button "Cancel and close" [ref=e307] [cursor=pointer]:
+          - img [ref=e309]
+          - generic [ref=e312]: Cancel and close
+        - generic [ref=e313]:
+          - generic [ref=e320]:
+            - heading "New Opportunity" [level=2] [ref=e322]
+            - generic [ref=e324]:
+              - generic [ref=e325]: "* = Required Information"
+              - generic [ref=e327]:
+                - generic [ref=e332]:
+                  - generic [ref=e334]:
+                    - heading "Opportunity Information" [level=3] [ref=e335]:
+                      - generic [ref=e336]: Opportunity Information
+                    - list [ref=e338]:
+                      - generic [ref=e339]:
+                        - generic [ref=e341]:
+                          - listitem [ref=e343]:
+                            - generic [ref=e344]:
+                              - generic [ref=e345]: Opportunity Owner
+                              - generic [ref=e357]: Rakesh Sharma
+                          - listitem [ref=e359]:
+                            - generic [ref=e363]:
+                              - group [ref=e364]:
+                                - generic [ref=e365]: "*Close Date"
+                                - generic [ref=e366]:
+                                  - textbox "Close Date" [ref=e367]
+                                  - button "Select a date for Close Date" [ref=e369] [cursor=pointer]:
+                                    - img [ref=e371]
+                                    - generic [ref=e374]: Select a date for Close Date
+                              - generic [ref=e375]:
+                                - generic [ref=e376]: Close Date
+                                - text: Complete this field with format 31/12/2024.
+                        - generic [ref=e378]:
+                          - listitem [ref=e380]:
+                            - generic [ref=e386]:
+                              - generic [ref=e387]: "*Opportunity Name"
+                              - textbox "Opportunity Name" [ref=e389]
+                          - listitem [ref=e391]:
+                            - generic [ref=e399]:
+                              - generic [ref=e401]: "*Stage"
+                              - generic [ref=e405]:
+                                - combobox "Stage" [ref=e406] [cursor=pointer]:
+                                  - generic [ref=e407]: "--None--"
+                                - img [ref=e411]
+                              - status
+                        - generic [ref=e415]:
+                          - listitem [ref=e417]:
+                            - generic [ref=e423]:
+                              - generic [ref=e424]: "*Account Name"
+                              - generic [ref=e429]:
+                                - combobox "Account Name" [ref=e432]
+                                - img [ref=e436]
+                              - status
+                          - listitem [ref=e440]:
+                            - generic [ref=e445]:
+                              - generic [ref=e446]: Probability (%)
+                              - spinbutton "Probability (%)" [ref=e448]
+                        - generic [ref=e450]:
+                          - listitem [ref=e452]:
+                            - generic [ref=e459]:
+                              - generic [ref=e461]: Type
+                              - generic [ref=e465]:
+                                - combobox "Type" [ref=e466] [cursor=pointer]:
+                                  - generic [ref=e467]: "--None--"
+                                - img [ref=e471]
+                              - status
+                          - listitem [ref=e475]:
+                            - generic [ref=e481]:
+                              - generic [ref=e482]: Amount
+                              - spinbutton "Amount" [ref=e484]
+                        - listitem [ref=e488]:
+                          - generic [ref=e494]:
+                            - generic [ref=e495]: Primary Campaign Source
+                            - generic [ref=e500]:
+                              - combobox "Primary Campaign Source" [ref=e503]
+                              - img [ref=e507]
+                            - status
+                  - generic [ref=e512]:
+                    - heading "Additional Information" [level=3] [ref=e513]:
+                      - generic [ref=e514]: Additional Information
+                    - list [ref=e516]:
+                      - generic [ref=e517]:
+                        - listitem [ref=e521]:
+                          - generic [ref=e528]:
+                            - generic [ref=e530]: Lead Source
+                            - generic [ref=e534]:
+                              - combobox "Lead Source" [ref=e535] [cursor=pointer]:
+                                - generic [ref=e536]: "--None--"
+                              - img [ref=e540]
+                            - status
+                        - listitem [ref=e547]:
+                          - generic [ref=e553]:
+                            - generic [ref=e554]: Next Step
+                            - textbox "Next Step" [ref=e556]
+                  - generic [ref=e559]:
+                    - heading "Description Information" [level=3] [ref=e560]:
+                      - generic [ref=e561]: Description Information
+                    - list [ref=e563]:
+                      - listitem [ref=e568]:
+                        - generic [ref=e572]:
+                          - generic [ref=e573]: Description
+                          - textbox "Description" [ref=e575]
+                          - status
+                - generic [ref=e580]:
+                  - generic "Cancel" [ref=e581]:
+                    - button "Cancel" [ref=e586] [cursor=pointer]
+                  - generic "Save & New" [ref=e587]:
+                    - button "Save & New" [ref=e592] [cursor=pointer]
+                  - generic "Save" [ref=e593]:
+                    - button "Save" [ref=e598] [cursor=pointer]
+          - status [ref=e599]
+  - generic:
+    - status

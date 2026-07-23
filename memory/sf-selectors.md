@@ -60,10 +60,17 @@
 |---|---|
 | First Name | `page.getByLabel('First Name')` |
 | Last Name | `page.getByLabel('Last Name')` |
-| Account Name | `page.getByLabel('Account Name')` |
+| Account Name | `page.getByLabel('Account Name')` (lookup, choose from autocomplete list) |
 | Email | `page.getByLabel('Email')` |
 | Phone | `page.getByLabel('Business Phone')` |
 | Title | `page.getByLabel('Title')` |
+
+## Lookup Fields
+| Field | Behavior |
+|---|---|
+| Contact Name | `fillLookup(page, 'Contact Name', 'contact')` → select first autocomplete option |
+| Account Name | `fillLookup(page, 'Account Name', 'agentic')` → select first autocomplete option |
+| Parent Account | `fillLookup(page, 'Parent Account', 'Acme Corp')` → select first autocomplete option |
 
 ## List View
 | Element | Locator |

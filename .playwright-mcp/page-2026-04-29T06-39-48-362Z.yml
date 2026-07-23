@@ -1,0 +1,720 @@
+- generic:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to Navigation" [ref=e2570] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - link "Skip to Main Content" [ref=e2571] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=e6]:
+        - button "Search" [ref=e2572]:
+          - img [ref=e14]
+          - text: Search...
+        - navigation "Global Header" [ref=e2573]:
+          - list [ref=e19]:
+            - listitem [ref=e20]:
+              - group [ref=e21]:
+                - button "This item doesn't support favorites" [ref=e2574] [cursor=pointer]:
+                  - generic [ref=e24]:
+                    - img [ref=e28]
+                    - tooltip "This item doesn't support favorites"
+                - button "Favorites list" [ref=e2575] [cursor=pointer]:
+                  - generic [ref=e33]:
+                    - img [ref=e37]
+                    - tooltip "Favorites list"
+            - listitem [ref=e40]:
+              - button "Global Actions" [disabled] [ref=e2576]:
+                - img [ref=e46]
+            - listitem [ref=e49]:
+              - button "Guidance Center" [ref=e2577] [cursor=pointer]:
+                - generic [ref=e52]:
+                  - img [ref=e56]
+                  - tooltip "Guidance Center"
+            - listitem [ref=e59]:
+              - button "Salesforce Help" [ref=e2578] [cursor=pointer]:
+                - generic [ref=e63]:
+                  - img [ref=e67]
+                  - tooltip "Salesforce Help"
+            - listitem [ref=e70]:
+              - button "Setup" [ref=e2579] [cursor=pointer]:
+                - generic [ref=e77]:
+                  - img [ref=e81]
+                  - tooltip "Setup"
+            - listitem [ref=e84]:
+              - button "Notifications" [ref=e2580] [cursor=pointer]:
+                - generic [ref=e88]:
+                  - img [ref=e93]
+                  - tooltip "Notifications"
+            - listitem [ref=e97]:
+              - button "View profile" [ref=e2581] [cursor=pointer]:
+                - generic [ref=e101]:
+                  - tooltip "View profile"
+    - generic [ref=e105]:
+      - generic [ref=e108]:
+        - generic [ref=e110]:
+          - navigation "App" [ref=e2582]:
+            - button "App Launcher" [ref=e2583] [cursor=pointer]:
+              - generic [ref=e124]: App Launcher
+          - heading "Sales" [level=1] [ref=e2584]:
+            - generic "Sales" [ref=e2585]
+        - navigation "Global" [ref=e2586]:
+          - list [ref=e130]:
+            - listitem [ref=e131]:
+              - link "Home" [ref=e2587] [cursor=pointer]:
+                - /url: /lightning/page/home
+                - generic [ref=e133]: Home
+            - listitem [ref=e134]:
+              - link "Opportunities" [ref=e2588] [cursor=pointer]:
+                - /url: /lightning/o/Opportunity/home
+                - generic [ref=e136]: Opportunities
+              - button "Opportunities List" [ref=e2589] [cursor=pointer]:
+                - img [ref=e144]
+                - generic [ref=e147]: Opportunities List
+            - listitem [ref=e148] [cursor=pointer]:
+              - link "Leads" [ref=e2590]:
+                - /url: /lightning/o/Lead/home
+                - generic [ref=e150]: Leads
+              - button "Leads List" [ref=e2591]:
+                - img [ref=e158]
+                - generic [ref=e161]: Leads List
+            - listitem [ref=e162]:
+              - link "Tasks" [ref=e2592] [cursor=pointer]:
+                - /url: /lightning/o/Task/home
+                - generic [ref=e164]: Tasks
+              - button "Tasks List" [ref=e2593] [cursor=pointer]:
+                - img [ref=e172]
+                - generic [ref=e175]: Tasks List
+            - listitem [ref=e176]:
+              - link "Files" [ref=e2594] [cursor=pointer]:
+                - /url: /lightning/o/ContentDocument/home
+                - generic [ref=e178]: Files
+              - button "Files List" [ref=e2595] [cursor=pointer]:
+                - img [ref=e186]
+                - generic [ref=e189]: Files List
+            - listitem [ref=e190]:
+              - link "Accounts" [ref=e2596] [cursor=pointer]:
+                - /url: /lightning/o/Account/home
+                - generic [ref=e192]: Accounts
+              - button "Accounts List" [ref=e2597] [cursor=pointer]:
+                - img [ref=e200]
+                - generic [ref=e203]: Accounts List
+            - listitem [ref=e204]:
+              - link "Contacts" [ref=e2598] [cursor=pointer]:
+                - /url: /lightning/o/Contact/home
+                - generic [ref=e206]: Contacts
+              - button "Contacts List" [ref=e2599] [cursor=pointer]:
+                - img [ref=e214]
+                - generic [ref=e217]: Contacts List
+            - listitem [ref=e218]:
+              - link "Campaigns" [ref=e2600] [cursor=pointer]:
+                - /url: /lightning/o/Campaign/home
+                - generic [ref=e220]: Campaigns
+              - button "Campaigns List" [ref=e2601] [cursor=pointer]:
+                - img [ref=e228]
+                - generic [ref=e231]: Campaigns List
+            - listitem [ref=e232]:
+              - link "Dashboards" [ref=e2602] [cursor=pointer]:
+                - /url: /lightning/o/Dashboard/home
+                - generic [ref=e234]: Dashboards
+              - button "Dashboards List" [ref=e2603] [cursor=pointer]:
+                - img [ref=e242]
+                - generic [ref=e245]: Dashboards List
+            - listitem [ref=e246]:
+              - link "Reports" [ref=e2604] [cursor=pointer]:
+                - /url: /lightning/o/Report/home
+                - generic [ref=e248]: Reports
+              - button "Reports List" [ref=e2605] [cursor=pointer]:
+                - img [ref=e256]
+                - generic [ref=e259]: Reports List
+            - listitem [ref=e260]:
+              - link "Chatter" [ref=e2606] [cursor=pointer]:
+                - /url: /lightning/page/chatter
+                - generic [ref=e262]: Chatter
+            - listitem [ref=e263]:
+              - button "Show more navigation items" [ref=e2607] [cursor=pointer]:
+                - generic [ref=e266]: More
+                - img [ref=e270]
+                - generic [ref=e273]: Show more navigation items
+            - listitem [ref=e274]:
+              - button "Edit nav items" [ref=e2608] [cursor=pointer]:
+                - img [ref=e278]
+                - generic [ref=e281]: Edit nav items
+      - main [ref=e1834]:
+        - generic [ref=e2612]:
+          - generic [ref=e2614]:
+            - generic [ref=e2616]:
+              - generic "Lead" [ref=e2618]:
+                - generic [ref=e2620]:
+                  - img [ref=e2622]
+                  - generic [ref=e2626]: Lead
+              - generic [ref=e2627]:
+                - heading "Leads" [level=1] [ref=e2628]
+                - generic [ref=e2633] [cursor=pointer]:
+                  - heading "Leads My Leads" [level=1] [ref=e2634]:
+                    - generic [ref=e2635]: Leads
+                    - generic [ref=e2636]: My Leads
+                  - 'button "Select a List View: Leads" [ref=e2639]':
+                    - img [ref=e2641]
+                    - generic [ref=e2644]: "Select a List View: Leads"
+            - group [ref=e2648]:
+              - generic "Lead View Settings" [ref=e2650]:
+                - button "Lead View Settings" [ref=e2651] [cursor=pointer]:
+                  - img [ref=e2653]
+                  - img [ref=e2657]
+                  - generic [ref=e2660]: Lead View Settings
+              - button "Refresh" [ref=e2661] [cursor=pointer]:
+                - img [ref=e2663]
+                - generic [ref=e2666]: Refresh
+              - button "Edit List" [ref=e2670] [cursor=pointer]:
+                - img [ref=e2672]
+                - generic [ref=e2675]: Edit List
+              - group [ref=e2677]:
+                - generic [ref=e2679]:
+                  - button "New" [ref=e2681] [cursor=pointer]
+                  - button "List View" [ref=e2683] [cursor=pointer]
+          - generic [ref=e2685]:
+            - generic [ref=e2689]:
+              - generic [ref=e2690]:
+                - generic [ref=e2691]:
+                  - generic [ref=e2693]: Created
+                  - 'button "Time Period Filter: This Quarter" [ref=e2698] [cursor=pointer]':
+                    - text: This Quarter
+                    - img [ref=e2700]
+                - generic [ref=e2703]:
+                  - generic [ref=e2705]: Owner
+                  - 'button "Lead owner filter: Me" [ref=e2710] [cursor=pointer]':
+                    - text: Me
+                    - img [ref=e2712]
+              - group [ref=e2717]:
+                - generic [ref=e2719]:
+                  - generic [ref=e2720]:
+                    - button "Important Leads" [ref=e2723] [cursor=pointer]:
+                      - img [ref=e2725]
+                      - generic [ref=e2728]: Important Leads
+                    - generic [ref=e2729]: Apply Important Leads Filter
+                  - tooltip "Shows the leads you mark as important. If you filter your view, the same filters apply." [ref=e2730]
+                - button "Show filters" [ref=e2734] [cursor=pointer]:
+                  - img [ref=e2736]
+                  - generic [ref=e2739]: Show filters
+            - group "Key Performance Indicators" [ref=e2742]:
+              - button "Total Leads 692" [pressed] [ref=e2744] [cursor=pointer]:
+                - generic [ref=e2745]:
+                  - paragraph [ref=e2747]: Total Leads
+                  - paragraph [ref=e2748]: "692"
+              - generic [ref=e2749]:
+                - button "No Activity 692" [ref=e2750] [cursor=pointer]:
+                  - generic [ref=e2751]:
+                    - paragraph [ref=e2753]: No Activity
+                    - paragraph [ref=e2755]: "692"
+                - button "Help" [ref=e2759] [cursor=pointer]:
+                  - img [ref=e2761]
+                  - generic [ref=e2764]: Help
+              - generic [ref=e2765]:
+                - button "Idle 0" [ref=e2766] [cursor=pointer]:
+                  - generic [ref=e2767]:
+                    - paragraph [ref=e2769]: Idle
+                    - paragraph [ref=e2771]: "0"
+                - button "Help" [ref=e2775] [cursor=pointer]:
+                  - img [ref=e2777]
+                  - generic [ref=e2780]: Help
+              - generic [ref=e2781]:
+                - button "No Upcoming 0" [ref=e2782] [cursor=pointer]:
+                  - generic [ref=e2783]:
+                    - paragraph [ref=e2785]: No Upcoming
+                    - paragraph [ref=e2787]: "0"
+                - button "Help" [ref=e2791] [cursor=pointer]:
+                  - img [ref=e2793]
+                  - generic [ref=e2796]: Help
+              - button "Overdue 0" [ref=e2798] [cursor=pointer]:
+                - generic [ref=e2799]:
+                  - paragraph [ref=e2801]: Overdue
+                  - paragraph [ref=e2802]: "0"
+              - button "Due Today 0" [ref=e2804] [cursor=pointer]:
+                - generic [ref=e2805]:
+                  - paragraph [ref=e2807]: Due Today
+                  - paragraph [ref=e2808]: "0"
+              - generic [ref=e2809]:
+                - button "Upcoming 0" [ref=e2810] [cursor=pointer]:
+                  - generic [ref=e2811]:
+                    - paragraph [ref=e2813]: Upcoming
+                    - paragraph [ref=e2815]: "0"
+                - button "Help" [ref=e2819] [cursor=pointer]:
+                  - img [ref=e2821]
+                  - generic [ref=e2824]: Help
+            - generic [ref=e2826]:
+              - generic [ref=e2828]:
+                - status [ref=e2832]: 25+ items • Filtered by Created Date, Me, Total Leads
+                - group [ref=e2835]:
+                  - generic [ref=e2837]:
+                    - button "Change Status" [ref=e2839] [cursor=pointer]
+                    - button "Change Owner" [ref=e2841] [cursor=pointer]
+                    - button "Send Email" [ref=e2843] [cursor=pointer]
+                    - button "Assign Label" [ref=e2845] [cursor=pointer]
+              - generic [ref=e2847]:
+                - generic [ref=e2856]:
+                  - generic [ref=e2857]: Navigation Mode
+                  - grid [ref=e2861]:
+                    - rowgroup:
+                      - row "Row Number Choose a Row Select 25 items Name Important Title Company Lead Status Lead Source Last Activity Actions Action":
+                        - columnheader "Row Number":
+                          - generic [ref=e2864]:
+                            - generic "Row Number"
+                        - gridcell "Choose a Row Select 25 items":
+                          - generic [ref=e2865]:
+                            - generic [ref=e2866]: Choose a Row
+                            - generic [ref=e2868]:
+                              - checkbox "Select 25 items" [ref=e2869]
+                              - generic [ref=e2872]: Select 25 items
+                        - columnheader "Name":
+                          - generic [ref=e2874]:
+                            - 'button "Sort by: Name" [ref=e2875] [cursor=pointer]':
+                              - generic [ref=e2876]: "Sort by:"
+                              - generic "Name" [ref=e2877]
+                            - generic [ref=e2878]: "Sorted: None"
+                            - button "Show Name column actions" [ref=e2880] [cursor=pointer]:
+                              - img [ref=e2882]
+                              - generic [ref=e2885]: Show Name column actions
+                            - slider "Name column width" [ref=e2886]: "156"
+                        - columnheader "Important":
+                          - generic "Important" [ref=e2893]:
+                            - generic [ref=e2894]:
+                              - img [ref=e2896]
+                              - generic [ref=e2899]: Important
+                        - columnheader "Title":
+                          - generic [ref=e2901]:
+                            - 'button "Sort by: Title" [ref=e2902] [cursor=pointer]':
+                              - generic [ref=e2903]: "Sort by:"
+                              - generic "Title" [ref=e2904]
+                            - generic [ref=e2905]: "Sorted: None"
+                            - button "Show Title column actions" [ref=e2907] [cursor=pointer]:
+                              - img [ref=e2909]
+                              - generic [ref=e2912]: Show Title column actions
+                            - slider "Title column width" [ref=e2913]: "140"
+                        - columnheader "Company":
+                          - generic [ref=e2917]:
+                            - 'button "Sort by: Company" [ref=e2918] [cursor=pointer]':
+                              - generic [ref=e2919]: "Sort by:"
+                              - generic "Company" [ref=e2920]
+                            - generic [ref=e2921]: "Sorted: None"
+                            - button "Show Company column actions" [ref=e2923] [cursor=pointer]:
+                              - img [ref=e2925]
+                              - generic [ref=e2928]: Show Company column actions
+                            - slider "Company column width" [ref=e2929]: "166"
+                        - columnheader "Lead Status":
+                          - generic [ref=e2933]:
+                            - 'button "Sort by: Lead Status" [ref=e2934] [cursor=pointer]':
+                              - generic [ref=e2935]: "Sort by:"
+                              - generic "Lead Status" [ref=e2936]
+                            - generic [ref=e2937]: "Sorted: None"
+                            - button "Show Lead Status column actions" [ref=e2939] [cursor=pointer]:
+                              - img [ref=e2941]
+                              - generic [ref=e2944]: Show Lead Status column actions
+                            - slider "Lead Status column width" [ref=e2945]: "195"
+                        - columnheader "Lead Source":
+                          - generic [ref=e2949]:
+                            - 'button "Sort by: Lead Source" [ref=e2950] [cursor=pointer]':
+                              - generic [ref=e2951]: "Sort by:"
+                              - generic "Lead Source" [ref=e2952]
+                            - generic [ref=e2953]: "Sorted: None"
+                            - button "Show Lead Source column actions" [ref=e2955] [cursor=pointer]:
+                              - img [ref=e2957]
+                              - generic [ref=e2960]: Show Lead Source column actions
+                            - slider "Lead Source column width" [ref=e2961]: "140"
+                        - columnheader "Last Activity":
+                          - generic [ref=e2965]:
+                            - 'button "Sort by: Last Activity" [ref=e2966] [cursor=pointer]':
+                              - generic [ref=e2967]: "Sort by:"
+                              - generic "Last Activity" [ref=e2968]
+                            - generic [ref=e2969]: "Sorted: None"
+                            - button "Show Last Activity column actions" [ref=e2971] [cursor=pointer]:
+                              - img [ref=e2973]
+                              - generic [ref=e2976]: Show Last Activity column actions
+                            - slider "Last Activity column width" [ref=e2977]: "140"
+                        - columnheader "Actions":
+                          - generic "Actions" [ref=e2983]
+                        - columnheader "Action":
+                          - generic [ref=e2986]:
+                            - generic "Action"
+                    - rowgroup [ref=e2987]:
+                      - 'row "Select Item 1 Choose a Row David Miller View Activity: David Miller Locked Name Mark Important: David Miller Edit Title Premier Industries Edit Company Qualified Edit Lead Status Edit Lead Source Locked Last Activity Show Actions" [ref=e2988]':
+                        - gridcell [ref=e2989]
+                        - gridcell "Select Item 1 Choose a Row" [ref=e2994]:
+                          - generic [ref=e2996]:
+                            - checkbox "Select Item 1 Choose a Row" [ref=e2997]
+                            - generic [ref=e3000]: Select Item 1
+                        - 'rowheader "David Miller View Activity: David Miller Locked Name" [ref=e3001]':
+                          - generic [ref=e3003]:
+                            - generic [ref=e3007]:
+                              - link "David Miller" [ref=e3010] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QdN00000DjG64UAF/view
+                                - generic [ref=e3011]: David Miller
+                              - 'button "View Activity: David Miller" [ref=e3013] [cursor=pointer]':
+                                - img [ref=e3015]
+                                - generic [ref=e3018]: "View Activity: David Miller"
+                            - img "Locked Name" [ref=e3019]:
+                              - img [ref=e3021]
+                        - 'gridcell "Mark Important: David Miller" [ref=e3024]':
+                          - 'button "Mark Important: David Miller" [ref=e3033] [cursor=pointer]':
+                            - img [ref=e3035]
+                            - generic [ref=e3038]: "Mark Important: David Miller"
+                        - gridcell "Edit Title" [ref=e3039]:
+                          - button "Edit Title" [ref=e3042] [cursor=pointer]:
+                            - img [ref=e3044]
+                            - generic [ref=e3047]: Edit Title
+                        - gridcell "Premier Industries Edit Company" [ref=e3048]:
+                          - generic [ref=e3050]:
+                            - generic [ref=e3053]: Premier Industries
+                            - button "Edit Company" [ref=e3054] [cursor=pointer]:
+                              - img [ref=e3056]
+                              - generic [ref=e3059]: Edit Company
+                        - gridcell "Qualified Edit Lead Status" [ref=e3060]:
+                          - generic [ref=e3062]:
+                            - generic [ref=e3065]: Qualified
+                            - button "Edit Lead Status" [ref=e3066] [cursor=pointer]:
+                              - img [ref=e3068]
+                              - generic [ref=e3071]: Edit Lead Status
+                        - gridcell "Edit Lead Source" [ref=e3072]:
+                          - button "Edit Lead Source" [ref=e3075] [cursor=pointer]:
+                            - img [ref=e3077]
+                            - generic [ref=e3080]: Edit Lead Source
+                        - gridcell "Locked Last Activity" [ref=e3081]:
+                          - img "Locked Last Activity" [ref=e3084]:
+                            - img [ref=e3086]
+                        - gridcell [ref=e3089]:
+                          - group [ref=e3096]:
+                            - generic [ref=e3098]:
+                              - generic:
+                                - button "Email" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Email
+                              - generic:
+                                - button "Call" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Call
+                        - gridcell "Show Actions" [ref=e3099]:
+                          - button "Show Actions" [ref=e3106] [cursor=pointer]:
+                            - img [ref=e3108]
+                            - generic [ref=e3111]: Show Actions
+                      - 'row "Select Item 2 Choose a Row Jane Smith View Activity: Jane Smith Locked Name Mark Important: Jane Smith Manager Edit Title Tech Innovations Inc Edit Company Qualified Edit Lead Status Edit Lead Source Locked Last Activity Show Actions" [ref=e3112]':
+                        - gridcell [ref=e3113]
+                        - gridcell "Select Item 2 Choose a Row" [ref=e3118]:
+                          - generic [ref=e3120]:
+                            - checkbox "Select Item 2 Choose a Row" [ref=e3121]
+                            - generic [ref=e3124]: Select Item 2
+                        - 'rowheader "Jane Smith View Activity: Jane Smith Locked Name" [ref=e3125]':
+                          - generic [ref=e3127]:
+                            - generic [ref=e3131]:
+                              - link "Jane Smith" [ref=e3134] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QdN00000DjHDKUA3/view
+                                - generic [ref=e3135]: Jane Smith
+                              - 'button "View Activity: Jane Smith" [ref=e3137] [cursor=pointer]':
+                                - img [ref=e3139]
+                                - generic [ref=e3142]: "View Activity: Jane Smith"
+                            - img "Locked Name" [ref=e3143]:
+                              - img [ref=e3145]
+                        - 'gridcell "Mark Important: Jane Smith" [ref=e3148]':
+                          - 'button "Mark Important: Jane Smith" [ref=e3157] [cursor=pointer]':
+                            - img [ref=e3159]
+                            - generic [ref=e3162]: "Mark Important: Jane Smith"
+                        - gridcell "Manager Edit Title" [ref=e3163]:
+                          - generic [ref=e3165]:
+                            - generic [ref=e3168]: Manager
+                            - button "Edit Title" [ref=e3169] [cursor=pointer]:
+                              - img [ref=e3171]
+                              - generic [ref=e3174]: Edit Title
+                        - gridcell "Tech Innovations Inc Edit Company" [ref=e3175]:
+                          - generic [ref=e3177]:
+                            - generic [ref=e3180]: Tech Innovations Inc
+                            - button "Edit Company" [ref=e3181] [cursor=pointer]:
+                              - img [ref=e3183]
+                              - generic [ref=e3186]: Edit Company
+                        - gridcell "Qualified Edit Lead Status" [ref=e3187]:
+                          - generic [ref=e3189]:
+                            - generic [ref=e3192]: Qualified
+                            - button "Edit Lead Status" [ref=e3193] [cursor=pointer]:
+                              - img [ref=e3195]
+                              - generic [ref=e3198]: Edit Lead Status
+                        - gridcell "Edit Lead Source" [ref=e3199]:
+                          - button "Edit Lead Source" [ref=e3202] [cursor=pointer]:
+                            - img [ref=e3204]
+                            - generic [ref=e3207]: Edit Lead Source
+                        - gridcell "Locked Last Activity" [ref=e3208]:
+                          - img "Locked Last Activity" [ref=e3211]:
+                            - img [ref=e3213]
+                        - gridcell [ref=e3216]:
+                          - group [ref=e3223]:
+                            - generic [ref=e3225]:
+                              - button "Email" [ref=e3227] [cursor=pointer]:
+                                - img [ref=e3229]
+                                - generic [ref=e3232]: Email
+                              - button "Call" [ref=e3234] [cursor=pointer]:
+                                - img [ref=e3236]
+                                - generic [ref=e3239]: Call
+                        - gridcell "Show Actions" [ref=e3240]:
+                          - button "Show Actions" [ref=e3247] [cursor=pointer]:
+                            - img [ref=e3249]
+                            - generic [ref=e3252]: Show Actions
+                      - 'row "Select Item 3 Choose a Row John Doe View Activity: John Doe Locked Name Mark Important: John Doe Edit Title Acme Corporation Edit Company Qualified Edit Lead Status Edit Lead Source Locked Last Activity Show Actions" [ref=e3253]':
+                        - gridcell [ref=e3254]
+                        - gridcell "Select Item 3 Choose a Row" [ref=e3259]:
+                          - generic [ref=e3261]:
+                            - checkbox "Select Item 3 Choose a Row" [ref=e3262]
+                            - generic [ref=e3265]: Select Item 3
+                        - 'rowheader "John Doe View Activity: John Doe Locked Name" [ref=e3266]':
+                          - generic [ref=e3268]:
+                            - generic [ref=e3272]:
+                              - link "John Doe" [ref=e3275] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QdN00000DjIEEUA3/view
+                                - generic [ref=e3276]: John Doe
+                              - 'button "View Activity: John Doe" [ref=e3278] [cursor=pointer]':
+                                - img [ref=e3280]
+                                - generic [ref=e3283]: "View Activity: John Doe"
+                            - img "Locked Name" [ref=e3284]:
+                              - img [ref=e3286]
+                        - 'gridcell "Mark Important: John Doe" [ref=e3289]':
+                          - 'button "Mark Important: John Doe" [ref=e3298] [cursor=pointer]':
+                            - img [ref=e3300]
+                            - generic [ref=e3303]: "Mark Important: John Doe"
+                        - gridcell "Edit Title" [ref=e3304]:
+                          - button "Edit Title" [ref=e3307] [cursor=pointer]:
+                            - img [ref=e3309]
+                            - generic [ref=e3312]: Edit Title
+                        - gridcell "Acme Corporation Edit Company" [ref=e3313]:
+                          - generic [ref=e3315]:
+                            - generic [ref=e3318]: Acme Corporation
+                            - button "Edit Company" [ref=e3319] [cursor=pointer]:
+                              - img [ref=e3321]
+                              - generic [ref=e3324]: Edit Company
+                        - gridcell "Qualified Edit Lead Status" [ref=e3325]:
+                          - generic [ref=e3327]:
+                            - generic [ref=e3330]: Qualified
+                            - button "Edit Lead Status" [ref=e3331] [cursor=pointer]:
+                              - img [ref=e3333]
+                              - generic [ref=e3336]: Edit Lead Status
+                        - gridcell "Edit Lead Source" [ref=e3337]:
+                          - button "Edit Lead Source" [ref=e3340] [cursor=pointer]:
+                            - img [ref=e3342]
+                            - generic [ref=e3345]: Edit Lead Source
+                        - gridcell "Locked Last Activity" [ref=e3346]:
+                          - img "Locked Last Activity" [ref=e3349]:
+                            - img [ref=e3351]
+                        - gridcell [ref=e3354]:
+                          - group [ref=e3361]:
+                            - generic [ref=e3363]:
+                              - generic:
+                                - button "Email" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Email
+                              - generic:
+                                - button "Call" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Call
+                        - gridcell "Show Actions" [ref=e3364]:
+                          - button "Show Actions" [ref=e3371] [cursor=pointer]:
+                            - img [ref=e3373]
+                            - generic [ref=e3376]: Show Actions
+                      - 'row "Select Item 4 Choose a Row Mark Wilson View Activity: Mark Wilson Locked Name Mark Important: Mark Wilson Edit Title Innovation Labs Edit Company Open Edit Lead Status Edit Lead Source Locked Last Activity Show Actions" [ref=e3377]':
+                        - gridcell [ref=e3378]
+                        - gridcell "Select Item 4 Choose a Row" [ref=e3383]:
+                          - generic [ref=e3385]:
+                            - checkbox "Select Item 4 Choose a Row" [ref=e3386]
+                            - generic [ref=e3389]: Select Item 4
+                        - 'rowheader "Mark Wilson View Activity: Mark Wilson Locked Name" [ref=e3390]':
+                          - generic [ref=e3392]:
+                            - generic [ref=e3396]:
+                              - link "Mark Wilson" [ref=e3399] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QdN00000DjIJwUAN/view
+                                - generic [ref=e3400]: Mark Wilson
+                              - 'button "View Activity: Mark Wilson" [ref=e3402] [cursor=pointer]':
+                                - img [ref=e3404]
+                                - generic [ref=e3407]: "View Activity: Mark Wilson"
+                            - img "Locked Name" [ref=e3408]:
+                              - img [ref=e3410]
+                        - 'gridcell "Mark Important: Mark Wilson" [ref=e3413]':
+                          - 'button "Mark Important: Mark Wilson" [ref=e3422] [cursor=pointer]':
+                            - img [ref=e3424]
+                            - generic [ref=e3427]: "Mark Important: Mark Wilson"
+                        - gridcell "Edit Title" [ref=e3428]:
+                          - button "Edit Title" [ref=e3431] [cursor=pointer]:
+                            - img [ref=e3433]
+                            - generic [ref=e3436]: Edit Title
+                        - gridcell "Innovation Labs Edit Company" [ref=e3437]:
+                          - generic [ref=e3439]:
+                            - generic [ref=e3442]: Innovation Labs
+                            - button "Edit Company" [ref=e3443] [cursor=pointer]:
+                              - img [ref=e3445]
+                              - generic [ref=e3448]: Edit Company
+                        - gridcell "Open Edit Lead Status" [ref=e3449]:
+                          - generic [ref=e3451]:
+                            - generic [ref=e3454]: Open
+                            - button "Edit Lead Status" [ref=e3455] [cursor=pointer]:
+                              - img [ref=e3457]
+                              - generic [ref=e3460]: Edit Lead Status
+                        - gridcell "Edit Lead Source" [ref=e3461]:
+                          - button "Edit Lead Source" [ref=e3464] [cursor=pointer]:
+                            - img [ref=e3466]
+                            - generic [ref=e3469]: Edit Lead Source
+                        - gridcell "Locked Last Activity" [ref=e3470]:
+                          - img "Locked Last Activity" [ref=e3473]:
+                            - img [ref=e3475]
+                        - gridcell [ref=e3478]:
+                          - group [ref=e3485]:
+                            - generic [ref=e3487]:
+                              - generic:
+                                - button "Email" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Email
+                              - generic:
+                                - button "Call" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Call
+                        - gridcell "Show Actions" [ref=e3488]:
+                          - button "Show Actions" [ref=e3495] [cursor=pointer]:
+                            - img [ref=e3497]
+                            - generic [ref=e3500]: Show Actions
+                      - 'row "Select Item 5 Choose a Row Robert Brown View Activity: Robert Brown Locked Name Mark Important: Robert Brown Edit Title Enterprise Corp Edit Company Open Edit Lead Status Edit Lead Source Locked Last Activity Show Actions" [ref=e3501]':
+                        - gridcell [ref=e3502]
+                        - gridcell "Select Item 5 Choose a Row" [ref=e3507]:
+                          - generic [ref=e3509]:
+                            - checkbox "Select Item 5 Choose a Row" [ref=e3510]
+                            - generic [ref=e3513]: Select Item 5
+                        - 'rowheader "Robert Brown View Activity: Robert Brown Locked Name" [ref=e3514]':
+                          - generic [ref=e3516]:
+                            - generic [ref=e3520]:
+                              - link "Robert Brown" [ref=e3523] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QdN00000DjIMMUA3/view
+                                - generic [ref=e3524]: Robert Brown
+                              - 'button "View Activity: Robert Brown" [ref=e3526] [cursor=pointer]':
+                                - img [ref=e3528]
+                                - generic [ref=e3531]: "View Activity: Robert Brown"
+                            - img "Locked Name" [ref=e3532]:
+                              - img [ref=e3534]
+                        - 'gridcell "Mark Important: Robert Brown" [ref=e3537]':
+                          - 'button "Mark Important: Robert Brown" [ref=e3546] [cursor=pointer]':
+                            - img [ref=e3548]
+                            - generic [ref=e3551]: "Mark Important: Robert Brown"
+                        - gridcell "Edit Title" [ref=e3552]:
+                          - button "Edit Title" [ref=e3555] [cursor=pointer]:
+                            - img [ref=e3557]
+                            - generic [ref=e3560]: Edit Title
+                        - gridcell "Enterprise Corp Edit Company" [ref=e3561]:
+                          - generic [ref=e3563]:
+                            - generic [ref=e3566]: Enterprise Corp
+                            - button "Edit Company" [ref=e3567] [cursor=pointer]:
+                              - img [ref=e3569]
+                              - generic [ref=e3572]: Edit Company
+                        - gridcell "Open Edit Lead Status" [ref=e3573]:
+                          - generic [ref=e3575]:
+                            - generic [ref=e3578]: Open
+                            - button "Edit Lead Status" [ref=e3579] [cursor=pointer]:
+                              - img [ref=e3581]
+                              - generic [ref=e3584]: Edit Lead Status
+                        - gridcell "Edit Lead Source" [ref=e3585]:
+                          - button "Edit Lead Source" [ref=e3588] [cursor=pointer]:
+                            - img [ref=e3590]
+                            - generic [ref=e3593]: Edit Lead Source
+                        - gridcell "Locked Last Activity" [ref=e3594]:
+                          - img "Locked Last Activity" [ref=e3597]:
+                            - img [ref=e3599]
+                        - gridcell [ref=e3602]:
+                          - group [ref=e3609]:
+                            - generic [ref=e3611]:
+                              - button "Email" [ref=e3613] [cursor=pointer]:
+                                - img [ref=e3615]
+                                - generic [ref=e3618]: Email
+                              - generic:
+                                - button "Call" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Call
+                        - gridcell "Show Actions" [ref=e3619]:
+                          - button "Show Actions" [ref=e3626] [cursor=pointer]:
+                            - img [ref=e3628]
+                            - generic [ref=e3631]: Show Actions
+                      - 'row "Select Item 6 Choose a Row Mark Wilson View Activity: Mark Wilson Locked Name Mark Important: Mark Wilson Edit Title Innovation Labs Edit Company Open Edit Lead Status Edit Lead Source Locked Last Activity Show Actions" [ref=e3632]':
+                        - gridcell [ref=e3633]
+                        - gridcell "Select Item 6 Choose a Row" [ref=e3638]:
+                          - generic [ref=e3640]:
+                            - checkbox "Select Item 6 Choose a Row" [ref=e3641]
+                            - generic [ref=e3644]: Select Item 6
+                        - 'rowheader "Mark Wilson View Activity: Mark Wilson Locked Name" [ref=e3645]':
+                          - generic [ref=e3647]:
+                            - generic [ref=e3651]:
+                              - link "Mark Wilson" [ref=e3654] [cursor=pointer]:
+                                - /url: /lightning/r/Lead/00QdN00000DjINvUAN/view
+                                - generic [ref=e3655]: Mark Wilson
+                              - 'button "View Activity: Mark Wilson" [ref=e3657] [cursor=pointer]':
+                                - img [ref=e3659]
+                                - generic [ref=e3662]: "View Activity: Mark Wilson"
+                            - img "Locked Name" [ref=e3663]:
+                              - img [ref=e3665]
+                        - 'gridcell "Mark Important: Mark Wilson" [ref=e3668]':
+                          - 'button "Mark Important: Mark Wilson" [ref=e3677] [cursor=pointer]':
+                            - img [ref=e3679]
+                            - generic [ref=e3682]: "Mark Important: Mark Wilson"
+                        - gridcell "Edit Title" [ref=e3683]:
+                          - button "Edit Title" [ref=e3686] [cursor=pointer]:
+                            - img [ref=e3688]
+                            - generic [ref=e3691]: Edit Title
+                        - gridcell "Innovation Labs Edit Company" [ref=e3692]:
+                          - generic [ref=e3694]:
+                            - generic [ref=e3697]: Innovation Labs
+                            - button "Edit Company" [ref=e3698] [cursor=pointer]:
+                              - img [ref=e3700]
+                              - generic [ref=e3703]: Edit Company
+                        - gridcell "Open Edit Lead Status" [ref=e3704]:
+                          - generic [ref=e3706]:
+                            - generic [ref=e3709]: Open
+                            - button "Edit Lead Status" [ref=e3710] [cursor=pointer]:
+                              - img [ref=e3712]
+                              - generic [ref=e3715]: Edit Lead Status
+                        - gridcell "Edit Lead Source" [ref=e3716]:
+                          - button "Edit Lead Source" [ref=e3719] [cursor=pointer]:
+                            - img [ref=e3721]
+                            - generic [ref=e3724]: Edit Lead Source
+                        - gridcell "Locked Last Activity" [ref=e3725]:
+                          - img "Locked Last Activity" [ref=e3728]:
+                            - img [ref=e3730]
+                        - gridcell [ref=e3733]:
+                          - group [ref=e3740]:
+                            - generic [ref=e3742]:
+                              - generic:
+                                - button "Email" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Email
+                              - generic:
+                                - button "Call" [disabled]:
+                                  - generic:
+                                    - img
+                                  - generic: Call
+                        - gridcell "Show Actions" [ref=e3743]:
+                          - button "Show Actions" [ref=e3750] [cursor=pointer]:
+                            - img [ref=e3752]
+                            - generic [ref=e3755]: Show Actions
+                - generic:
+                  - dialog
+                - generic:
+                  - dialog
+                - generic:
+                  - dialog
+                - generic:
+                  - dialog
+                - generic:
+                  - dialog
+                - generic:
+                  - dialog
+    - generic:
+      - contentinfo "Utility Bar":
+        - list [ref=e1821]:
+          - listitem [ref=e1822]:
+            - button "To Do List" [ref=e3756] [cursor=pointer]:
+              - img [ref=e1829]
+              - generic [ref=e1832]: To Do List
+  - generic:
+    - status
