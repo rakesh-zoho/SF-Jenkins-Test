@@ -3,7 +3,7 @@ pipeline {
 
   tools {
     nodejs 'Node20'
-    allure 'allure'
+ //  allure  'allure'
   }
 
   parameters {

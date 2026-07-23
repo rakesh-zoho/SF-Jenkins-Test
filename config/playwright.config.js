@@ -10,27 +10,24 @@ export default defineConfig({
   workers: 1,
   timeout: parseInt(process.env.TIMEOUT) || 80000,
   expect: { timeout: 15000 },
-
+  
+// reporter: [
+//    ['list'],
+//   ['html', { outputFolder: 'reports/playwright-report', open: 'never' }],
+//   ['allure-playwright', { outputFolder: 'reports/allure-results' }],
+//   ['junit', { outputFile: 'reports/junit-results.xml' }]
+// ],
   reporter: [
+    
     ['list'],
-    ['html', { outputFolder: './reports/playwright-report', open: 'never' }],
+    ['html', { outputFolder: '../reports/playwright-report', open: 'never' }],
     ['allure-playwright', {
-      outputFolder: './reports/allure-results',
       detail: true,
+      outputFolder: '../reports/allure-results',
       suiteTitle: false,
     }],
-    ['junit', { outputFile: './reports/junit-results.xml' }],
-    ['../utils/jira-reporter.js'],
-    ['../utils/teams-reporter.js']
+    ['junit', { outputFile: '../reports/junit-results.xml' }],
   ],
-
-  launchOptions: {
-    args: [
-      '--disable-gpu',
-      '--use-gl=swiftshader',
-      '--disable-dev-shm-usage',
-    ],
-  },
 
   use: {
     baseURL: process.env.BASE_URL || process.env.SF_URL,
