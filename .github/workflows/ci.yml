@@ -8,6 +8,17 @@ on:
   schedule:
     - cron: '0 2 * * *'   # Nightly 2 AM UTC
   workflow_dispatch:
+    inputs:
+      TEST_SUITE:
+        description: 'Select which test suite to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - lead
+          - account
+          - opportunity
 
 jobs:
   test:
@@ -20,7 +31,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install dependencies
@@ -37,7 +48,22 @@ jobs:
           SF_SECURITY_TOKEN: ${{ secrets.SF_SECURITY_TOKEN }}
           HEADLESS: 'true'
           CI: 'true'
-        run: npm run test:ci
+          TEST_SUITE: ${{ github.event.inputs.TEST_SUITE || 'lead' }}
+        run: |
+          case "$TEST_SUITE" in
+            lead)
+              npm run test:lead
+              ;;
+            account)
+              npx playwright test tests/customdata-creation.spec.js --config=config/playwright.config.js
+              ;;
+            opportunity)
+              npm run test:opportunity
+              ;;
+            *)
+              npm run test:ci
+              ;;
+          esac
 
       - name: Generate Allure Report
         if: always()

@@ -32,6 +32,7 @@
     "form-data": "^4.0.5",
     "nodemailer": "^8.0.7",
     "playwright": "^1.60.0",
-    "resend": "^6.12.2"
+    "resend": "^6.12.2",
+    "uuid": "^14.0.0"
   }
 }
